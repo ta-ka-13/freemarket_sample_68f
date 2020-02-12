@@ -86,7 +86,3 @@ gem 'pry-rails'
 gem 'jquery-rails'
 gem 'ancestry'
 gem 'payjp'
-
-group :production do
-  gem 'unicorn', '5.4.1'
-end
