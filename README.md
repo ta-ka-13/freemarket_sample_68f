@@ -47,7 +47,7 @@ Things you may want to cover:
 ## addressesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|reference|ull: false, foreign_key: true|
+|user_id|reference|null: false, foreign_key: true|
 |prefectures|string|nul: false|
 |municipalities|string|nul: false|
 |address|string|nul: false|
@@ -73,12 +73,15 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |user_id|reference|null: false, foreign_key: true|
+|brand_id|reference|null: false, foreign_key: true|
+|category_id|reference|null: false, foreign_key: true|
 |shopping_charges|string|null: false|
 |shopping_area|string|null: false|
 |shopping_date|string|null: false|
 |price|integer|null:false|
 |description|string|null: false|
 |status|string|null: false|
+
  ## Association
 - has_many: images
 - belongs_to: user
@@ -100,7 +103,6 @@ Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
 |ancestry|string||
-|item_id|reference|null: false, foreign_key: true|
 ## Association
 - has_many: items
 
@@ -109,6 +111,5 @@ Column|Type|Options|
 Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
-|item_id|reference|null: false, foreign_key: true|
 ## Association
 - has_many: items
