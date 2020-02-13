@@ -30,11 +30,7 @@ $footerBg: #333;
   border-radius: 10px;
   background-color: $bg;
 }
-
-.main {
-  height: 100vh;
-  background-color: darkcyan;
-}
+// 上記、追々colors.scss、mixin.scssに追加予定
 
 .header {
   background-color: $headerBg;

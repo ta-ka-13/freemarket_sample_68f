@@ -35,8 +35,7 @@
   &__logo {
     text-align: center;
     .footer-logo {
-      height: auto;
-      width: 160px;
+      @include heightWidth(auto, 160px);
     }
   }
   &__bottom {
