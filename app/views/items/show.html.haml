@@ -1,16 +1,89 @@
-.content
-  %h1.content__item-name
-    名前
-    .content-clearfix
-      .content__image
-      .item-box
-        .item-price
-          ¥4000
-        .item-free
-          円
-      .item-table
-        
-     
+.free
+  .contents
+    .content
+      %h2.content__item-name
+        ラルフローレン　財布
+      .content-box
+        %ul.content-box__image 
+          %li
+            =image_tag "https://static.mercdn.net/item/detail/orig/photos/m79639826108_1.jpg?1581574124", size: "300x300"
+          .content-box__image-sub
+            %ul
+              %li
+                =image_tag "https://static.mercdn.net/item/detail/orig/photos/m79639826108_3.jpg?1581574124", size: "80x80"
+              %li
+                =image_tag "https://static.mercdn.net/item/detail/orig/photos/m79639826108_4.jpg?1581574124", size: "80x80"
+              %li 
+                =image_tag "https://static.mercdn.net/item/detail/orig/photos/m79639826108_2.jpg?1581574124", size: "80x80"
+          -# 画像は仮の画像です
+        %table
+          %tbody
+            %tr
+              %th 出品者
+              %td
+                山田
+            %tr
+              %th カテゴリー
+              %td
+                = link_to "#", class: "gategory" do
+                  メンズ
+            %tr
+              %th ブランド
+              %td
+                = link_to "#", class: "gategory" do
+                  ラルフローレン
+            %tr
+              %th 商品のサイズ
+              %td
+                L
+            %tr
+              %th 商品の状態
+              %td
+                新品
+            %tr
+              %th 配送料の負担
+              %td
+                送料込み(出品者負担)
+            %tr
+              %th 配送の方法
+              %td ラクラクメルカリ便
+            %tr
+              %th 配送の地域
+              %td
+                = link_to "#", class: "adress" do
+                  青森県
+            %tr
+              %th 発送日の目安
+              %td
+                1~2日
 
-    
-      
+      .price-box
+        .price-box__number
+          ¥4000
+        .price-box__value
+          （税込）送料込み
+        .item-buy
+        = link_to "#", class: "item-buy-btn" do
+          購入画面に進む
+      .buy-text-box
+        %p.buy-text
+          商品の説明欄
+      .like-area
+        %ul
+          %li.like-btn
+            お気に入り
+        %ul
+          %li.report-btn
+            = link_to "#", class: "opitinal-btn" do
+              不適切な商品の情報
+
+    %ul.links
+      %li
+        = link_to "#", class: "select-before" do
+          前の商品
+      %li
+        = link_to "#", class: "selectーafter" do
+          後ろの商品
+    .man-item
+      = link_to "#", class: "mense-btn" do
+        メンズをもっとみる
