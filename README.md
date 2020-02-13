@@ -60,7 +60,7 @@ Things you may want to cover:
 ## cardsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|reference|null: false, foreign: true|
+|user_id|reference|null: false, foreign_key: true|
 |card_number|integer||
 |year|integer||
 |month|integer||
@@ -82,7 +82,7 @@ Things you may want to cover:
  ## Association
 - has_many: users
 - has_one: image
-- has_one: bland
+- has_one: brand
 - has_one: category
 
 
