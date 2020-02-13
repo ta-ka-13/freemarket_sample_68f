@@ -1,0 +1,44 @@
+.footer {
+  background-color: $footerBg;
+  color: $whiteFont;
+  padding: 50px;
+  white-space: nowrap;
+  &__list {
+    .list-perent {
+      @include displayFlex(space-around);
+      &__text {
+        margin-right: 30px;
+        text-align: center;
+        &--head {
+          font-size: 20px;
+          font-weight: bold;
+          margin-bottom: 40px;
+        }
+        .list-chilled {
+          font-size: 15px;
+          display:inline-block;
+          text-align:left;
+          &__text {
+            margin-bottom: 20px;
+            &--link {
+              text-decoration: none;
+              color: $whiteFont;
+              &:hover {
+                border-bottom: 1px solid $whiteFont;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  &__logo {
+    text-align: center;
+    .footer-logo {
+      @include heightWidth(auto, 160px);
+    }
+  }
+  &__bottom {
+    text-align: center;
+  }
+}
