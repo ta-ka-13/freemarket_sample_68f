@@ -80,10 +80,10 @@ Things you may want to cover:
 |description|string|null: false|
 |status|string|null: false|
  ## Association
-- has_many: users
-- has_one: image
-- has_one: brand
-- has_one: category
+- has_many: images
+- belongs_to: user
+- belongs_to: brand
+- belongs_to: category
 
 
 ## imagesテーブル
@@ -102,7 +102,7 @@ Column|Type|Options|
 |ancestry|string||
 |item_id|reference|null: false, foreign_key: true|
 ## Association
-- belongs_to: item
+- has_many: items
 
 
 ## brandsテーブル
@@ -111,4 +111,4 @@ Column|Type|Options|
 |name|string|null: false|
 |item_id|reference|null: false, foreign_key: true|
 ## Association
-- belongs_to: item
+- has_many: items
