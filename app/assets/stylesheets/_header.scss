@@ -1,0 +1,115 @@
+$mainFont: #333;
+$mainColor: #3CCACE;
+$whiteFont: #fff; 
+$headerBg: #fff;
+$leftListHover: crimson;
+
+@mixin heightWidth($h, $w) {
+  height: $h;
+  width: $w;
+}
+
+@mixin displayFlex($jc)  {
+  display: flex;
+  justify-content: $jc;
+}
+
+@mixin headerBottomFont($c:$mainFont) {
+  color: $c;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+@mixin headerBottomRight($borderColor, $bg) {
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 10px;
+  border: 2px solid $borderColor;
+  border-radius: 10px;
+  background-color: $bg;
+}
+
+.main {
+  height: 100vh;
+  background-color: darkcyan;
+}
+
+.header {
+  background-color: $headerBg;
+  padding-top: 15px;
+  &__main {
+    margin: 0 15% 0;
+    .contents-top {
+      display: flex;
+      .furima_image {
+        @include heightWidth(40px, 140px);
+        margin-right: 30px;
+      }
+      .search {
+        width: 100%;
+        .search-box {
+          display: flex;
+          &__text {
+            width: 100%;
+          }
+          .submit-btn {
+            @include heightWidth(40px, 40px);
+            background-color: $mainColor;
+            border: 0;
+            cursor: pointer;
+            &:hover {
+              opacity: 0.9;
+            }
+            .search-icon {
+              @include heightWidth(20px, 20px);
+            }
+          }
+        }
+      }
+    }
+    .contents-bottom {
+      @include displayFlex(space-between);
+      height: 40px;
+      line-height: 40px;
+      padding: 10px 0 10px;
+      &__left {
+        .left-list {
+          @include headerBottomFont();
+          display: flex;
+          cursor: pointer;
+          &__category {
+            margin-right: 30px;
+            &:hover {
+              color: $leftListHover;
+            }
+          }
+          &__bland {
+            &:hover {
+              color: $leftListHover;
+            }
+          }
+        }
+      }
+      &__right {
+        .right-list {
+          &__sign {
+            @include headerBottomFont($whiteFont);
+            @include headerBottomRight($mainColor, $mainColor);
+            margin-right: 20px;
+            &:hover {
+              opacity: 0.9;
+            }
+          }
+          &__member {
+            @include headerBottomFont($mainFont);
+            @include headerBottomRight($mainColor, $headerBg);
+            &:hover {
+              opacity: 0.9;
+            }
+          }
+        }
+      }
+    }
+  }
+}
