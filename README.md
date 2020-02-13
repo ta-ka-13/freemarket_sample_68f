@@ -24,99 +24,92 @@ Things you may want to cover:
 * ...
 
 
-Usersテーブル
+# freemarket_sample DB設計 
+## Usersテーブル
 |Column|Type|Options|
 |------|----|-------|
-|name|string||
-|email|string|nul:false|
+|name|string|null: false|
+|email|string|null: false, unique: true|
 |password|string|null: false|
 |family_name|string|null: false|
-|last_name|string||
-|family_name_kana|string|
-|last_name_kana|string||
-|birth_year|integer||
-|birth_month|integer|
-|birth_day|integer|
-
+|last_name|string|nul: false|
+|family_name_kana|string|nul: false|
+|last_name_kana|string|null: false|
+|birth_year|integer|null: false|
+|birth_month|integer|null: false|
+|birth_day|integer|null: false|
  ## Association
-has_many: items
-has_one: adress
-has_one: cards
+- has_many: items
+- has_one: address
+- has_one: card
 
 
-
-adressesテーブル
+## addressesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|reference||
-|prefectures|string||
-|municipalities|string||
-|adress|string||
+|user_id|reference|null: false, foreign_key: true|
+|prefectures|string|nul: false|
+|municipalities|string|nul: false|
+|address|string|nul: false|
 |building|string||
-|phone number|integer||
-
+|phone number|integer|unique: true|
  ## Association
- has_one: user
+- belongs_to: user
 
 
-cardsテーブル
+## cardsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|reference||
+|user_id|reference|null: false, foreign_key: true|
 |card_number|integer||
 |year|integer||
 |month|integer||
 |security_number|integer||
-
 ## Association
-has_one: user
+- belongs_to: user
 
 
-itemsテーブル
+## itemsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|reference||
-|categorys_id|reference||
-|bland_id|reference||
-|shopping_charges|string||
-|shopping_area|string||
-|shoping_date|string||
-|price|integer||
+|user_id|reference|null: false, foreign_key: true|
+|brand_id|reference|null: false, foreign_key: true|
+|category_id|reference|null: false, foreign_key: true|
+|shopping_charges|string|null: false|
+|shopping_area|string|null: false|
+|shopping_date|string|null: false|
+|price|integer|null:false|
+|description|string|null: false|
+|status|string|null: false|
 
  ## Association
- has_one: image
- has_one: bland
- has_one: category
- has_many: users
+- has_many: images
+- belongs_to: user
+- belongs_to: brand
+- belongs_to: category
 
 
-
-imageテーブル
+## imagesテーブル
 Column|Type|Options|
 |------|----|-------|
-|item_id|reference||
-|image|text||
-
+|item_id|reference|null: false, foreign_key: true|
+|image|text|null: false|
 ## Association
-has_many: items
+- belongs_to: item
 
 
-categorysテーブル
+## categoriesテーブル
 Column|Type|Options|
 |------|----|-------|
-|name|string||
+|name|string|null: false|
 |ancestry|string||
-|item_id|reference||
-
 ## Association
-has_many: items
+- has_many: items
 
 
-blandsテーブル
+## brandsテーブル
 Column|Type|Options|
 |------|----|-------|
-|name|string||
-|item_id|reference||
-
+|name|string|null: false|
 ## Association
-has_one: item
+- has_many: items
