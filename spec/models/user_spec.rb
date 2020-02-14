@@ -58,11 +58,11 @@ describe User do
       expect(user.errors[:password]).to include("is too short (minimum is 7 characters)")
     end
 
-    # 2. 苗字が空では登録できないこと
+    # 9. 苗字が空では登録できないこと
     it "is invalid without a family_name" do
-      user = build(:user, name: nil)
+      user = build(:user, family_name: nil)
       user.valid?
-      expect(user.errors[:name]).to include("can't be blank")
+      expect(user.errors[:family_name]).to include("can't be blank")
     end
 
   end
