@@ -93,14 +93,14 @@ describe User do
       expect(user.errors[:birth_year]).to include("can't be blank")
     end
 
-    # 12. 誕生月が空では登録できないこと
+    # 14. 誕生月が空では登録できないこと
     it "is invalid without a birth_month" do
       user = build(:user, birth_month: nil)
       user.valid?
       expect(user.errors[:birth_month]).to include("can't be blank")
     end
 
-    # 12. 誕生日が空では登録できないこと
+    # 15. 誕生日が空では登録できないこと
     it "is invalid without a birth_day" do
       user = build(:user, birth_day: nil)
       user.valid?
