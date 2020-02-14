@@ -65,5 +65,19 @@ describe User do
       expect(user.errors[:family_name]).to include("can't be blank")
     end
 
+    # 10. 名前が空では登録できないこと
+    it "is invalid without a last_name" do
+      user = build(:user, last_name: nil)
+      user.valid?
+      expect(user.errors[:last_name]).to include("can't be blank")
+    end
+
+    # 11. 苗字（カナ）が空では登録できないこと
+    it "is invalid without a family_name_kana" do
+      user = build(:user, family_name_kana: nil)
+      user.valid?
+      expect(user.errors[:family_name_kana]).to include("can't be blank")
+    end
+
   end
 end
