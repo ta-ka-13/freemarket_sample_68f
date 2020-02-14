@@ -40,14 +40,12 @@
         font-weight: bold;
         border: solid 0.1px #F2F2F2;
       }
-      
       .my-good{
         padding: 1.5em 1em;
         margin: 0em 0;
         font-weight: bold;
         border: solid 0.1px #F2F2F2;
       }
-      
       .my-create{
         padding: 1.5em 1em;
         margin: 0em 0;
@@ -60,35 +58,30 @@
         font-weight: bold;
         border: solid 0.1px #F2F2F2;
       }
-      
       .my-up_ing{
         padding: 1.5em 1em;
         margin: 0em 0;
         font-weight: bold;
         border: solid 0.1px #F2F2F2;
       }
-      
       .my-end{
         padding: 1.5em 1em;
         margin: 0em 0;
         font-weight: bold;
         border: solid 0.1px#F2F2F2;
       }
-      
       .my-buying_item{
         padding: 1.5em 1em;
         margin: 0em 0;
         font-weight: bold;
         border: solid 0.1px #F2F2F2;
       }
-      
       .my-bought_item{
         padding: 1.5em 1em;
         margin: 0em 0;
         font-weight: bold;
         border: solid 0.1px #F2F2F2;
       }
-      
       .my-news{
         padding: 1.5em 1em;
         margin: 0em 0;
@@ -120,29 +113,18 @@
         border: solid 0.1px #F2F2F2;
         background-color:  #F2F2F2;
       }
-      
       .sales_app{
         padding: 1.5em 1em;
         margin: 0em 0;
         font-weight: bold;
         border: solid 0.1px #F2F2F2;
       }
-        
       .point{
         padding: 1.5em 1em;
         margin: 0em 0;
         font-weight: bold;
         border: solid 0.1px #F2F2F2;
       }
-
-
-
-
-
-
-
-
-
     .my-pag__under--left{
         background-color: white;
         width: 400px;
@@ -222,25 +204,18 @@
           width: 1200px;
           height: 650px;
           background-color:white;
-          
-          
             }
             .my-page_announcement{
               float: left;
               width: 600px;
               height: 130px;
-
               display: flex;
               justify-content: center;
               align-items: center;
               border-top: solid red;
-              
             }
             .info{
               font-size: 25px;
-              // text-align: center;
-              
-
             }
             .my-page_to_do{
               float: right;
@@ -255,114 +230,39 @@
               font-size: 25px;
               text-align: center;
             }
-            .announc1{
-            padding: 3em 1em;
-            // margin: 0em 0;
-            font-weight: bold;
-            border: solid 0.1px #F2F2F2;
-          
-            
-            }
-            .announc2{
-            padding: 1.5em 1em;
-            margin: 0em 0;
-            font-weight: bold;
-            border: solid 0.1px #F2F2F2;
-            
-            }
-            .announc3{
-              padding: 1.5em 1em;
-              margin: 0em 0;
-              font-weight: bold;
-              border: solid 0.1px #F2F2F2;
-              
-              }
-              .announc4{
-                padding: 1.5em 1em;
-                margin: 0em 0;
-                font-weight: bold;
-                border: solid 0.1px #F2F2F2;
-            
-                }
-              .announc5{
-                padding: 1.5em 1em;
-                margin: 0em 0;
-                font-weight: bold;
-                border: solid 0.1px #F2F2F2;
-                
-                }
-                .announc6{
-                  padding: 1.5em 1em;
-                  margin: 0em 0;
-                  font-weight: bold;
-                  border: solid 0.1px #F2F2F2;
-                  
-                  }
-
             .my-page__inner--right_3{
               width: 1200px;
               height: 120px;
               background-color:white;
               margin-top: 4px;
-              // padding: px;
-
-              margin-bottom: 90px;
-
-
-
-
               margin-bottom: 90px;
                 }
                 .my-page__btn{
                   margin: 40px;
                   margin-top: -1px;
-                  // padding: 70px;
-                  // margin-left: auto;
-                  // margin-right: auto;
-                  // padding-left: 70px;
-                  background-color: lightgray;
+                  background-color:lightgray;
                   padding-top: 90 px;
-                  // paddig-bottom: 40px;
-                  
                   width: 1100px;
                   height: 80px;
-
                 display: flex;
                 justify-content: center;
                 align-items: center;
-
                   .btn{
                     text-align: center;
                     font-size: 20px;
                   }
-                  // margin-left: 1px;
-                  // padding:80 60px;
-                  
                 }
-
-
-
-
       }
-
-    // .my-page__under{
       .my-pag__under--left{
         background-color:white;
         width: 400px;
         height: 560px;
-
-        // padding: 90 50 50 40 px;
-        // margin: top px;
-        // float: left;
-        // position: fixed;
       }
       .my-page__under--right{
         background-color: white;
         width: 1200px;
         height: 500px;
         float: right;
-        // margin: 90 60 90 90px;
-        // margin-top: 70px;
       .my-page__under--right_1{
       height: 40px;
       width: 400px;
@@ -398,6 +298,5 @@
         font-size: 30px;
       }
       }
-      
     }
   }
