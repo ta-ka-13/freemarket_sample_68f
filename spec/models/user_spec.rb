@@ -86,5 +86,26 @@ describe User do
       expect(user.errors[:last_name_kana]).to include("can't be blank")
     end
 
+    # 13. 誕生年が空では登録できないこと
+    it "is invalid without a birth_year" do
+      user = build(:user, birth_year: nil)
+      user.valid?
+      expect(user.errors[:birth_year]).to include("can't be blank")
+    end
+
+    # 12. 誕生月が空では登録できないこと
+    it "is invalid without a birth_month" do
+      user = build(:user, birth_month: nil)
+      user.valid?
+      expect(user.errors[:birth_month]).to include("can't be blank")
+    end
+
+    # 12. 誕生日が空では登録できないこと
+    it "is invalid without a birth_day" do
+      user = build(:user, birth_day: nil)
+      user.valid?
+      expect(user.errors[:birth_day]).to include("can't be blank")
+    end
+
   end
 end
