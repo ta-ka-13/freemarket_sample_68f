@@ -58,6 +58,11 @@ describe Address do
     end
 
     # 9. 郵便番号が空では登録できないこと
+    it "is invalid without a postal_code" do
+      address = build(:address, postal_code: nil)
+      address.valid?
+      expect(address.errors[:postal_code]).to include("can't be blank")
+    end
 
     # 10. 重複したphone_numberが存在する場合登録できないこと
     it "is invalid with a duplicate phone number" do
