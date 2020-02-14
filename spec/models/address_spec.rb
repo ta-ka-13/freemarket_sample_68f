@@ -1,5 +1,5 @@
 require 'rails_helper'
-describe User do
+describe Address do
   describe '#create' do
 
     # 1. 全ての項目が存在すれば登録できること
