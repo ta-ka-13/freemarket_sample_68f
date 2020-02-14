@@ -3,18 +3,8 @@
     %header.single-header
       %h1
         %a{:href => "https://www.mercari.com/jp/"}
-          %img{:alt => "mercari", :src => ""}/
+          %img{:alt => "mercari", :src => "https://www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?35314277",size: "300x300"}/
       %nav
-        %ol.clearfix
-          %li.active
-            会員情報
-            .progress-status
-          %li.active
-            電話番号認証
-            .progress-status
-          %li.active
-            完了
-            .progress-status
     %main.single-main
       %section.l-single-container
         %h2.l-single-head.registration
@@ -23,50 +13,80 @@
           = render "devise/shared/error_messages", resource: @user
           .l-single-content
             .form-group
-              = f.label :name
+              = f.label :ニックネーム
+              %span.form-requre
+                必須
               %br/
-              = f.text_field :name
+              = f.text_field :name, class: "input-basic", placeholder: "例）メルカリ太郎"
             .form-group
-              = f.label :email
+              = f.label :メールアドレス
+              %span.form-requre
+                必須
               %br/
-              = f.email_field :email, autofocus: true, autocomplete: "email"
+              = f.email_field :email, autofocus: true, autocomplete: "email", class: "input-basic", placeholder: "PC・携帯どちらでも可"
             .form-group
-              = f.label :password
+              = f.label :パスワード
+              %span.form-requre
+                必須
               - if @minimum_password_length
                 %em
-                  (#{@minimum_password_length} characters minimum)
+                  (#{@minimum_password_length} 文字以上)
               %br/
-              = f.password_field :password, autocomplete: "new-password"
-            .field
-              = f.label :password_confirmation
-              %br/
-              = f.password_field :password_confirmation, autocomplete: "new-password"
+              = f.password_field :password, autocomplete: "new-password", class: "input-basic", placeholder: "７文字以上半角英数字"
             .form-group
-              = f.label :family_name
+              = f.label :パスワード（確認用）
+              %span.form-requre
+                必須
+              - if @minimum_password_length
+                %em
+                  (#{@minimum_password_length} 文字以上)
               %br/
-              = f.text_field :family_name, autofocus: true, autocomplete: "family_name"
+              = f.password_field :password_confirmation, autocomplete: "new-password", class: "input-basic", placeholder: "７文字以上半角英数字"
+
+              .form-group
+              %h3 本人確認
+              %p 安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません
+
             .form-group
-              = f.label :last_name
+              = f.label :お名前（全角）
+              %span.form-requre
+                必須
               %br/
-              = f.text_field :last_name, autofocus: true, autocomplete: "last_name"
+              = f.text_field :family_name, autofocus: true, autocomplete: "family_name", placeholder: "例）山田"
             .form-group
-              = f.label :family_name_kana
+              = f.label :お名前（全角）
+              %span.form-requre
+                必須
               %br/
-              = f.text_field :family_name_kana, autofocus: true, autocomplete: "family_name_kana"
+              = f.text_field :last_name, autofocus: true, autocomplete: "last_name", placeholder: "例）太郎"
             .form-group
-              = f.label :last_name_kana
+              = f.label :お名前カナ（全角）
+              %span.form-requre
+                必須
               %br/
-              = f.text_field :last_name_kana, autofocus: true, autocomplete: "last_name_kana"
+              = f.text_field :family_name_kana, autofocus: true, autocomplete: "family_name_kana", placeholder: "例）ヤマダ"
             .form-group
-              = f.label :birth_year
+              = f.label :お名前カナ（全角）
+              %span.form-requre
+                必須
+              %br/
+              = f.text_field :last_name_kana, autofocus: true, autocomplete: "last_name_kana", placeholder: "例）タロウ"
+            .form-group
+              = f.label :西暦
+              %span.form-requre
+                必須
               %br/
               = f.text_field :birth_year, autofocus: true, autocomplete: "birth_year"
             .form-group
-              = f.label :birth_month
+              = f.label :月
+              %span.form-requre
+                必須
               %br/
               = f.text_field :birth_month, autofocus: true, autocomplete: "birth_month"
             .form-group
-              = f.label :birth_day
+              = f.label :日
+              %span.form-requre
+                必須
               %br/
               = f.text_field :birth_day, autofocus: true, autocomplete: "birth_day"
             .actions
