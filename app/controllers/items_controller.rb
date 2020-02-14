@@ -19,5 +19,9 @@ class ItemsController < ApplicationController
 
   def destroy
   end
+
+  def purchase_confirmation
+    
+  end
   
 end
