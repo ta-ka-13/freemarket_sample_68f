@@ -25,7 +25,16 @@
           padding: 40px;
           border-top: 1px solid #eee;
         }
-        
+        // 有効期限sass------------
+        .expiration-date-input{
+          display: flex;
+          justify-content: space-between;
+          .small-pulldown-box{
+            background-color: #eee;
+            width: 150px;
+          }
+        }
+        //---------------------------
         .buy-btn-box{
           background-color: grey;
           text-align: center;

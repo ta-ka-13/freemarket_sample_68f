@@ -25,7 +25,6 @@
               .right-product-price
                 ¥1,000（税込）
 
-            
 
           .sell-content
             .sell-content
@@ -40,8 +39,32 @@
             .sell-content
               %p.payment-method
                 支払い方法
-              = link_to '#' , class: "payment-choice" do
-                登録してください
+              .registration-payment
+                .sell-content__form-group-name
+                  カード番号
+                  %span.form-require
+                    必須
+                .sell-form-pulldown
+              .expiration-date
+                .sell-content__form-group-name
+                  有効期限
+                  %span.form-require
+                    必須
+                .expiration-date-input
+                  .small-pulldown-box
+                    
+                  %div
+                    月
+                  .small-pulldown-box
+                    
+                  %div
+                    年
+                .sell-content__form-group-name
+                  セキュリティコード
+                  %span.form-require
+                    必須
+                .sell-form-pulldown
+
 
             .sell-content
               %p.shipping-address
