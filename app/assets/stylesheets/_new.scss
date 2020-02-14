@@ -1,0 +1,183 @@
+.wrapper {
+  background-color: #eee;
+}
+
+.clearfix{
+  content: "";
+  clear: both;
+  display: block;
+}
+
+// ヘッダー共通-------------------
+.single-header{
+  height: 128px;
+  text-align: center;
+  a{
+    img{
+      width: 185px;
+      height: 50px;
+      margin: 40px 0;
+    }
+  }
+}
+//-------------------------------
+
+.single-main{
+  .sell-container{
+    width: 700px;
+    height: 100%;
+    margin: 0 auto;
+    .sell-container-inner{
+      background-color: #fff;
+      .sell-header{
+        text-align: center;
+        padding: 40px 0;
+        font-size: 22px;
+        border-top: 1px solid #eee;
+      }
+      
+      .sell-form{
+        border-top: 1px solid #eee;
+        &__upload-box{
+          width: 620px;
+          padding: 40px;
+          height: 200px;
+          .sell-form__upload-head{
+            font-weight: bold;
+            .form-require{
+              
+              background-color: #ea352d;
+              border-radius: 4px;
+              color: #fff;
+              padding: 2px 4px;
+              margin-left: 8px;
+              font-weight: bold;
+            }
+          }
+          .sell-form__drop-image{
+            background-color: #eee;
+            width: 620px;
+            height: 160px;
+            display: table-cell;
+            vertical-align: middle;
+            p{
+              text-align: center;
+              
+            }
+          }
+        }
+
+        .sell-content{
+          padding: 40px;
+          border-top: 1px solid #eee;
+          .sell-form-price-box {
+            display: flex;
+            justify-content: space-between;
+            .sell-form-group-price{
+              margin-right: 50px;
+            }
+            .price-pulldowna{
+              width: 400px;
+              height: 50px;
+              border: lightskyblue 1px solid;
+              margin-bottom: 20px;
+              border-radius: 3px;
+
+            }
+            .price-pulldown{
+              text-align: right;
+              margin-bottom: 20px;
+            }
+          }
+        }
+      }
+      .sell-content{
+          .sell-form-pulldown{
+            width: 600px;
+            height: 48px;
+            background-color: #eee;
+          }
+        }
+
+        .price{
+          display: flex;
+          justify-content: space-between;
+        }
+
+      .sell-attention{
+        p{
+          font-size: 12px;
+        }
+      }
+
+      // 赤い送信ボタン------------------------
+      .sell-button{
+        background-color: red;
+        text-align: center;
+        color: white;
+        height: 50px;
+        line-height: 50px;
+        margin: 0 auto;
+        width: 45%;
+        border-radius: 5px;
+      }
+      // ライトグレーの戻るボタン
+      .sell-button-back{
+        background-color: lightgray;
+        text-align: center;
+        width: 45%;
+        margin: 24px auto 0;
+        height: 50px;
+        line-height: 50px;
+        margin-bottom: 32px;
+        border-radius: 5px;
+      }
+      //-------------------------------------
+    }
+  }
+}
+
+// フォームの必須に対するCSSーーーー
+.form-require{
+              
+  background-color: #ea352d;
+  border-radius: 4px;
+  color: #fff;
+  padding: 2px 4px;
+  margin-left: 8px;
+  font-weight: bold;
+}
+// ーーーーー
+
+// プルダウン共通ーーーーーー
+.sell-form-pulldown{
+  width: 400px;
+  height: 48px;
+  background-color: #eee;
+
+}
+// ーーーーーーーー
+
+// フッター共通--------
+.single-footer{
+  width: 450px;
+  height: 140px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 40px 0;
+  li{
+    display: inline-block;
+    font-size: 12px;
+    margin: 0 0 0 16px;
+  }
+  a{
+    text-decoration: none;
+
+  }
+  .img{
+    height: auto;
+    width: 160px;
+    margin: 40px auto 0;
+  }
+}
+//------------------------

@@ -1,0 +1,146 @@
+.wrapper
+
+  .single-header
+    = link_to '#' do
+      = image_tag 'material/logo/logo.png'
+
+
+  .single-main
+    .sell-container
+      .sell-container-inner
+        %h2.sell-header
+          商品の情報を入力
+
+        .sell-form
+          .sell-form__upload-box
+            %h3.sell-form__upload-head
+              出品画像
+              %span.form-require
+                必須
+            %p
+              最大10枚までアップロードできます
+            .sell-form__drop-image
+              %p
+                ドラッグアンドドロップ
+              %p
+                またはクリックしてファイルをアップロード
+
+
+
+          .sell-content
+            .sell-content__form-group-name
+              商品名
+              %span.form-require
+                必須
+              
+            .sell-form-right
+              .sell-form-pulldown
+              .sell-content__form-group-description
+                商品の説明
+              .sell-form-pulldown
+          
+
+          .sell-content
+            %h3.sell-form-left
+              商品の詳細
+            .sell-form-right
+              .sell-form-group-name
+                カテゴリー
+                %span.form-require
+                  必須
+              .sell-form-pulldown
+
+              .sell-content-form-group-status
+                商品の状態
+              .sell-form-pulldown
+
+
+          .sell-content
+            %h3.sell-form-left
+              配送について
+            .sell-form-right
+              .sell-content-form-group-status
+                配送料の負担
+                %span.form-require
+                  必須
+              .sell-form-pulldown
+
+              .sell-content-form-group-area
+                配送元の地域
+                %span.form-require
+                  必須
+              .sell-form-pulldown
+
+              .sell-content-form-group-day
+                発送までの日数
+                %span.form-require
+                  必須
+              .sell-form-pulldown
+
+          .sell-content.price
+            %h3.sell-form-price
+              価格（¥300〜9,999,999）
+              .sell-form-price-box
+                %p.sell-form-group-price
+                  販売価格
+                  %span.form-require
+                    必須
+                  
+                  .price-pulldowna
+                    
+
+              .sell-form-price-box
+                %p.sell-form-group-fee
+                  販売手数料
+                  
+                .price-pulldown
+                  ー
+
+              .sell-form-price-box
+                %p.sell-form-group-price
+                  販売利益
+                  
+                .price-pulldown
+                  ー
+
+
+          .sell-content.sell-btn-box
+            .sell-button-box
+              .sell-button
+                出品する
+              .sell-button-back
+                もどる
+            .sell-attention
+              %p
+                禁止されている
+                %a(href="#") 出品
+                、
+                %a(href="#") 行為
+                を必ずご確認ください
+                
+              %p
+                またブランド品でシリアルナンバー等がある場合はご記載ください。
+                %a(href="#") 偽ブランドの販売
+                は犯罪であり処罰される可能性があります。
+                また、出品をもちまして
+                %a(href="#") 加盟店規約
+                に同意したことになります。
+
+
+  .single-footer
+    .footer-nav
+      %ul.clearfix
+        %li
+          = link_to '#' do
+            プライバシーポリシー
+        %li
+          = link_to '#' do
+            フリマ利用規約
+        %li
+          = link_to '#' do
+            特定商取引に関する表記
+        
+    = link_to '#', class: "single-footer__logo" do
+      = image_tag 'material/logo/logo-white.png', class: "img"
+    %p
+      ©️FURIMA
