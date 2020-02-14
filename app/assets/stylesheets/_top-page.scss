@@ -86,7 +86,7 @@
   .categories{
     background-color: hotpink;
     height: 100%;
-    padding: 80px 0 0;
+    padding: 80px 0 ;
     h2{
       text-align: center;
       font-size: 28px;
@@ -111,7 +111,6 @@
               width: 220px;
               height: 150px;
               background-color: yellow;
-              
             }
             .productList--body {
               padding: 16px;
@@ -139,8 +138,58 @@
   }
 
   .brand{
-    background-color: mediumblue;
+    background-color: greenyellow;
+    padding-bottom: 80px;
+    h2{
+      text-align: center;
+      font-size: 28px;
+    }
+    .productBox {
+      .productHead {
+        a{
+          h3{
+            text-align: center;
+            font-size: 24px;
+          }
+        }
+      }
+      .productLists {
+        width: 780px;
+        display: flex;
+        justify-content: space-around;
+        margin: 26px auto;
+        .productList {
+          a {
+            .productList--img {
+              width: 220px;
+              height: 150px;
+              background-color: green;
+            }
+            .productList--body {
+              padding: 16px;
+              background-color: hotpink;
+              color: black;
+              h3 {
+
+              }
+              .details {
+                ul {
+                  display: flex;
+                  justify-content: space-between;
+                  li {
+                  }
+                }
+                p {
+                  font-size: 10px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
   }
+
   .bottom{
   background-image: url(/assets/material/pict/bg-appBanner-pict.jpg);
   padding: 100px 40px;
