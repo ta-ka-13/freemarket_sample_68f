@@ -79,5 +79,12 @@ describe User do
       expect(user.errors[:family_name_kana]).to include("can't be blank")
     end
 
+    # 12. 名前（カナ）が空では登録できないこと
+    it "is invalid without a last_name_kana" do
+      user = build(:user, last_name_kana: nil)
+      user.valid?
+      expect(user.errors[:last_name_kana]).to include("can't be blank")
+    end
+
   end
 end
