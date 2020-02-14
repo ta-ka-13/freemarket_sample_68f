@@ -1,7 +1,6 @@
 require 'rails_helper'
 describe Address do
   describe '#create' do
-
     # 1. 全ての項目が存在すれば登録できること
     it "is valid with all" do
       address = build(:address)
