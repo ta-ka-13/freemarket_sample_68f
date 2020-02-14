@@ -1,0 +1,93 @@
+.create{
+  background-color: #eee;
+}
+
+.single-main{
+  .sell-container{
+    width: 700px;
+    height: 100%;
+    margin: 0 auto;
+    .sell-container-inner{
+      
+      .sell-header{
+        text-align: center;
+        padding: 40px 0;
+      }
+      
+      .sell-form{
+        border-top: 1px solid #eee;
+        &__upload-box{
+          width: 620px;
+          padding: 40px;
+          height: 200px;
+        }
+        .sell-content{
+          padding: 40px;
+          border-top: 1px solid #eee;
+        }
+        // 有効期限sass------------
+        .expiration-date-input{
+          display: flex;
+          justify-content: space-between;
+          .small-pulldown-box{
+            background-color: #eee;
+            width: 150px;
+          }
+        }
+        //---------------------------
+        .buy-btn-box{
+          background-color: grey;
+          text-align: center;
+          width: 45%;
+          margin: 0 auto;
+          height: 40px;
+          line-height: 40px;
+          color: #eee;
+        }
+        
+      }
+      
+    }
+  }
+}
+
+// ２つ目のブロック イメージ--
+.sell-content.image{
+  display: flex;
+  justify-content: center;
+  .left-product-left{
+    background-color: #eee;
+    width: 70px;
+    height: 70px;
+    margin-right: 20px;
+    
+  }
+
+}
+//---------------
+
+// 3つめのブロック 支払い金額------
+
+.left-payment-box{
+  display: flex;
+  justify-content: space-between;
+  .payment-title{
+    font-weight: bold;
+    font-size: 20px;
+  }
+  .payment-price{
+    font-weight: bold;
+    font-size: 30px;
+  }
+}
+
+//--------------------------
+
+// 商品情報のdivをflexboxにーーーー
+
+.image{
+  display: flex;
+  justify-content: space-between;
+
+}
+// ーーーーーーーーーーー
