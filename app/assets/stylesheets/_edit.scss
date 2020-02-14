@@ -5,6 +5,7 @@
 .my-page {
     height:170vh;
     background-color: #F2F2F2;
+    position:  absolute;
   .my-page__inner {
     width:auto;
     padding:0 60px;
@@ -125,7 +126,6 @@
         width: 400px;
         height: 900vh;
         float: left;
-        // position: fixed;
       .setting{
         padding: 1.5em 1em;
         margin: 0em 0;
@@ -181,10 +181,9 @@
       height: 1200px;
       float: right;
       background-color:#F2F2F2;
-      // position: fixed;
       .my-page__inner--right_1{
         width: 1200px;
-        height: 350px;      // background-color: white;
+        height: 350px;
         background: url('https://livedoor.blogimg.jp/jin115/imgs/b/c/bc3f2b2c.jpg');
         }
         .my-page__inner--right_2{
@@ -260,7 +259,6 @@
       float: left;
       width: 600px;
       height:100px;
-      
       display: flex;
       justify-content: center;
       align-items: center;
