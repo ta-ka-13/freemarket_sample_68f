@@ -8,14 +8,16 @@ describe User do
       expect(user).to be_valid
     end
 
+    # 2. nameが空では登録できないこと
     it "is invalid without a name" do
-      user = build(:user, name: "")
+      user = build(:user, name: nil)
       user.valid?
       expect(user.errors[:name]).to include("can't be blank")
     end
 
+    # 3. emailが空では登録できないこと
     it "is invalid without an email" do
-      user = build(:user, email: "")
+      user = build(:user, email: nil)
       user.valid?
       expect(user.errors[:email]).to include("can't be blank")
     end

@@ -14,14 +14,4 @@ FactoryBot.define do
     birth_day             {"4"}
   end
 
-  factory :address do
-    destination_family_name       {"阿部"}
-    destination_last_name         {"浩己"}
-    destination_family_name_kana  {"アベ"}
-    destination_last_name_kana    {"コウキ"}
-    prefectures                   {"千葉県"}
-    municipalities                {"船橋市"}
-    address                       {"行徳1-3-1"}
-  end
-
 end
