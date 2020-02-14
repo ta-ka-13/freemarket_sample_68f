@@ -64,6 +64,9 @@
         .sell-content{
           padding: 40px;
           border-top: 1px solid #eee;
+          &__form-group-name{
+            margin-bottom: 10px;
+          }
           .sell-form-price-box {
             display: flex;
             justify-content: space-between;
@@ -76,7 +79,6 @@
               border: lightskyblue 1px solid;
               margin-bottom: 20px;
               border-radius: 3px;
-
             }
             .price-pulldown{
               text-align: right;
@@ -91,12 +93,13 @@
           justify-content: space-between;
         }
 
+        // 出品時の注意書き-----------
       .sell-attention{
         p{
           font-size: 12px;
         }
       }
-
+      //-----------------------------
       // 赤い送信ボタン------------------------
       .sell-button{
         background-color: red;
@@ -138,7 +141,7 @@
 
 // プルダウン共通ーーーーーー
 .sell-form-pulldown{
-  width: 600px;
+  width: 550px;
   height: 48px;
   background-color: #eee;
 
