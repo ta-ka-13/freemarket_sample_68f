@@ -1,37 +1,3 @@
-$mainFont: #333;
-$mainColor: #3CCACE;
-$whiteFont: #fff; 
-$headerBg: #fff;
-$leftListHover: crimson;
-$footerBg: #333;
-
-@mixin heightWidth($h, $w) {
-  height: $h;
-  width: $w;
-}
-
-@mixin displayFlex($jc)  {
-  display: flex;
-  justify-content: $jc;
-}
-
-@mixin headerBottomFont($c:$mainFont) {
-  color: $c;
-  font-size: 15px;
-  font-weight: bold;
-}
-
-@mixin headerBottomRight($borderColor, $bg) {
-  text-decoration: none;
-  font-size: 15px;
-  font-weight: bold;
-  padding: 10px;
-  border: 2px solid $borderColor;
-  border-radius: 10px;
-  background-color: $bg;
-}
-// 上記、追々colors.scss、mixin.scssに追加予定
-
 .header {
   background-color: $headerBg;
   padding-top: 15px;

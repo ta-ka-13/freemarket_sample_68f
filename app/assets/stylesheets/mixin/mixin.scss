@@ -1,0 +1,30 @@
+@mixin heightWidth($h, $w) {
+  height: $h;
+  width: $w;
+}
+
+@mixin displayFlex($jc)  {
+  display: flex;
+  justify-content: $jc;
+}
+
+@mixin headerBottomFont($c:$mainFont) {
+  color: $c;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+@mixin headerBottomRight($borderColor, $bg) {
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 10px;
+  border: 2px solid $borderColor;
+  border-radius: 10px;
+  background-color: $bg;
+}
+
+@mixin linkReset($c) {
+  color: $c;
+  text-decoration: none;
+}

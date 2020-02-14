@@ -1,0 +1,27 @@
+.wrapper
+  = render "shared/header"
+  .category-main
+    .category-main__top
+      カテゴリー一覧
+    .category-main__contents
+      %ul.category-perent
+        - @categories.each do |perent|
+          - if perent.ancestry.nil?
+            %li.category-perent__list
+              = link_to "#", class: "perent-list" do
+                = perent.name
+              %ul.category-children
+                - perent.children.each do |child|
+                  %li.category-children__list
+                    = link_to "#", class: "children-list" do
+                      = child.name
+                    %ul.category-grandChild
+                      - child.children.each do |grandChild|
+                        %li.category-grandChild__list
+                          = link_to "#", class: "grandChild-list" do
+                            = grandChild.name
+  = render "shared/footer"
+
+
+
+

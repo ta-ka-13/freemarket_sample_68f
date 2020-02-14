@@ -1,10 +1,13 @@
 @import "./reset";
-// @import "./header";
-// @import "./footer";
+@import "./config/colors.scss";
+@import "./mixin/mixin";
+@import "./modules/header";
+@import "./modules/footer";
 // @import "./top-page";
-// @import "./show";
-// @import "./new";
-// @import "./create";
+@import "./show";
+@import "./new";
+@import "./create";
 // @import "./edit";
 // @import "./update";
 // @import "./destroy";
+@import "./modules/categories";
