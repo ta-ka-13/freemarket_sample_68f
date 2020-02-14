@@ -41,13 +41,30 @@
 
     .my-page__inner--right
       .my-page__inner--right_1
-        画像
-      .my-page__inner--right_2
-        やること
-      .my-page__inner--right_3
         
+      .my-page__inner--right_2
+        .my-page_announcement
+          .info
+            お知らせ
+        .my-page_to_do
+          .to_do
+            やることリスト
+        -# .announc1
+          
+        -# .announc2
+          
+        -# .announc3
+          
+        -# .announc4
+          
+        -# .announc5
+          
+        -# .announc6
+          
+      .my-page__inner--right_3
         .my-page__btn
-          ボタン
+          .btn
+            一覧を見る
 
 
 
@@ -61,7 +78,7 @@
       .delivery_address
         発送元・お届け先住所変更
       .method_of_payment
-        支払い方法
+        = link_to "支払い方法", method: :delete, class: 'icon'
       .mail_pass
         メール/パスワード
       .identity_infomation
@@ -76,17 +93,8 @@
       .my-page__under--right_1
         購入した商品
       .my-page__under--right_2
-        取引
-    -#   -# = form_for(current_user) do |f|
-    -#     .field
-    -#       .field-label
-    -#         -# = f.label :name
-    -#       .field-input
-    -#         -# = f.text_field :name, autofocus: true
-    -#     .field
-    -#       .field-label
-    -#         -# = f.label :email
-    -#       .field-input
-    -#         -# = f.email_field :email
-    -#     .actions
-    -#       -# = f.submit "Update", class: 'btn'
+        .transaction
+          取引中
+      .my-page__under--right_3
+        .past
+          過去の取引
