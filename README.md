@@ -52,6 +52,7 @@ Things you may want to cover:
 |destination_last_name|string|null: false|
 |destination_family_name_kana|string|null: false|
 |destination_last_name_kana|string|null: false|
+|Postal_code|integer|null: false|
 |prefectures|string|nul: false|
 |municipalities|string|nul: false|
 |address|string|nul: false|
