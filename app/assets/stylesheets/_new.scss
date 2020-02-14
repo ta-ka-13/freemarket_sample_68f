@@ -23,6 +23,7 @@
 }
 //-------------------------------
 
+//メインのボックス--------------------------------
 .single-main{
   .sell-container{
     width: 700px;
@@ -93,13 +94,6 @@
           }
         }
       }
-      .sell-content{
-          .sell-form-pulldown{
-            width: 600px;
-            height: 48px;
-            background-color: #eee;
-          }
-        }
 
         .price{
           display: flex;
@@ -153,7 +147,7 @@
 
 // プルダウン共通ーーーーーー
 .sell-form-pulldown{
-  width: 400px;
+  width: 600px;
   height: 48px;
   background-color: #eee;
 
