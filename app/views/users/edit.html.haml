@@ -1,0 +1,92 @@
+.my-page
+  .my-page__inner
+    .my-page__inner--left
+      .my-mypage
+        マイページ
+        .icon-arrow-right
+          
+      .my-announce
+        お知らせ
+      .my-to_do
+        やることリスト
+      .my-good
+        いいね！一覧
+      .my-create
+        出品する
+      .my-up_currunt
+        出品した商品-出品中
+      .my-up_ing
+        出品した商品-取引中
+      .my-end
+        出品した商品-売却済み
+      .my-buying_item
+        購入した商品-取引中
+      .my-bought_item
+        購入した商品-過去の取引
+      .my-news
+        ニュース一覧
+      .reviw
+        評価一覧
+      .guide
+        ガイド
+      .infomation
+        お問い合わせ
+      .merupay
+        メルペイ
+      .sales_app
+        売上・振込申請
+      .point
+        ポイント
+
+
+    .my-page__inner--right
+      .my-page__inner--right_1
+        画像
+      .my-page__inner--right_2
+        やること
+      .my-page__inner--right_3
+        
+        .my-page__btn
+          ボタン
+
+
+
+
+    .my-pag__under--left
+      
+      .setting
+        設定
+      .profile
+        プロフィール
+      .delivery_address
+        発送元・お届け先住所変更
+      .method_of_payment
+        支払い方法
+      .mail_pass
+        メール/パスワード
+      .identity_infomation
+        本人情報
+      .phone_number_check
+        電話番号の確認
+      .logout
+        = link_to "ログアウト", method: :delete, class: 'icon'
+
+
+    .my-page__under--right
+      .my-page__under--right_1
+        購入した商品
+      .my-page__under--right_2
+        取引
+    -#   -# = form_for(current_user) do |f|
+    -#     .field
+    -#       .field-label
+    -#         -# = f.label :name
+    -#       .field-input
+    -#         -# = f.text_field :name, autofocus: true
+    -#     .field
+    -#       .field-label
+    -#         -# = f.label :email
+    -#       .field-input
+    -#         -# = f.email_field :email
+    -#     .actions
+    -#       -# = f.submit "Update", class: 'btn'

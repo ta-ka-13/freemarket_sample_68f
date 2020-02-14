@@ -1,0 +1,265 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.my-page {
+    // width: 100vh;
+    height:170vh;
+  background-color: #F2F2F2;
+  .my-page__inner {
+    width:auto;
+    // height:100vh;
+    // background-color: crimson;
+    padding:0 60px;
+    margin: 0 180px;
+  }
+    .my-page__inner--left {
+        width: 400px;
+        height:1200px;
+        float: left;
+        background-color: white;
+        // position: fixed;
+      }
+      .my-mypage{
+        padding: 1.5em 1em;
+        margin: 0em 0;
+        font-weight: bold;
+        border: solid 0.1px #F2F2F2;
+        background-color:lightgray;
+        
+      }
+      .my-announce{
+        padding: 1.5em 1em;
+        margin: 0em 0;
+        font-weight: bold;
+        border: solid 0.1px #F2F2F2;
+      }
+      .my-to_do{
+        padding: 1.5em 1em;
+        margin: 0em 0;
+        font-weight: bold;
+        border: solid 0.1px #F2F2F2;
+      }
+      
+      .my-good{
+        padding: 1.5em 1em;
+        margin: 0em 0;
+        font-weight: bold;
+        border: solid 0.1px #F2F2F2;
+      }
+      
+      .my-create{
+        padding: 1.5em 1em;
+        margin: 0em 0;
+        font-weight: bold;
+        border: solid 0.1px #F2F2F2;
+      }
+      .my-up_currunt{
+        padding: 1.5em 1em;
+        margin: 0em 0;
+        font-weight: bold;
+        border: solid 0.1px #F2F2F2;
+      }
+      
+      .my-up_ing{
+        padding: 1.5em 1em;
+        margin: 0em 0;
+        font-weight: bold;
+        border: solid 0.1px #F2F2F2;
+      }
+      
+      .my-end{
+        padding: 1.5em 1em;
+        margin: 0em 0;
+        font-weight: bold;
+        border: solid 0.1px#F2F2F2;
+      }
+      
+      .my-buying_item{
+        padding: 1.5em 1em;
+        margin: 0em 0;
+        font-weight: bold;
+        border: solid 0.1px #F2F2F2;
+      }
+      
+      .my-bought_item{
+        padding: 1.5em 1em;
+        margin: 0em 0;
+        font-weight: bold;
+        border: solid 0.1px #F2F2F2;
+      }
+      
+      .my-news{
+        padding: 1.5em 1em;
+        margin: 0em 0;
+        font-weight: bold;
+        border: solid 0.1px #F2F2F2;
+      }
+      .reviw{
+        padding: 1.5em 1em;
+        margin: 0em 0;
+        font-weight: bold;
+        border: solid 0.1px #F2F2F2;
+      }
+      .guide{
+        padding: 1.5em 1em;
+        margin: 0em 0;
+        font-weight: bold;
+        border: solid 0.1px #F2F2F2;
+      }
+      .infomation{
+        padding: 1.5em 1em;
+        margin: 0em 0;
+        font-weight: bold;
+        border: solid 0.1px #F2F2F2;
+      }
+      .merupay{
+        padding: 2em 1em;
+        margin: 0em 0;
+        font-weight: bold;
+        border: solid 0.1px #F2F2F2;
+        background-color:  #F2F2F2;
+      }
+      
+      .sales_app{
+        padding: 1.5em 1em;
+        margin: 0em 0;
+        font-weight: bold;
+        border: solid 0.1px #F2F2F2;
+      }
+        
+      .point{
+        padding: 1.5em 1em;
+        margin: 0em 0;
+        font-weight: bold;
+        border: solid 0.1px #F2F2F2;
+      }
+
+
+
+
+
+
+
+
+
+    .my-pag__under--left{
+        background-color: white;
+        width: 400px;
+        height: 900vh;
+        float: left;
+        // position: fixed;
+      .setting{
+        padding: 1.5em 1em;
+        margin: 0em 0;
+        font-weight: bold;
+        border: solid 0.1px #F2F2F2;
+        background-color:#F2F2F2;
+      }
+      
+      .profile{
+        padding: 1.5em 1em;
+        margin: 0em 0;
+        font-weight: bold;
+        border: solid 0.1px #F2F2F2;
+      }
+        
+      .delivery_address{
+        padding: 1.5em 1em;
+        margin: 0em 0;
+        font-weight: bold;
+        border: solid 0.1px #F2F2F2;
+      }
+        
+      .method_of_payment{
+        padding: 1.5em 1em;
+        margin: 0em 0;
+        font-weight: bold;
+        border: solid 0.1px #F2F2F2;
+      }
+        
+      .mail_pass{
+        padding: 1.5em 1em;
+        margin: 0em 0;
+        font-weight: bold;
+        border: solid 0.1px #F2F2F2;
+      }
+        
+      .identity_infomation{
+        padding: 1.5em 1em;
+        margin: 0em 0;
+        font-weight: bold;
+        border: solid 0.1px #F2F2F2;
+      }
+        
+      .phone_number_check{
+        padding: 1.5em 1em;
+        margin: 0em 0;
+        font-weight: bold;
+        border: solid 0.1px #F2F2F2;
+      }
+        
+      .logout{
+        padding: 1.5em 1em;
+        margin: 0em 0;
+        font-weight: bold;
+        border: solid 0.1px #F2F2F2;
+      }
+      }
+    .my-page__inner--right{
+      width: 1200px;
+      height: 1200px;
+      float: right;
+      background-color:#F2F2F2;
+      // position: fixed;
+        .my-page__inner--right_1{
+      width: 1200px;
+      height: 350px;
+      background-color: white;
+        }
+        .my-page__inner--right_2{
+          width: 1200px;
+          height: 650px;
+          background-color: chartreuse;
+            }
+            .my-page__inner--right_3{
+              width: 1200px;
+              height: 120px;
+              background-color:blue;
+                }
+
+
+
+
+      }
+
+    // .my-page__under{
+      .my-pag__under--left{
+        background-color:white;
+        width: 400px;
+        height: 560px;
+
+        // padding: 90 50 50 40 px;
+        // margin: top px;
+        // float: left;
+        // position: fixed;
+      }
+      .my-page__under--right{
+        background-color: white;
+        width: 1200px;
+        height: 500px;
+        float: right;
+        // margin: 90 60 90 90px;
+        // margin-top: 70px;
+      .my-page__under--right_1{
+      height: 100px;
+      width: 400px;
+      }
+        
+      .my-page__under--right_2{
+
+      }
+      
+    }
+  }
+// }

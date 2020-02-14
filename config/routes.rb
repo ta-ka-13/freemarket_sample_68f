@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
-  root "items#index"
+  root "users#edit"
   resources :items
+  resources :users, only: [:edit, :show ,]
 end
