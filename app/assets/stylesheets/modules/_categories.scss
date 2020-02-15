@@ -5,14 +5,36 @@
     color: $mainFont;
     font-size: 20px;
     font-weight: bold;
-    margin: 50px 0 20px;
+    margin: 50px 0 30px;
+    .perent-sift {
+      background-color: #fff;
+      margin-top: 30px;
+      padding: 30px 0 10px 5%;
+      border-radius: 10px;
+      &__list {
+        @include linkReset(#333);
+        .sift-list {
+          font-weight: normal;
+          background-color: #fff;
+          float: left;
+          padding: 10px;
+          margin: 0 20px 20px 0;
+          border: 2px solid $mainColor;
+          border-radius: 10px;
+          cursor: pointer;
+          &:hover {
+            color: $whiteFont;
+            background-color: $mainColor;
+          }
+        }
+      }
+    }
   }
   &__contents {
     .category-perent {
       &__box {
         background-color: #fff;
         margin-bottom: 50px;
-        padding-bottom: 20px;
       }
       .perent-list {
         height: 50px;
@@ -26,14 +48,17 @@
       .category-children {
         margin: 20px 5% 0; 
         &__all {
-          padding-bottom: 30px;
           .perent-all {
             @include linkReset(#07f);
+            &:hover {
+              border-bottom: 1px solid #07f;
+              opacity: 0.6;
+            }
           }
         }
         &__box {
           .children-list {
-            padding-bottom: 30px;
+            padding: 30px 0 30px;
           }
         }
         .category-grandChild {
@@ -43,20 +68,44 @@
             padding-bottom: 30px;
             .children-all {
               @include linkReset(#07f);
+              &:hover {
+                border-bottom: 1px solid #07f;
+                opacity: 0.6;
+              }
             }
           }
           &__box {
             float: left;
             width: calc(100% / 2);
-            padding-bottom: 20px;
+            padding-bottom: 25px;
             .grandChild-list {
               @include linkReset(#07f);
+              &:hover {
+                border-bottom: 1px solid #07f;
+                opacity: 0.6;
+              }
             }
           }
         }
       }
     }
   }
+}
+
+.category-scroll {
+  @include heightWidth(70px, 70px);
+  background-color: #fff;
+  line-height: 70px;
+  text-align: center;
+  color: #333;
+  font-size: 40px;
+  font-weight: bold;
+  position: fixed;
+  right: 50px;
+  bottom: 220px;
+  border: 3px solid $mainColor;
+  border-radius: 100px;
+  cursor: pointer;
 }
 
 .clearfix::after {

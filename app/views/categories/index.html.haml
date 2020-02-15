@@ -3,12 +3,18 @@
   .category-main
     .category-main__top
       カテゴリー 一覧
+      .perent-sift.clearfix
+        - @categories.each do |perent|
+          - if perent.ancestry.nil?
+            = link_to "##{perent.name}", class: "perent-sift__list" do
+              .sift-list
+                = perent.name
     .category-main__contents
       %ul.category-perent
         - @categories.each do |perent|
           - if perent.ancestry.nil?
             %li.category-perent__box
-              .perent-list
+              .perent-list{id: "#{perent.name}"}
                 = perent.name
               %ul.category-children
                 .category-children__all
@@ -24,10 +30,11 @@
                           = "#{child.name}一覧"
                       - child.children.each do |grandChild|
                         %li.category-grandChild__box
-                          .grandChild-list
-                            = link_to "#", class: "grandChild-list" do
-                              = grandChild.name
+                          = link_to "#", class: "grandChild-list" do
+                            = grandChild.name
   = render "shared/footer"
+.category-scroll
+  ↑
 
 
 
