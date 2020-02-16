@@ -11,27 +11,7 @@
                 = perent.name
     .category-main__contents
       %ul.category-perent
-        - @categories.each do |perent|
-          - if perent.ancestry.nil?
-            %li.category-perent__box
-              .perent-list{id: "#{perent.name}"}
-                = perent.name
-              %ul.category-children
-                .category-children__all
-                  = link_to "#", class: "perent-all" do
-                    = "#{perent.name}一覧"
-                - perent.children.each do |child|
-                  %li.category-children__box
-                    .children-list
-                      = child.name
-                    %ul.category-grandChild.clearfix
-                      .category-grandChild__all
-                        = link_to "#", class: "children-all" do
-                          = "#{child.name}一覧"
-                      - child.children.each do |grandChild|
-                        %li.category-grandChild__box
-                          = link_to "#", class: "grandChild-list" do
-                            = grandChild.name
+        = render @categories
   = render "shared/footer"
 .category-scroll
   ↑

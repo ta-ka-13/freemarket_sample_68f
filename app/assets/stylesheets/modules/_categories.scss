@@ -2,20 +2,18 @@
   max-width: 600px;
   margin: 0 auto;
   &__top {
-    color: $mainFont;
-    font-size: 20px;
-    font-weight: bold;
+    @include fontSizeColorBold(20px, $mainFont);
     margin: 50px 0 30px;
     .perent-sift {
-      background-color: #fff;
+      background-color: $categoryBg;
       margin-top: 30px;
       padding: 30px 0 10px 5%;
       border-radius: 10px;
       &__list {
-        @include linkReset(#333);
+        @include linkReset($mainFont);
         .sift-list {
+          background-color: $categoryBg;
           font-weight: normal;
-          background-color: #fff;
           float: left;
           padding: 10px;
           margin: 0 20px 20px 0;
@@ -33,15 +31,13 @@
   &__contents {
     .category-perent {
       &__box {
-        background-color: #fff;
+        background-color: $categoryBg;
         margin-bottom: 50px;
       }
       .perent-list {
+        @include fontSizeColorBold(20px, $whiteFont);
         height: 50px;
         line-height: 50px;
-        font-size: 20px;
-        font-weight: bold;
-        color: #fff;
         background-color: $mainColor;
         padding-left: 20px;
       }
@@ -49,10 +45,9 @@
         margin: 20px 5% 0; 
         &__all {
           .perent-all {
-            @include linkReset(#07f);
+            @include linkReset($linkFont);
             &:hover {
-              border-bottom: 1px solid #07f;
-              opacity: 0.6;
+              @include categoryLinkHover;
             }
           }
         }
@@ -67,10 +62,9 @@
           &__all {
             padding-bottom: 30px;
             .children-all {
-              @include linkReset(#07f);
+              @include linkReset($linkFont);
               &:hover {
-                border-bottom: 1px solid #07f;
-                opacity: 0.6;
+                @include categoryLinkHover;
               }
             }
           }
@@ -79,10 +73,9 @@
             width: calc(100% / 2);
             padding-bottom: 25px;
             .grandChild-list {
-              @include linkReset(#07f);
+              @include linkReset($linkFont);
               &:hover {
-                border-bottom: 1px solid #07f;
-                opacity: 0.6;
+                @include categoryLinkHover;
               }
             }
           }
@@ -94,13 +87,11 @@
 
 .category-scroll {
   @include heightWidth(60px, 60px);
+  @include fontSizeColorBold(40px, $mainFont);
   display: none;
-  background-color: #fff;
+  background-color: $categoryBg;
   line-height: 60px;
   text-align: center;
-  color: $mainFont;
-  font-size: 40px;
-  font-weight: bold;
   position: fixed;
   right: 50px;
   bottom: 220px;

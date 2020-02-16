@@ -1,6 +1,7 @@
-@mixin heightWidth($h, $w) {
-  height: $h;
-  width: $w;
+// 共通
+@mixin heightWidth($height, $width) {
+  height: $height;
+  width: $width;
 }
 
 @mixin displayFlex($jc)  {
@@ -8,8 +9,24 @@
   justify-content: $jc;
 }
 
-@mixin headerBottomFont($c:$mainFont) {
-  color: $c;
+@mixin linkReset($color) {
+  color: $color;
+  text-decoration: none;
+}
+
+@mixin transition($all:0.3s) {
+  transition: all $all ease 0s;
+}
+
+@mixin fontSizeColorBold($size, $color) {
+  font-size: $size;
+  color: $color;
+  font-weight: bold;
+}
+
+// header&footer
+@mixin headerBottomFont($color:$mainFont) {
+  color: $color;
   font-size: 15px;
   font-weight: bold;
 }
@@ -24,11 +41,8 @@
   background-color: $bg;
 }
 
-@mixin linkReset($c) {
-  color: $c;
-  text-decoration: none;
-}
-
-@mixin transition($all:0.3s) {
-  transition: all $all ease 0s;
+// category
+@mixin categoryLinkHover {
+  border-bottom: 1px solid $linkFont;
+  opacity: 0.6;
 }
