@@ -93,11 +93,12 @@
 }
 
 .category-scroll {
-  @include heightWidth(70px, 70px);
+  @include heightWidth(60px, 60px);
+  display: none;
   background-color: #fff;
-  line-height: 70px;
+  line-height: 60px;
   text-align: center;
-  color: #333;
+  color: $mainFont;
   font-size: 40px;
   font-weight: bold;
   position: fixed;
@@ -106,6 +107,10 @@
   border: 3px solid $mainColor;
   border-radius: 100px;
   cursor: pointer;
+  &:hover {
+    color: $whiteFont;
+    background-color: $mainColor;
+  }
 }
 
 .clearfix::after {

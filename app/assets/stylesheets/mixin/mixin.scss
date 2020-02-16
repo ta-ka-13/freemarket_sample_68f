@@ -28,3 +28,7 @@
   color: $c;
   text-decoration: none;
 }
+
+@mixin transition($all:0.3s) {
+  transition: all $all ease 0s;
+}

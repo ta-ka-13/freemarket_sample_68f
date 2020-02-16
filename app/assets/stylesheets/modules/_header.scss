@@ -1,6 +1,7 @@
 .header {
   background-color: $headerBg;
   padding-top: 15px;
+  min-width: 555px;
   &__main {
     margin: 0 15% 0;
     .contents-top {
