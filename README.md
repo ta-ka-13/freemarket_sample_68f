@@ -77,15 +77,17 @@ Things you may want to cover:
 ## itemsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|reference|null: false, foreign_key: true|
-|brand_id|reference|null: false, foreign_key: true|
-|category_id|reference|null: false, foreign_key: true|
+|name|string|null: false|
+|price|integer|null:false|
+|description|string|null: false|
+|condition|string|null: false|
 |shopping_charges|string|null: false|
 |shopping_area|string|null: false|
 |shopping_date|string|null: false|
-|price|integer|null:false|
-|description|string|null: false|
-|status|string|null: false|
+|buyer|integer||
+|user_id|references|foreign_key: true|
+|brand_id|references|foreign_key: true|
+|category_id|references|foreign_key: true|
 
  ## Association
 - has_many: images
