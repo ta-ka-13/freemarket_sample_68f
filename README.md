@@ -100,7 +100,7 @@ Things you may want to cover:
 Column|Type|Options|
 |------|----|-------|
 |item_id|reference|null: false, foreign_key: true|
-|image|text|null: false|
+|image|string|null: false|
 ## Association
 - belongs_to: item
 
