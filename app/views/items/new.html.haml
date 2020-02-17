@@ -10,49 +10,47 @@
       .sell-container-inner
         %h2.sell-header
           商品の情報を入力
-
-        .sell-form
-          .sell-form__upload-box
-            %h3.sell-form__upload-head
-              出品画像
-              %span.form-require
-                必須
-            %p
-              最大10枚までアップロードできます
-            .sell-form__drop-image
-              %p
-                ドラッグアンドドロップ
-              %p
-                またはクリックしてファイルをアップロード
-
-
-
-          .sell-content
-            .sell-content__form-group-name
-              商品名
-              %span.form-require
-                必須
-              
-            .sell-form
-              .sell-form-pulldown
-              .sell-content__form-group-name
-                商品の説明
-              .sell-form-pulldown
-          
-
-          .sell-content
-            %h3
-              商品の詳細
-            .sell-form-right
-              .sell-content__form-group-name
-                カテゴリー
+        = form_for @item do |f|
+          .sell-form
+            .sell-form__upload-box
+              %h3.sell-form__upload-head
+                出品画像
                 %span.form-require
                   必須
-              .sell-form-pulldown
+              %p
+                最大10枚までアップロードできます
+              .sell-form__drop-image
+                %p
+                  ドラッグアンドドロップ
+                %p
+                  またはクリックしてファイルをアップロード
 
+
+
+            .sell-content
               .sell-content__form-group-name
-                商品の状態
-              .sell-form-pulldown
+                = f.label :商品名
+                %span.form-require
+                  必須
+                %br/
+                = f.text_field :name, class: "sell-form-pulldown"
+              .sell-content__form-group-name
+                = f.label :商品の説明
+                = f.text_field :name, class: "sell-form-pulldown"
+
+            .sell-content
+              %h3
+                商品の詳細
+              .sell-form-right
+                .sell-content__form-group-name
+                  カテゴリー
+                  %span.form-require
+                    必須
+                .sell-form-pulldown
+
+                .sell-content__form-group-name
+                  商品の状態
+                .sell-form-pulldown
 
 
           .sell-content

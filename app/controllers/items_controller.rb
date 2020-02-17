@@ -3,9 +3,16 @@ class ItemsController < ApplicationController
   end
 
   def new
+    @item = Item.new
   end
 
   def create
+    @item = Item.new(item_params)
+    if @group.save
+      redirect_to root_path
+    else
+      render :new
+    end
   end
 
   def show
@@ -22,6 +29,11 @@ class ItemsController < ApplicationController
 
   def purchase_confirmation
     
+  end
+
+  private
+  def item_params
+    params.require(:item).permit(:name)
   end
   
 end
