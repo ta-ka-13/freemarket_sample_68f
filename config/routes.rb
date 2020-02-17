@@ -65,4 +65,3 @@ Rails.application.routes.draw do
   end
 
 end
-© 2020 GitHub, Inc.
