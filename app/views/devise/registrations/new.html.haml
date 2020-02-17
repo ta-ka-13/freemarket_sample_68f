@@ -2,19 +2,8 @@
   .single-container
     %header.single-header
       %h1
-        %a{:href => "https://www.mercari.com/jp/"}
-          %img{:alt => "mercari", :src => ""}/
+        =image_tag "https://www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?35314277", size: "300x300"
       %nav
-        %ol.clearfix
-          %li.active
-            会員情報
-            .progress-status
-          %li.active
-            電話番号認証
-            .progress-status
-          %li.active
-            完了
-            .progress-status
     %main.single-main
       %section.l-single-container
         %h2.l-single-head.registration
@@ -23,52 +12,115 @@
           = render "devise/shared/error_messages", resource: @user
           .l-single-content
             .form-group
-              = f.label :name
+              = f.label :ニックネーム
+              %span.form-requre
+                必須
               %br/
-              = f.text_field :name
+              = f.text_field :name, class: "input-basic", placeholder: "例）メルカリ太郎"
             .form-group
-              = f.label :email
+              = f.label :メールアドレス
+              %span.form-requre
+                必須
               %br/
-              = f.email_field :email, autofocus: true, autocomplete: "email"
+              = f.email_field :email, autofocus: true, autocomplete: "email", class: "input-basic", placeholder: "PC・携帯どちらでも可"
             .form-group
-              = f.label :password
+              = f.label :パスワード
+              %span.form-requre
+                必須
               - if @minimum_password_length
                 %em
-                  (#{@minimum_password_length} characters minimum)
+                  (#{@minimum_password_length} 文字以上)
               %br/
-              = f.password_field :password, autocomplete: "new-password"
-            .field
-              = f.label :password_confirmation
-              %br/
-              = f.password_field :password_confirmation, autocomplete: "new-password"
+              = f.password_field :password, autocomplete: "new-password", class: "input-basic", placeholder: "７文字以上半角英数字"
             .form-group
-              = f.label :family_name
+              = f.label :パスワード（確認用）
+              %span.form-requre
+                必須
+              - if @minimum_password_length
+                %em
+                  (#{@minimum_password_length} 文字以上)
               %br/
-              = f.text_field :family_name, autofocus: true, autocomplete: "family_name"
+              = f.password_field :password_confirmation, autocomplete: "new-password", class: "input-basic", placeholder: "７文字以上半角英数字"
+
+              .form-group
+              %h3 本人確認
+              %p 安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません
+
             .form-group
-              = f.label :last_name
+              = f.label :姓（全角）
+              %span.form-requre
+                必須
               %br/
-              = f.text_field :last_name, autofocus: true, autocomplete: "last_name"
+              = f.text_field :family_name, autofocus: true, autocomplete: "family_name", class: "input-basic", placeholder: "例）山田"
             .form-group
-              = f.label :family_name_kana
+              = f.label :名（全角）
+              %span.form-requre
+                必須
               %br/
-              = f.text_field :family_name_kana, autofocus: true, autocomplete: "family_name_kana"
+              = f.text_field :last_name, autofocus: true, autocomplete: "last_name", class: "input-basic", placeholder: "例）太郎"
             .form-group
-              = f.label :last_name_kana
+              = f.label :性カナ（全角）
+              %span.form-requre
+                必須
               %br/
-              = f.text_field :last_name_kana, autofocus: true, autocomplete: "last_name_kana"
+              = f.text_field :family_name_kana, autofocus: true, autocomplete: "family_name_kana", class: "input-basic", placeholder: "例）ヤマダ"
             .form-group
-              = f.label :birth_year
+              = f.label :名カナ（全角）
+              %span.form-requre
+                必須
               %br/
-              = f.text_field :birth_year, autofocus: true, autocomplete: "birth_year"
+              = f.text_field :last_name_kana, autofocus: true, autocomplete: "last_name_kana", class: "input-basic", placeholder: "例）タロウ"
             .form-group
-              = f.label :birth_month
+              -# %label{for: "birthday"} 生年月日
+              -# %span.form-require
+              -#   必須
+              -# .pulldown
+              -#   .select-wrap
+              -#     = raw sprintf(f.date_select(  :birth_day, 
+              -#       prompt: "--",
+              -#       use_two_digit_numbers: true,
+              -#       birth_year: Time.now.year,
+              -#       birth_month: 1900,
+              -#       date_separator: '%s'),
+              -#       '年 ', '月 ') + '日'
+              -# できたら上の記述にしたい
+              %p生年月日
+              = f.label :西暦
+              %span.form-requre
+                必須
               %br/
-              = f.text_field :birth_month, autofocus: true, autocomplete: "birth_month"
+              = f.text_field :birth_year, autofocus: true, autocomplete: "birth_year", class: "birthday-box", placeholder: "西暦"
             .form-group
-              = f.label :birth_day
+              = f.label :月
+              %span.form-requre
+                必須
               %br/
-              = f.text_field :birth_day, autofocus: true, autocomplete: "birth_day"
-            .actions
-              = f.submit "次へ進む"
+              = f.text_field :birth_month, autofocus: true, autocomplete: "birth_month", class: "birthday-box", placeholder: "月"
+            .form-group
+              = f.label :日
+              %span.form-requre
+                必須
+              %br/
+              = f.text_field :birth_day, autofocus: true, autocomplete: "birth_day", class: "birthday-box", placeholder: "日"
+              %p.form-info-text
+                ※本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合がございます。
+            .form-group
+              = f.submit "次へ進む", class: "next-btn"
         = render "devise/shared/links"
+    .single-footer
+      %nav
+        %ul.clearfix
+          %li
+            = link_to "#", class: "btn" do
+              プライパシーポリシー
+          %li
+            = link_to "#", class: "btn" do
+              メルカリ利用規約
+          %li
+            = link_to "#", class: "btn" do
+              特定商取引に関する表記
+        .single-footer-logo
+          =image_tag "https://www-mercari-jp.akamaized.net/assets/img/common/common/logo-gray.svg?2072393617", size: "80x80"
+          %p
+            %small
+              © Mercari, Inc.
