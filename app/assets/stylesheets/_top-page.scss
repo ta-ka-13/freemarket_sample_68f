@@ -6,8 +6,6 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: top center;
-    // padding: 0 60px;
-    // position: relative;
     display: flex;
     align-items: center;
     .content {
@@ -62,8 +60,6 @@
           img {
             width: 100%;
           }
-        }
-        h3{
         }
         span{
           color: #3CCACE;
@@ -166,15 +162,10 @@
             padding: 16px;
             background-color:white;
             color: black;
-            h3 {
-              
-            }
             .details {
               ul {
                 display: flex;
                 justify-content: space-between;
-                li {
-                }
               }
               p {
                 font-size: 10px;
