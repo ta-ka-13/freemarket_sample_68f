@@ -1,0 +1,49 @@
+// 共通
+@mixin heightWidth($height, $width) {
+  height: $height;
+  width: $width;
+}
+
+@mixin displayFlex($jc, $ai:normal)  {
+  display: flex;
+  justify-content: $jc;
+  align-items: $ai;
+}
+
+@mixin linkReset($color:$mainFont) {
+  color: $color;
+  text-decoration: none;
+}
+
+@mixin transition($all:0.3s) {
+  transition: all $all ease 0s;
+}
+
+@mixin fontSizeColorBold($size, $color) {
+  font-size: $size;
+  color: $color;
+  font-weight: bold;
+}
+
+// header&footer
+@mixin headerBottomFont($color:$mainFont) {
+  color: $color;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+@mixin headerBottomRight($borderColor, $bg) {
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 10px;
+  border: 2px solid $borderColor;
+  border-radius: 10px;
+  background-color: $bg;
+}
+
+// category
+@mixin categoryLinkHover {
+  border-bottom: 1px solid $linkFont;
+  opacity: 0.6;
+}
