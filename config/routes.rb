@@ -12,5 +12,6 @@ Rails.application.routes.draw do
       get 'purchase_confirmation'
     end
   end
+  resources :categories, only: [:index, :show]
 
 end
