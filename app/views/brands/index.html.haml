@@ -1,0 +1,13 @@
+.wrapper
+  = render "shared/header"
+  .brand-main
+    .brand-main__top
+      ブランド一覧
+    .brand-main__contents
+      %ul.brand-japanese
+        - @hiragana.each do |kana|
+          %li.brand-japanese__box
+            .japanese-list
+              = "#{kana}行"
+              .japanese-list__box
+  = render "shared/footer"
