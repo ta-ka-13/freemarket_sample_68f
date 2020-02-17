@@ -1,5 +1,5 @@
 @import "./reset";
-@import "./config/colors.scss";
+@import "./config/colors";
 @import "./mixin/mixin";
 @import "./modules/header";
 @import "./modules/footer";
@@ -10,4 +10,4 @@
 // @import "./edit";
 // @import "./update";
 // @import "./destroy";
-@import "./modules/categories";
+@import "./modules/categories/index";

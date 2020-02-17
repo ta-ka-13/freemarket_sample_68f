@@ -4,12 +4,13 @@
   width: $width;
 }
 
-@mixin displayFlex($jc)  {
+@mixin displayFlex($jc, $ai:normal)  {
   display: flex;
   justify-content: $jc;
+  align-items: $ai;
 }
 
-@mixin linkReset($color) {
+@mixin linkReset($color:$mainFont) {
   color: $color;
   text-decoration: none;
 }
