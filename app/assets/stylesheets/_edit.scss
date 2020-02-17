@@ -2,8 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
 .my-page {
     height:170vh;
+    // height: 600vh;
     background-color: #F2F2F2;
     position:  absolute;
   .my-page__inner {
@@ -121,10 +123,9 @@
         font-weight: bold;
         border: solid 0.1px #F2F2F2;
       }
-    .my-pag__under--left{
+    .my-page__under--left{
         background-color: white;
         width: 400px;
-        height: 900vh;
         float: left;
       .setting{
         padding: 1.5em 1em;
