@@ -37,12 +37,21 @@
             font-weight: 600;
             font-size:14px;
           }
-          span {
+          .form-requre {
             background: #ea352d;
             padding: 2px 4px;
             border-radius: 2px;
             color: #fff;
             font-size: 12px;
+          }
+          .form-arbitrary {
+            margin: 0 0 0 8px;
+            padding: 2px 4px;
+            border-radius: 2px;
+            color: #fff;
+            font-size: 12px;
+            vertical-align: top;
+            background: #ccc;
           }
           .input-basic {
             width: 100%;
