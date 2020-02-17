@@ -151,12 +151,26 @@
         display: flex;
         justify-content: space-around;
         margin: 26px auto;
+        flex-wrap: wrap;
         .productList {
           text-decoration: none;
+          margin-bottom: 15px;
+          a{
+            text-decoration: none;
+          }
           &__img {
             width: 220px;
             height: 150px;
             background-color: yellow;
+            .sold-out{
+              transform: rotate(-20deg);
+              background-color: red;
+              width: 100px;
+              text-align: center;
+              text-decoration: none;
+              color: white;
+              border-radius: 2px;
+            }
           }
           &__body {
             padding: 16px;
