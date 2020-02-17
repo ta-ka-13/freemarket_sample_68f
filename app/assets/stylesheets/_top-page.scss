@@ -70,7 +70,7 @@
 
 
   .center {
-    background-image: url(/assets/material/pict/bg-topMiddleDl-pict.jpg);
+    background-image: image-url("material/pict/bg-topMiddleDl-pict.jpg");
     height: 400px;
     background-size: cover;
     background-position: center;
@@ -226,7 +226,7 @@
   }
 
   .bottom{
-  background-image: url(/assets/material/pict/bg-appBanner-pict.jpg);
+  background-image: image-url("material/pict/bg-appBanner-pict.jpg");
   padding: 100px 40px;
   background-size: cover;
   background-position: center;
