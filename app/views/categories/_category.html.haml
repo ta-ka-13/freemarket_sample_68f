@@ -1,0 +1,20 @@
+- if category.ancestry.nil?
+  %li.category-perent__box
+    .perent-list{id: "#{category.name}"}
+      = category.name
+    %ul.category-children
+      .category-children__all
+        = link_to "#", class: "perent-all" do
+          = "#{category.name}一覧"
+      - category.children.each do |child|
+        %li.category-children__box
+          .children-list
+            = child.name
+          %ul.category-grandChild.clearfix
+            .category-grandChild__all
+              = link_to "#", class: "children-all" do
+                = "#{child.name}一覧"
+            - child.children.each do |grandChild|
+              %li.category-grandChild__box
+                = link_to "#", class: "grandChild-list" do
+                  = grandChild.name
