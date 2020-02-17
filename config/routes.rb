@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   get '/mypage/identification', to: 'mypages#identification'
   get '/mypage/profile', to: 'mypages#profile'
   get '/mypage/card', to: 'mypages#card'
