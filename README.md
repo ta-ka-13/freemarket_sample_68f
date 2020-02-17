@@ -32,8 +32,8 @@ Things you may want to cover:
 |email|string|null: false, unique: true|
 |password|string|null: false|
 |family_name|string|null: false|
-|last_name|string|nul: false|
-|family_name_kana|string|nul: false|
+|last_name|string|null: false|
+|family_name_kana|string|null: false|
 |last_name_kana|string|null: false|
 |birth_year|integer|null: false|
 |birth_month|integer|null: false|
@@ -48,6 +48,11 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |user_id|reference|null: false, foreign_key: true|
+|destination_family_name|string|null: false|
+|destination_last_name|string|null: false|
+|destination_family_name_kana|string|null: false|
+|destination_last_name_kana|string|null: false|
+|Postal_code|integer|null: false|
 |prefectures|string|nul: false|
 |municipalities|string|nul: false|
 |address|string|nul: false|

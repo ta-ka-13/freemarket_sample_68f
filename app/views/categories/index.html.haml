@@ -1,0 +1,21 @@
+.wrapper
+  = render "shared/header"
+  .category-main
+    .category-main__top
+      カテゴリー 一覧
+      .perent-sift.clearfix
+        - @categories.each do |perent|
+          - if perent.ancestry.nil?
+            = link_to "##{perent.name}", class: "perent-sift__list" do
+              .sift-list
+                = perent.name
+    .category-main__contents
+      %ul.category-perent
+        = render @categories
+  = render "shared/footer"
+.category-scroll
+  ↑
+
+
+
+
