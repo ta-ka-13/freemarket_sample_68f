@@ -1,7 +1,7 @@
-= render "header"
+= render "shared/header"
 %h1 Items#index
 %p Find me in app/views/items/index.html.haml
 
 =link_to "ログイン", new_user_registration_path
 =link_to "ログアウト", destroy_user_session_path, method: :delete
-= render "footer"
+= render "shared/footer"
