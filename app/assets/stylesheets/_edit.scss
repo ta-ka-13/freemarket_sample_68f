@@ -4,6 +4,7 @@
 
 $back_gray:#F2F2F2;
 $back_gray_color: #D3D3D3;
+$back_white: #FFF;
 
 @mixin left_side_list {
   padding: 1.5em 1em;
@@ -31,7 +32,7 @@ $back_gray_color: #D3D3D3;
       width: 400px;  
       height:1200px;
       float: left;
-      background-color: white;
+      background-color:back_white;
       }
       .my-mypage {
         @include left_side_list;
@@ -87,7 +88,7 @@ $back_gray_color: #D3D3D3;
         @include left_side_list;
       }
     &__under--left{
-        background-color: white;
+        background-color: back_white;
         width: 400px;
         float: left;
       .setting{
@@ -118,72 +119,72 @@ $back_gray_color: #D3D3D3;
     &__inner--right{
       @include inner_height_width(1200px,1200px);
       float: right;
-      background-color:#F2F2F2;
+      background-color:$back_gray;
       .my-page__inner--right_1{
         width: 1200px;
         height: 350px;
         background: url('https://livedoor.blogimg.jp/jin115/imgs/b/c/bc3f2b2c.jpg');
         }
-        .my-page__inner--right_2{
-          width: 1200px;
-          height: 650px;
-          background-color:white;
-            }
-            .my-page_announcement{
-              float: left;
-              width: 600px;
-              height: 130px;
-              display: flex;
-              justify-content: center;
-              align-items: center;
-              border-top: solid red;
-            }
-            .info{
-              font-size: 25px;
-            }
-            .my-page_to_do{
-              float: right;
-              width: 600px;
-              height: 120px;
-              background-color: lightgray;
-              display: flex;
-              justify-content: center;
-              align-items: center;
-            }
-            .to_do{
-              font-size: 25px;
-              text-align: center;
-            }
-            .my-page__inner--right_3{
-              width: 1200px;
-              height: 120px;
-              background-color:white;
-              margin-top: 4px;
-              margin-bottom: 90px;
-                }
-              .my-page__btn{
-                margin: 40px;
-                margin-top: -1px;
-                background-color:lightgray;
-                padding-top: 90 px;
-                width: 1100px;
-                height: 80px;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                .btn{
-                  text-align: center;
-                  font-size: 20px;
+      .my-page__inner--right_2{
+        width: 1200px;
+        height: 650px;
+        background-color: back_white;
+      }
+        .my-page_announcement{
+          float: left;
+          width: 600px;
+          height: 130px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border-top: solid red;
+        }
+          .info{
+            font-size: 25px;
+          }
+        .my-page_to_do{
+          float: right;
+          width: 600px;
+          height: 120px;
+          background-color: lightgray;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+          .to_do{
+            font-size: 25px;
+            text-align: center;
+          }
+      .my-page__inner--right_3{
+        width: 1200px;
+        height: 120px;
+        background-color: back_white;
+        margin-top: 4px;
+        margin-bottom: 90px;
+        }
+        .my-page__btn{
+          margin: 40px;
+          margin-top: -1px;
+          background-color:lightgray;
+          padding-top: 90 px;
+          width: 1100px;
+          height: 80px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          .btn{
+            text-align: center;
+            font-size: 20px;
           }
         }
       }
-      .my-pag__under--left{
-        background-color:white;
-        width: 400px;
-        height: 560px;
+    &__under--left{
+      background-color: back_white;
+      width: 400px;
+      height: 560px;
       }
       .my-page__under--right{
-        background-color: white;
+        background-color:back_white;
         width: 1200px;
         height: 500px;
         float: right;
@@ -201,21 +202,21 @@ $back_gray_color: #D3D3D3;
           justify-content: center;
           align-items: center;
           border-top: solid red;
-          .transaction{
+            .transaction{
             font-size: 30px;
-      }
+            }
+          }
+        .my-page__under--right_3{
+          float: right;
+          background-color: lightgray;
+          width: 600px;
+          height: 100px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+            .past{
+              font-size: 30px;
+            }
+          }
     }
-      .my-page__under--right_3{
-        float: right;
-        background-color: lightgray;
-        width: 600px;
-        height: 100px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        .past{
-          font-size: 30px;
-      }
-    }
-  }
 }
