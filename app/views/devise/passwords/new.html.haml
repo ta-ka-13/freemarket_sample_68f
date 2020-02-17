@@ -1,10 +1,38 @@
-%h2 Forgot your password?
-= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f|
-  = render "devise/shared/error_messages", resource: resource
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  .actions
-    = f.submit "Send me reset password instructions"
-= render "devise/shared/links"
+%body
+  .single-container
+    %header.single-header
+      %h1
+        =image_tag "https://www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?35314277", size: "300x300"
+      %nav
+    %main.single-main
+      %section.l-single-container
+        %h2.l-single-head.registration
+          パスワードお忘れの方
+        = form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f|
+          = render "devise/shared/error_messages", resource: resource
+          .l-single-content
+            .form-group
+              = f.label :メールアドレス
+              %br/
+              = f.email_field :email, autofocus: true, autocomplete: "email", class: "input-basic", placeholder: "例）メールアドレス"
+            .form-group
+              = f.submit "送信する", class: "next-btn"
+          = render "devise/shared/links"
+
+    .single-footer
+      %nav
+        %ul.clearfix
+          %li
+            = link_to "#", class: "btn" do
+              プライパシーポリシー
+          %li
+            = link_to "#", class: "btn" do
+              メルカリ利用規約
+          %li
+            = link_to "#", class: "btn" do
+              特定商取引に関する表記
+        .single-footer-logo
+          =image_tag "https://www-mercari-jp.akamaized.net/assets/img/common/common/logo-gray.svg?2072393617", size: "80x80"
+          %p
+            %small
+              © Mercari, Inc.
