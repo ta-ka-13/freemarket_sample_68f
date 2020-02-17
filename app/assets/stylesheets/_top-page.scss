@@ -82,7 +82,7 @@
     background-position: center;
     display: flex;
     align-items: center;
-    .topMiddleDl__inner {
+    .inner {
       color: white;
       text-shadow: 0 0 5px rgba(0,0,0,0.4);
       width: 100%;
@@ -148,12 +148,10 @@
     }
     .productBox{
       .productHead{
-        a {
           h3{
             text-align: center;
             font-size: 24px;
           }
-        }
       }
       .productLists{
         width: 780px;
@@ -161,30 +159,29 @@
         justify-content: space-around;
         margin: 26px auto;
         .productList {
-          a {
-            text-decoration: none;
-            .productList--img {
-              width: 220px;
-              height: 150px;
-              background-color: yellow;
+          // a {
+          text-decoration: none;
+          &__img {
+            width: 220px;
+            height: 150px;
+            background-color: yellow;
+          }
+          &__body {
+            padding: 16px;
+            background-color:white;
+            color: black;
+            h3 {
+              
             }
-            .productList--body {
-              padding: 16px;
-              background-color:white;
-              color: black;
-              h3 {
-                
+            .details {
+              ul {
+                display: flex;
+                justify-content: space-between;
+                li {
+                }
               }
-              .details {
-                ul {
-                  display: flex;
-                  justify-content: space-between;
-                  li {
-                  }
-                }
-                p {
-                  font-size: 10px;
-                }
+              p {
+                font-size: 10px;
               }
             }
           }
@@ -216,12 +213,12 @@
         margin: 26px auto;
         .productList {
           a {
-            .productList--img {
+            .productList__img {
               width: 220px;
               height: 150px;
               background-color: green;
             }
-            .productList--body {
+            .productList__body {
               padding: 16px;
               background-color: white;
               color: black;
