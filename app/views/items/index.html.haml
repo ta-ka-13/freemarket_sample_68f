@@ -13,7 +13,7 @@
         -# %a.aBtm{:href => "#"}
         = link_to "#", class: "aBtm" do
           %img{:src => ""}
-    -# .picture いるか確認
+          -# = image_tag ""
   .reason
     %h2.subtitle
       FURIMAが選ばれる3つの理由
@@ -60,10 +60,12 @@
         %br
         ほしかったあの商品に出会えるかもしれません。
       .btn
-        %a{:href => "#"}
-        %img.aBtn{:src => ""}
-        %a{:href => "#"}
-        %img.gBtn{:src => ""}
+        -# %a{:href => "#"}
+        = link_to "#" do
+          %img.aBtn{:src => ""}
+        -# %a{:href => "#"}
+        = link_to "#" do
+          %img.gBtn{:src => ""}
 
   .feature
     %h2.head
@@ -95,7 +97,8 @@
       ピックアップカテゴリー
     .productBox
       .productHead
-        %a{:href => "#"}
+        -# %a{:href => "#"}
+        = link_to "#" do
           %h3.title
             新規投稿商品
       .productLists
@@ -117,7 +120,8 @@
                 %p
                   (税込)
         .productList
-          %a{:href => ""}
+          -# %a{:href => ""}
+          = link_to "#" do
             .productList--img
               %img{:src => ""}
             .productList--body
@@ -133,7 +137,8 @@
                 %p
                   (税込)
         .productList
-          %a{:href => ""}
+          -# %a{:href => ""}
+          = link_to "#" do
             .productList--img
               %img{:src => ""}
             .productList--body
@@ -153,12 +158,14 @@
       ピックアップブランド
     .productBox
       .productHead
-        %a{:href => "#"}
+        -# %a{:href => "#"}
+        = link_to "#" do
           %h3.title
             アーカイバ
       .productLists
         .productList
-          %a{:herf => ""}
+          -# %a{:herf => ""}
+          = link_to "#" do
             .productList--img
               %img{:src => ""}
             .productList--body
@@ -174,7 +181,8 @@
                 %p
                   (税込)
         .productList
-          %a{:herf => ""}
+          -# %a{:herf => ""}
+          = link_to "#" do
             .productList--img
               %img{:src => ""}
             .productList--body
@@ -190,7 +198,8 @@
                 %p
                   (税込)
         .productList
-          %a{:herf => ""}
+          -# %a{:herf => ""}
+          = link_to '#' do
             .productList--img
               %img{:src => ""}
             .productList--body
@@ -215,9 +224,11 @@
           -# %a{:href => "#"}
           = link_to "#" do
             %img.linkIcon-aBtn{:src => ""}
-          %a{:href => "#"}
+          -# %a{:href => "#"}
+          = link_to '#' do
             %img.linkIcon-aBtn{:src => ""}
-%a{:href => "#"}
+-# %a{:href => "#"}
+= link_to '#' do
   .purchaseBtn
     %span.purchaseBth__text
       出品する
