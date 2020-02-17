@@ -93,54 +93,25 @@
             %h3.title
               新規投稿商品
         .productLists
-          .productList 
-            = link_to "#" do
-              .productList__img
-                = image_tag ""
-              .productList__body
-                %h3.name
-                  puroduct3
-                .details
-                  %ul
-                    %li
-                      3000円
-                    %li
-                      %i.linkIcon
-                      0
-                  %p
-                    (税込)
-          .productList
-            = link_to "#" do
-              .productList__img
-                = image_tag ""
-              .productList__body
-                %h3.name
-                  puroduct3
-                .details
-                  %ul
-                    %li
-                      3000円
-                    %li
-                      %i.linkIcon
-                      0
-                  %p
-                    (税込)
-          .productList
-            = link_to "#" do
-              .productList__img
-                = image_tag ""
-              .productList__body
-                %h3.name
-                  puroduct3
-                .details
-                  %ul
-                    %li
-                      3000円
-                    %li
-                      %i.linkIcon
-                      0
-                  %p
-                    (税込)
+          - @items.each do |item|
+            .productList 
+              = link_to "#" do
+                .productList__img
+                  = image_tag ""
+                  .sold-out
+                    SOLD
+                .productList__body
+                  %h3.name
+                    = item.name
+                  .details
+                    %ul
+                      %li
+                        = item.price
+                      %li
+                        %i.linkIcon
+                        0
+                    %p
+                      (税込)
     .brand
       %h2
         ピックアップブランド
