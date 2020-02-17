@@ -2,184 +2,121 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+$back_gray:#F2F2F2;
+$back_gray_color: #D3D3D3;
+
+@mixin left_side_list {
+  padding: 1.5em 1em;
+  margin: 0em 0;
+  font-weight: bold;
+  border: solid 0.1px $back_gray;
+}
+
+@mixin inner_height_width($w,$h) {
+  width: &w;
+  height: &h;
+}
+
 
 .my-page {
     height:170vh;
-    // height: 600vh;
-    background-color: #F2F2F2;
+    background-color: $back_gray;
     position:  absolute;
-  .my-page__inner {
+  &__inner {
     width:auto;
     padding:0 60px;
     margin: 0 180px;
   }
-    .my-page__inner--left {
-        width: 400px;
-        height:1200px;
-        float: left;
-        background-color: white;
+    &__inner--left {
+      width: 400px;  
+      height:1200px;
+      float: left;
+      background-color: white;
       }
       .my-mypage {
-        padding: 1.5em 1em;
-        margin: 0em 0;
-        font-weight: bold;
-        border: solid 0.1px #F2F2F2;
-        background-color:lightgray;
+        @include left_side_list;
+        background-color: $back_gray_color;
       }
       .my-announce{
-        padding: 1.5em 1em;
-        margin: 0em 0;
-        font-weight: bold;
-        border: solid 0.1px #F2F2F2;
+        @include left_side_list;
       }
       .my-to_do{
-        padding: 1.5em 1em;
-        margin: 0em 0;
-        font-weight: bold;
-        border: solid 0.1px #F2F2F2;
+        @include left_side_list;
       }
       .my-good{
-        padding: 1.5em 1em;
-        margin: 0em 0;
-        font-weight: bold;
-        border: solid 0.1px #F2F2F2;
+        @include left_side_list;
       }
       .my-create{
-        padding: 1.5em 1em;
-        margin: 0em 0;
-        font-weight: bold;
-        border: solid 0.1px #F2F2F2;
+        @include left_side_list;
       }
       .my-up_currunt{
-        padding: 1.5em 1em;
-        margin: 0em 0;
-        font-weight: bold;
-        border: solid 0.1px #F2F2F2;
+        @include left_side_list;
       }
       .my-up_ing{
-        padding: 1.5em 1em;
-        margin: 0em 0;
-        font-weight: bold;
-        border: solid 0.1px #F2F2F2;
+        @include left_side_list;
       }
       .my-end{
-        padding: 1.5em 1em;
-        margin: 0em 0;
-        font-weight: bold;
-        border: solid 0.1px#F2F2F2;
+        @include left_side_list;
       }
       .my-buying_item{
-        padding: 1.5em 1em;
-        margin: 0em 0;
-        font-weight: bold;
-        border: solid 0.1px #F2F2F2;
+        @include left_side_list;
       }
       .my-bought_item{
-        padding: 1.5em 1em;
-        margin: 0em 0;
-        font-weight: bold;
-        border: solid 0.1px #F2F2F2;
+        @include left_side_list;
       }
       .my-news{
-        padding: 1.5em 1em;
-        margin: 0em 0;
-        font-weight: bold;
-        border: solid 0.1px #F2F2F2;
+        @include left_side_list;
       }
       .reviw{
-        padding: 1.5em 1em;
-        margin: 0em 0;
-        font-weight: bold;
-        border: solid 0.1px #F2F2F2;
+        @include left_side_list;
       }
       .guide{
-        padding: 1.5em 1em;
-        margin: 0em 0;
-        font-weight: bold;
-        border: solid 0.1px #F2F2F2;
+        @include left_side_list;
       }
       .infomation{
-        padding: 1.5em 1em;
-        margin: 0em 0;
-        font-weight: bold;
-        border: solid 0.1px #F2F2F2;
+        @include left_side_list;
       }
       .merupay{
-        padding: 1.5em 1em;
-        margin: 0em 0;
-        font-weight: bold;
-        border: solid 0.1px #F2F2F2;
-        background-color:  #F2F2F2;
+        @include left_side_list;
+        background-color: $back_gray;
       }
       .sales_app{
-        padding: 1.5em 1em;
-        margin: 0em 0;
-        font-weight: bold;
-        border: solid 0.1px #F2F2F2;
+        @include left_side_list;
       }
       .point{
-        padding: 1.5em 1em;
-        margin: 0em 0;
-        font-weight: bold;
-        border: solid 0.1px #F2F2F2;
+        @include left_side_list;
       }
-    .my-page__under--left{
+    &__under--left{
         background-color: white;
         width: 400px;
         float: left;
       .setting{
-        padding: 1.5em 1em;
-        margin: 0em 0;
-        font-weight: bold;
-        border: solid 0.1px #F2F2F2;
-        background-color:#F2F2F2;
+        @include left_side_list;
       }
       .profile{
-        padding: 1.5em 1em;
-        margin: 0em 0;
-        font-weight: bold;
-        border: solid 0.1px #F2F2F2;
+        @include left_side_list;
       }        
       .delivery_address{
-        padding: 1.5em 1em;
-        margin: 0em 0;
-        font-weight: bold;
-        border: solid 0.1px #F2F2F2;
+        @include left_side_list;
       }
       .method_of_payment{
-        padding: 1.5em 1em;
-        margin: 0em 0;
-        font-weight: bold;
-        border: solid 0.1px #F2F2F2;
+        @include left_side_list;
       }
       .mail_pass{
-        padding: 1.5em 1em;
-        margin: 0em 0;
-        font-weight: bold;
-        border: solid 0.1px #F2F2F2;
+        @include left_side_list;
       }
       .identity_infomation{
-        padding: 1.5em 1em;
-        margin: 0em 0;
-        font-weight: bold;
-        border: solid 0.1px #F2F2F2;
-      }        
+        @include left_side_list;
+      }
       .phone_number_check{
-        padding: 1.5em 1em;
-        margin: 0em 0;
-        font-weight: bold;
-        border: solid 0.1px #F2F2F2;
+        @include left_side_list;
       }
       .logout{
-        padding: 1.5em 1em;
-        margin: 0em 0;
-        font-weight: bold;
-        border: solid 0.1px #F2F2F2;
+        @include left_side_list;
       }
       }
-    .my-page__inner--right{
-      width: 1200px;
-      height: 1200px;
+    &__inner--right{
+      @include inner_height_width(1200px,1200px);
       float: right;
       background-color:#F2F2F2;
       .my-page__inner--right_1{
@@ -224,19 +161,19 @@
               margin-top: 4px;
               margin-bottom: 90px;
                 }
-                .my-page__btn{
-                  margin: 40px;
-                  margin-top: -1px;
-                  background-color:lightgray;
-                  padding-top: 90 px;
-                  width: 1100px;
-                  height: 80px;
+              .my-page__btn{
+                margin: 40px;
+                margin-top: -1px;
+                background-color:lightgray;
+                padding-top: 90 px;
+                width: 1100px;
+                height: 80px;
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                  .btn{
-                    text-align: center;
-                    font-size: 20px;
+                .btn{
+                  text-align: center;
+                  font-size: 20px;
           }
         }
       }
@@ -250,35 +187,35 @@
         width: 1200px;
         height: 500px;
         float: right;
-      .my-page__under--right_1{
-      height: 40px;
-      width: 400px;
-      padding: 50px;
-      font-size: 30px;
-      }
-      .my-page__under--right_2{
-      float: left;
-      width: 600px;
-      height:100px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      border-top: solid red;
-      .transaction{
-        font-size: 30px;
+        .my-page__under--right_1{
+          height: 40px;
+          width: 400px;
+          padding: 50px;
+          font-size: 30px;
+        }
+        .my-page__under--right_2{
+          float: left;
+          width: 600px;
+          height:100px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border-top: solid red;
+          .transaction{
+            font-size: 30px;
       }
     }
       .my-page__under--right_3{
-      float: right;
-      background-color: lightgray;
-      width: 600px;
-      height: 100px;      
-      display: flex;
-      justify-content: center;
-      align-items: center;      
-      .past{
-        font-size: 30px;
-      }
+        float: right;
+        background-color: lightgray;
+        width: 600px;
+        height: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .past{
+          font-size: 30px;
       }
     }
   }
+}
