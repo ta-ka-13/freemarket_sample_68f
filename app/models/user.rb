@@ -7,4 +7,6 @@ class User < ApplicationRecord
   VALID_EMAIL_REGEX = /\A[\x21-\x3f\x41-\x7e]+@(?:[-a-z0-9]+\.)+[a-z]{2,}\z/i
   validates :email, {presence: true, format: { with: VALID_EMAIL_REGEX }, uniqueness: { case_sensitive: false }}
   has_one :address
+  has_many :items
+  has_one :card
 end
