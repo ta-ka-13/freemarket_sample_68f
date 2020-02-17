@@ -1,6 +1,8 @@
 @import "./reset";
-@import "./header";
-@import "./footer";
+@import "./config/colors";
+@import "./mixin/mixin";
+@import "./modules/header";
+@import "./modules/footer";
 // @import "./top-page";
 @import "./show";
 @import "./new";
@@ -8,3 +10,4 @@
 // @import "./edit";
 // @import "./update";
 // @import "./destroy";
+@import "./modules/categories/index";
