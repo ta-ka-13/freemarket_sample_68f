@@ -3,12 +3,13 @@
 @import "./mixin/mixin";
 @import "./modules/header";
 @import "./modules/footer";
-// @import "./top-page";
+@import "./top-page";
 @import "./show";
 @import "./new";
 @import "./create";
 // @import "./edit";
 // @import "./update";
 // @import "./destroy";
+@import "modules/user";
 @import "./modules/categories/index";
 @import "./modules/categories/show";
