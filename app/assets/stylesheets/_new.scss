@@ -101,15 +101,17 @@
       }
       //-----------------------------
       // 赤い送信ボタン------------------------
-      .sell-button{
-        background-color: red;
+      .sell-button-box{
         text-align: center;
-        color: white;
-        height: 50px;
-        line-height: 50px;
-        margin: 0 auto;
-        width: 45%;
-        border-radius: 5px;
+        .sell-button{
+          background-color: red;
+          color: white;
+          height: 50px;
+          line-height: 50px;
+          width: 45%;
+          border-radius: 5px;
+          cursor: pointer;
+        }
       }
       // ライトグレーの戻るボタン
       .sell-button-back{
