@@ -9,11 +9,9 @@
     .brand-japanese {
       &__box {
         background-color: $categoryBg;
-        // margin-bottom: 50px;
       }
       .japanese-list {
         @include fontSizeColorBold(20px, $whiteFont);
-        // height: 50px;
         line-height: 50px;
         background-color: $mainColor;
         &__top {
@@ -26,7 +24,6 @@
           background-color: white;
           height: 100%;
           &__name {
-            // float: left;
             width: calc(100% / 2 - 15px);
             padding-left: 15px;
             .brand-name {
