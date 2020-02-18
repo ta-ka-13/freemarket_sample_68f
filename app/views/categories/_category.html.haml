@@ -4,7 +4,7 @@
       = category.name
     %ul.category-children
       .category-children__all
-        = link_to "#", class: "perent-all" do
+        = link_to category_path(category[:id]), class: "perent-all" do
           = "#{category.name}一覧"
       - category.children.each do |child|
         %li.category-children__box
@@ -12,9 +12,9 @@
             = child.name
           %ul.category-grandChild.clearfix
             .category-grandChild__all
-              = link_to "#", class: "children-all" do
+              = link_to category_path(child[:id]), class: "children-all" do
                 = "#{child.name}一覧"
             - child.children.each do |grandChild|
               %li.category-grandChild__box
-                = link_to "#", class: "grandChild-list" do
+                = link_to category_path(grandChild[:id]), class: "grandChild-list" do
                   = grandChild.name
