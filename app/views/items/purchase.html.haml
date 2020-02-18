@@ -8,24 +8,9 @@
     %main.single-main
       %section.l-single-container
         %h2.l-single-head.registration
-          ログイン画面
-        = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-          .l-single-content
-            .form-group
-              = f.label :メールアドレス
-              %br/
-              = f.email_field :email, autofocus: true, autocomplete: "email", class: "input-basic", placeholder: "メールアドレス"
-            .form-group
-              = f.label :パスワード
-              %br/
-              = f.password_field :password, autocomplete: "current-password", class: "input-basic", placeholder: "パスワード"
-            - if devise_mapping.rememberable?
-              .field
-                = f.check_box :remember_me
-                = f.label :パスワード保存
-            .form-group
-              = f.submit "ログイン", class: "next-btn"
-          = render "devise/shared/links"
+          商品の購入が完了しました
+          .link_to_toppage
+          = link_to "トップページへ", root_path , class: "purchase-toppage-link"
 
     .single-footer
       %nav
@@ -44,4 +29,3 @@
           %p
             %small
               ©️FURIMA
-
