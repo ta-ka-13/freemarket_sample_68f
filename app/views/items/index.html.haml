@@ -98,8 +98,10 @@
               = link_to "#" do
                 .productList__img
                   = image_tag ""
-                  .sold-out
-                    SOLD
+                  - if item.buyer.present? 
+                    .sold-out
+                      SOLD
+
                 .productList__body
                   %h3.name
                     = item.name
