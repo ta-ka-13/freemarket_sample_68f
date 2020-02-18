@@ -19,12 +19,12 @@
       .contents-bottom__right
         .right-list
           - if user_signed_in?
-            = link_to destroy_user_session_path, class: "right-list__sign" do
+            = link_to destroy_user_session_path, method: :delete, class: "right-list__sign" do
               ログアウト
             = link_to "#", class: "right-list__member" do
               マイページ
           - else
-            = link_to "#", class: "right-list__sign" do
+            = link_to new_user_session_path, class: "right-list__sign" do
               ログイン
             = link_to new_user_registration_path, class: "right-list__member" do
               新規会員登録
