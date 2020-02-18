@@ -43,63 +43,66 @@
                 商品の詳細
               .sell-form-right
                 .sell-content__form-group-name
-                  カテゴリー
-                  %span.form-require
-                    必須
-                .sell-form-pulldown
+                = f.label :カテゴリー
+                %span.form-require
+                  必須
+                %br/
+                = f.text_field :name, class: "sell-form-pulldown"
+              .sell-content__form-group-name
+                = f.label :商品の状態
+                = f.text_field :name, class: "sell-form-pulldown"
+
+
+            .sell-content
+              %h3
+                配送について
+              .sell-form-right
+                .sell-content__form-group-name
+                = f.label :配送料の負担
+                %span.form-require
+                  必須
+                %br/
+                = f.text_field :name, class: "sell-form-pulldown"
 
                 .sell-content__form-group-name
-                  商品の状態
-                .sell-form-pulldown
-
-
-          .sell-content
-            %h3
-              配送について
-            .sell-form-right
-              .sell-content__form-group-name
-                配送料の負担
+                = f.label :配送元の地域
                 %span.form-require
                   必須
-              .sell-form-pulldown
+                %br/
+                = f.text_field :name, class: "sell-form-pulldown"
 
-              .sell-content__form-group-name
-                配送元の地域
+                .sell-content__form-group-name
+                = f.label :発送までの日数
                 %span.form-require
                   必須
-              .sell-form-pulldown
+                %br/
+                = f.text_field :name, class: "sell-form-pulldown"
 
-              .sell-content__form-group-name
-                発送までの日数
-                %span.form-require
-                  必須
-              .sell-form-pulldown
-
-          .sell-content.price
-            %h3.sell-form-price
-              価格（¥300〜9,999,999）
-              .sell-form-price-box
-                %p.sell-form-group-price
-                  販売価格
-                  %span.form-require
-                    必須
-                  
-                  .price-pulldown-blue
+            .sell-content.price
+              %h3.sell-form-price
+                価格（¥300〜9,999,999）
+                .sell-form-price-box
+                  %p.sell-form-group-price
+                    販売価格
+                    %span.form-require
+                      必須
                     
+                  = f.text_field :name, class: "price-pulldown-blue"
+                      
 
-              .sell-form-price-box
-                %p.sell-form-group-fee
-                  販売手数料
-                  
-                .price-pulldown
-                  ー
+                .sell-form-price-box
+                  %p.sell-form-group-fee
+                    販売手数料
+                    
+                  .price-pulldown
+                    ー
 
-              .sell-form-price-box
-                %p.sell-form-group-price
-                  販売利益
-                  
-                .price-pulldown
-                  ー
+                .sell-form-price-box
+                  %p.sell-form-group-price
+                    販売利益
+                    
+                  .price-pulldown
+                    ー
 
 
           .sell-content.sell-btn-box
