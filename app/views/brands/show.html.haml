@@ -1,16 +1,9 @@
 .wrapper
   = render "shared/header"
-  -# = render "nav"
-  .category-show
-    .category-show__top
+  .brand-show
+    .brand-show__top
       = "#{@brand.name}の一覧"
-    -# - if @category.children.present?
-    -#   %ul.category-show__sub.clearfix
-    -#     - @category.children.each do |category|
-    -#       %li.sub-category
-    -#         = link_to category_path(category[:id]), class: "sub-list" do
-    -#           = category.name
-    .category-show__items.clearfix
+    .brand-show__items.clearfix
       -# - @items.each do |item|
       -#   .item-list
       -#     = link_to item_path(params[:item_id]), class: "item-link" do
