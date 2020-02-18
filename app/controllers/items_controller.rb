@@ -21,7 +21,9 @@ class ItemsController < ApplicationController
   end
 
   def purchase_confirmation
-    
+  end
+
+  def purchase
   end
   
 end

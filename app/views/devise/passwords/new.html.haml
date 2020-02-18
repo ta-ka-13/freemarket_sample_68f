@@ -1,10 +1,39 @@
-%h2 Forgot your password?
-= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f|
-  = render "devise/shared/error_messages", resource: resource
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  .actions
-    = f.submit "Send me reset password instructions"
-= render "devise/shared/links"
+%body
+  .single-container
+    %header.single-header
+      %h1
+        = link_to root_path, class: "header-link" do
+          =image_tag "http://localhost:3000/assets/material/logo/logo-9486ef715c62ec78e487e9fd713395dee60de0966916f621cbc19d0462dbf03b.png", size: "300x300"
+      %nav
+    %main.single-main
+      %section.l-single-container
+        %h2.l-single-head.registration
+          パスワードお忘れの方
+        = form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f|
+          = render "devise/shared/error_messages", resource: resource
+          .l-single-content
+            .form-group
+              = f.label :メールアドレス
+              %br/
+              = f.email_field :email, autofocus: true, autocomplete: "email", class: "input-basic", placeholder: "例）メールアドレス"
+            .form-group
+              = f.submit "送信する", class: "next-btn"
+          = render "devise/shared/links"
+
+    .single-footer
+      %nav
+        %ul.clearfix
+          %li
+            = link_to "#", class: "btn" do
+              プライパシーポリシー
+          %li
+            = link_to "#", class: "btn" do
+              メルカリ利用規約
+          %li
+            = link_to "#", class: "btn" do
+              特定商取引に関する表記
+        .single-footer-logo
+          =image_tag "http://localhost:3000/assets/material/logo/logo-white-34b9db297824e9a0b2fe711412f0f6ef6431c163d60f76848bf0c719f656e807.png", size: "150x40"
+          %p
+            %small
+              ©️FURIMA

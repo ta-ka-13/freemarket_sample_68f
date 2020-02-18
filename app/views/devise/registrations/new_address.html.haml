@@ -1,46 +1,95 @@
-%h2 住所情報登録
-= form_for @address do |f|
-  = render "devise/shared/error_messages", resource: @address
-  .form-group
-    = f.label :destination_family_name
-    %br/
-    = f.text_field :destination_family_name
-  .form-group
-    = f.label :destination_last_name
-    %br/
-    = f.text_field :destination_last_name
-  .form-group
-    = f.label :destination_family_name_kana
-    %br/
-    = f.text_field :destination_family_name_kana
-  .form-group
-    = f.label :destination_last_name_kana
-    %br/
-    = f.text_field :destination_last_name_kana
-  .form-group
-    = f.label :postal_code
-    %br/
-    = f.text_field :postal_code
-  .form-group
-    = f.label :prefectures
-    %br/
-    = f.text_field :prefectures
-  .form-group
-    = f.label :municipalities
-    %br/
-    = f.text_field :municipalities
-  .form-group
-    = f.label :address
-    %br/
-    = f.text_field :address
-  .form-group
-    = f.label :building
-    %br/
-    = f.text_field :building
-  .form-group
-    = f.label :phone_number
-    %br/
-    = f.text_field :phone_number
-  .actions
-    = f.submit "Sign up"
-= render "devise/shared/links"
+%body
+  .single-container
+    %header.single-header
+      %h1
+        = link_to root_path, class: "header-link" do
+          =image_tag "http://localhost:3000/assets/material/logo/logo-9486ef715c62ec78e487e9fd713395dee60de0966916f621cbc19d0462dbf03b.png", size: "300x300"
+      %nav
+    %main.single-main
+      %section.l-single-container
+        %h2.l-single-head.registration
+          本人情報登録
+        = form_for @address do |f|
+          = render "devise/shared/error_messages", resource: @address
+          .l-single-content
+            .form-group
+              = f.label :配送先　姓（全角）
+              %span.form-requre
+                必須
+              %br/
+              = f.text_field :destination_family_name, class: "input-basic", placeholder: "例）山田"
+            .form-group
+              = f.label :配送先　名（全角）
+              %span.form-requre
+                必須
+              %br/
+              = f.text_field :destination_last_name, class: "input-basic", placeholder: "例）太郎"
+            .form-group
+              = f.label :配送先　姓カナ（全角）
+              %span.form-requre
+                必須
+              %br/
+              = f.text_field :destination_family_name_kana, class: "input-basic", placeholder: "例）ヤマダ"
+            .form-group
+              = f.label :配送先　名カナ（全角）
+              %span.form-requre
+                必須
+              %br/
+              = f.text_field :destination_last_name_kana, class: "input-basic", placeholder: "例）タロウ"
+            .form-group
+              = f.label :郵便番号
+              %span.form-requre
+                必須
+              %br/
+              = f.text_field :postal_code, class: "input-basic", placeholder: "例）1234567"
+            .form-group
+              = f.label :都道府県
+              %span.form-requre
+                必須
+              %br/
+              = f.text_field :prefectures, class: "input-basic", placeholder: "例）神奈川県"
+            .form-group
+              = f.label :市区町村
+              %span.form-requre
+                必須
+              %br/
+              = f.text_field :municipalities, class: "input-basic", placeholder: "例）横浜市緑区"
+            .form-group
+              = f.label :番地
+              %span.form-requre
+                必須
+              %br/
+              = f.text_field :address, class: "input-basic", placeholder: "例）青山1-1-1"
+            .form-group
+              = f.label :建物名
+              %span.form-arbitrary
+                任意
+              %br/
+              = f.text_field :building, class: "input-basic", placeholder: "例）柳ビル103"
+            .form-group
+              = f.label :電話番号
+              %span.form-arbitrary
+                任意
+              %br/
+              = f.text_field :phone_number, class: "input-basic", placeholder: "例）09012345678"
+            .form-group
+              = f.submit "登録する", class: "next-btn"
+          = render "devise/shared/links"
+    .single-footer
+      %nav
+        %ul.clearfix
+          %li
+            = link_to "#", class: "btn" do
+              プライパシーポリシー
+          %li
+            = link_to "#", class: "btn" do
+              メルカリ利用規約
+          %li
+            = link_to "#", class: "btn" do
+              特定商取引に関する表記
+        .single-footer-logo
+          =image_tag "http://localhost:3000/assets/material/logo/logo-white-34b9db297824e9a0b2fe711412f0f6ef6431c163d60f76848bf0c719f656e807.png", size: "150x40"
+          %p
+            %small
+              ©️FURIMA
+

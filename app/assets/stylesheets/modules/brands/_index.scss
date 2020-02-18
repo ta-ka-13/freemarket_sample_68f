@@ -1,0 +1,42 @@
+.brand-main {
+  max-width: 600px;
+  margin: 0 auto;
+  &__top {
+    @include fontSizeColorBold(20px, $mainFont);
+    margin: 50px 0 30px;
+  }
+  &__contents {
+    .brand-japanese {
+      &__box {
+        background-color: $categoryBg;
+      }
+      .japanese-list {
+        @include fontSizeColorBold(20px, $whiteFont);
+        line-height: 50px;
+        background-color: $mainColor;
+        &__top {
+          padding-left: 15px;
+        }
+        &__box{
+          display: flex;
+          flex-wrap: wrap;
+
+          background-color: white;
+          height: 100%;
+          &__name {
+            width: calc(100% / 2 - 15px);
+            padding-left: 15px;
+            .brand-name {
+              @include linkReset(#07f);
+              font-size: 14px;
+              &:hover {
+                border-bottom: 1px solid #07f;
+                opacity: 0.8;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
