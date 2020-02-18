@@ -1,0 +1,19 @@
+.wrapper
+  = render "shared/header"
+  .brand-main
+    .brand-main__top
+      ブランド一覧
+    .brand-main__contents
+      %ul.brand-japanese
+        - japanese.each do |kana|
+          %li.brand-japanese__box
+            .japanese-list
+              .japanese-list__top
+                = "#{kana}行"
+              %ul.japanese-list__box
+                - @brands.each do |brand|
+                  - if first(brand).match(/^#{kana}/)
+                    %li.japanese-list__box__name
+                      = link_to '#', class: "brand-name" do
+                        = brand.name
+  = render "shared/footer"
