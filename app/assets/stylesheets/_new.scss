@@ -100,35 +100,37 @@
         }
       }
       //-----------------------------
-      .sell-button-box{
-        text-align: center;
-        // 赤い送信ボタン------------------------
-        .sell-button{
-          background-color: red;
-          color: white;
-          height: 50px;
-          line-height: 50px;
-          width: 45%;
-          border-radius: 5px;
-          cursor: pointer;
-        }
+      .sell-content.sell-btn-box{
+        .sell-button-box{
+          text-align: center;
+          // 赤い送信ボタン------------------------
+          .sell-button{
+            background-color: red;
+            color: white;
+            height: 50px;
+            line-height: 50px;
+            width: 45%;
+            border-radius: 5px;
+            cursor: pointer;
+          }
 
-      // ライトグレーの戻るボタン
-      .sell-button-back{
-        background-color: lightgray;
-        display: block;
-        color: white;
-        width: 45%;
-        margin: 24px auto 0;
-        height: 50px;
-        line-height: 50px;
-        margin-bottom: 32px;
-        border-radius: 5px;
-        font-size: 15px;
-        cursor: pointer;
+        // ライトグレーの戻るボタン
+          .sell-button-back{
+            background-color: lightgray;
+            display: block;
+            color: white;
+            width: 45%;
+            margin: 24px auto 0;
+            height: 50px;
+            line-height: 50px;
+            margin-bottom: 32px;
+            border-radius: 5px;
+            font-size: 15px;
+            cursor: pointer;
+            text-decoration: none;
+          }
+        }
       }
-      }
-      
       //-------------------------------------
     }
   }
