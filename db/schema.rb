@@ -18,7 +18,6 @@ ActiveRecord::Schema.define(version: 2020_02_17_084208) do
     t.string "destination_last_name", null: false
     t.string "destination_family_name_kana", null: false
     t.string "destination_last_name_kana", null: false
-    t.integer "postal_code", null: false
     t.string "prefectures", null: false
     t.string "municipalities", null: false
     t.string "address", null: false
