@@ -1,0 +1,77 @@
+.wrapper
+  = render "shared/header"
+  -# = render "nav"
+  .category-show
+    .category-show__top
+      = "#{@brand.name}の一覧"
+    -# - if @category.children.present?
+    -#   %ul.category-show__sub.clearfix
+    -#     - @category.children.each do |category|
+    -#       %li.sub-category
+    -#         = link_to category_path(category[:id]), class: "sub-list" do
+    -#           = category.name
+    .category-show__items.clearfix
+      -# - @items.each do |item|
+      -#   .item-list
+      -#     = link_to item_path(params[:item_id]), class: "item-link" do
+      -#       .item-list__image
+      -#         = image_tag item.images[0].image, alt: "#{item.name}", class: "item-image"
+      -#         .item-price
+      -#           .item-price__display
+      -#             = "#{item.price}円"
+      -#       .item-list__body
+      -#         .item-list__body--name
+      -#           = item.name
+      -# itemテーブルから呼び出せるようになり次第、
+      -# 上記記述を適用し、以下をfooter手前まで削除
+      .item-list
+        = link_to "#", class: "item-link" do
+          .item-list__image
+            = image_tag "", alt: "商品一覧", class: "item-image"
+            .item-price
+              .item-price__display
+                490円
+          .item-list__body
+            .item-list__body--name
+              ドライカレーだあああああああああああああああああああああ
+      .item-list
+        = link_to "#", class: "item-link" do
+          .item-list__image
+            = image_tag "", alt: "商品一覧", class: "item-image"
+            .item-price
+              .item-price__display
+                490円
+          .item-list__body
+            .item-list__body--name
+              ドライカレーだあああああああああああああああああああああ
+      .item-list
+        = link_to "#", class: "item-link" do
+          .item-list__image
+            = image_tag "", alt: "商品一覧", class: "item-image"
+            .item-price
+              .item-price__display
+                490円
+          .item-list__body
+            .item-list__body--name
+              ドライカレーだあああああああああああああああああああああ
+      .item-list
+        = link_to "#", class: "item-link" do
+          .item-list__image
+            = image_tag "", alt: "商品一覧", class: "item-image"
+            .item-price
+              .item-price__display
+                490円
+          .item-list__body
+            .item-list__body--name
+              ドライカレーだあああああああああああああああああああああ
+      .item-list
+        = link_to "#", class: "item-link" do
+          .item-list__image
+            = image_tag "", alt: "商品一覧", class: "item-image"
+            .item-price
+              .item-price__display
+                490円
+          .item-list__body
+            .item-list__body--name
+              ドライカレーだあああああああああああああああああああああ
+  = render "shared/footer"
