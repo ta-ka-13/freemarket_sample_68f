@@ -11,8 +11,10 @@ Rails.application.routes.draw do
     collection do
       get 'purchase_confirmation'
       get 'purchase'
+      get 'edit'
     end
   end
   resources :categories, only: [:index, :show]
   resources :brands, only: [:index, :show]
+  delete 'items/:id' => 'items#destroy'
 end
