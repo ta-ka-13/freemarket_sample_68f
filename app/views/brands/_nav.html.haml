@@ -1,0 +1,14 @@
+.brand-nav
+  %ul.brand-nav__list
+    - list = brandList(@brand)
+    - list.each_with_index do |data, index|
+      -if index < list.size - 1
+        %li.nav-list
+          = link_to data[:path], class:"nav-link" do
+            = data[:name]
+          %li.nav-list
+            >
+      - else
+        %li.nav-list.last-list
+          = link_to data[:path], class: "nav-link" do
+            = data[:name]
