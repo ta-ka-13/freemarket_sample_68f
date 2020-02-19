@@ -51,9 +51,12 @@
               }
             }
           }
-          &__bland {
-            &:hover {
-              color: $leftListHover;
+          &__brand {
+            .brand-link {
+              @include linkReset();
+              &:hover {
+                color: $leftListHover;
+              }
             }
           }
         }
