@@ -15,8 +15,9 @@
           .left-list__category
             = link_to categories_path, class: "category-link" do
               カテゴリー
-          .left-list__bland
-            ブランド
+          .left-list__brand
+            = link_to brands_path, class: "brand-link" do
+              ブランド
       .contents-bottom__right
         .right-list
           - if user_signed_in?

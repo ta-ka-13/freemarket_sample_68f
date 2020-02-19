@@ -1,3 +1,26 @@
+.brand-nav {
+  background-color: #fff;
+  padding: 0 5%;
+  border-top: 1px solid #eee;
+  filter: drop-shadow(0 3px 1px #aaa);
+  &__list {
+    display: flex;
+    padding: 15px 0;
+    .nav-list {
+      padding-right: 10px;
+      .nav-link {
+        @include linkReset();
+        &:hover {
+          color: $mainColor;
+        }
+      }
+    }
+    .last-list {
+      font-weight: bold;
+    }
+  }
+}
+
 .brand-show {
   width: 700px;
   margin: 30px auto;
@@ -58,3 +81,4 @@
     }
   }
 }
+
