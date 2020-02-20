@@ -8,7 +8,7 @@ $(document).on('turbolinks:load', function(){
     } else if(num==2) {
       var select_id = `grandchildform`
     }
-    var html = `<select class="sell-form-pulldown" id="${select_id}" name="item=item[category_ids[]]">
+    var html = `<select class="sell-form-pulldown" id="${select_id}" name="item[category_id]">
                   <option value>---</option>
                 </select>`
     category.append(html)
