@@ -20,10 +20,24 @@
               %p
                 最大10枚までアップロードできます
               .sell-form__drop-image
-                %p
-                  ドラッグアンドドロップ
-                %p
-                  またはクリックしてファイルをアップロード
+                #image-box
+                  #previews
+                    - if @item.persisted?
+                      - @item.images.each_with_index do |image, i|
+                        = image_tag image.src.url, data: { index: i }, width: "100", height: '100'
+
+                    = f.fields_for :images do |image|
+                      .js-file_group{"data-index" => "#{image.index}"}
+                        = image.file_field :image, class: 'js-file',autocomplete: "off"
+                      %br/
+                      %span.js-remove 削除
+                    - if @item.persisted?
+                      = i.check_box :_destroy, data:{ index: image.index }, class: 'hidden-destroy'
+                    - if @item.persisted?
+                      .js-file_group{"data-index" => "#{@item.images.count}"}
+                        = file_field_tag :image, name: "item[images_attributes][#{@item.images.count}][src]", class: 'js-file'
+                        .js-remove 削除
+
 
 
 
@@ -44,13 +58,13 @@
             .sell-content
               %h3
                 商品の詳細
-              .sell-form-right
+              .sell-form-right#category-form
                 .sell-content__form-group-name
                 = f.label :カテゴリー
                 %span.form-require
                   必須
                 %br/
-                = f.select :category, [["選択してください"],["レディース"], ["メンズ"], ["ベビー・キッズ"], ["インテリア・住まい・小物"], ["本・音楽・ゲーム"], ["おもちゃ・ホビー・グッズ"], ["コスメ・香水・美容"], ["家電・スマホ・カメラ"], ["スポーツ・レジャー"],["ハンドメイド"], ["チケット"], ["自転車・オートバイ"], ["その他"]], {}, class: "sell-form-pulldown"
+                = f.collection_select :category_id,  @parents, :id, :name,{prompt: "---"}, class: "sell-form-pulldown", id: "parent-form", name: 'item[category_ids][]'
               .sell-content__form-group-name
                 = f.label :商品の状態
                 %span.form-require

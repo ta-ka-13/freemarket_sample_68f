@@ -5,4 +5,6 @@ class Item < ApplicationRecord
   belongs_to :category
 
   validates :name, :price, :description, :category, :condition, :shopping_charges, :shopping_area, :shopping_date, presence: true
+  has_ancestry
+  accepts_nested_attributes_for :images, allow_destroy: true
 end

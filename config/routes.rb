@@ -11,7 +11,9 @@ Rails.application.routes.draw do
     collection do
       get 'purchase_confirmation'
     end
+    collection do
+      get 'search'
+    end
   end
   resources :categories, only: [:index, :show]
-
 end
