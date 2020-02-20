@@ -23,7 +23,7 @@
           - if user_signed_in?
             = link_to destroy_user_session_path, method: :delete, class: "right-list__sign" do
               ログアウト
-            = link_to "#", class: "right-list__member" do
+            = link_to edit_user_registration_path, class: "right-list__member" do
               マイページ
           - else
             = link_to new_user_session_path, class: "right-list__sign" do
