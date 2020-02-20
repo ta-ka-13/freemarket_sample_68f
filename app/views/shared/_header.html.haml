@@ -3,12 +3,15 @@
     .contents-top
       = link_to "#", class: "header-link" do
         = image_tag "material/logo/logo.png", alt: "FURIMA", class: "header-logo"
+
+
       .search
-        = form_with url: "#", method: :get, local: true do |f|
+        = form_with url: searches_items_path, method: :get, local: true do |f|
           .search-box
             = f.text_field :search, class: "search-box__text", placeholder: "キーワードから探す"
             = f.button class: "submit-btn" do
               = image_tag "material/icon/icon-search 1.png", alt: "検索", class: "search-icon"
+
     .contents-bottom
       .contents-bottom__left
         .left-list
@@ -16,8 +19,8 @@
             = link_to categories_path, class: "category-link" do
               カテゴリー
           .left-list__brand
-            = link_to brands_path, class: "brand-link" do
-              ブランド
+            -# = link_to brands_path, class: "brand-link" do
+              -# ブランド
       .contents-bottom__right
         .right-list
           - if user_signed_in?
