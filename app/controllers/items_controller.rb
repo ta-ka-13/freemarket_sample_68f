@@ -1,6 +1,7 @@
 class ItemsController < ApplicationController
   def index
-    @items = Item.all
+    @categories = Category.all
+    @items = Item.all.order("id DESC").limit(12)
   end
 
   def new
@@ -24,5 +25,5 @@ class ItemsController < ApplicationController
   def purchase_confirmation
     
   end
-  
+
 end
