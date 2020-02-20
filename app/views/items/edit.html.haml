@@ -63,8 +63,8 @@
         .price-box__value
           （税込）送料込み
         .item-buy
-        - if user_signed_in? && current_user.id == item.user_id
-          = link_to "/items/#{item.id}",method: :delete
+        -# - if user_signed_in? && current_user.id == item.user_id
+        = link_to '削除',"/items/#{:id}",method: :delete
         .buy-text-box
           %p.buy-text
             商品の説明欄
