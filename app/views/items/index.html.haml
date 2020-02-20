@@ -84,6 +84,7 @@
             様々な支払いに対応
           %p.item__detail
             お支払いは、クレジットカードだけではなく、ポイントや売上金など多彩な方法があります。
+
     .categories
       %h2.head
         ピックアップカテゴリー
@@ -91,29 +92,154 @@
         .productHead
           = link_to "#" do
             %h3.title
-              新規投稿商品
-        .productLists
-          - @items.each do |item|
-            .productList 
-              = link_to "#" do
-                .productList__img
-                  = image_tag ""
-                  - if item.buyer.present? 
-                    .sold-out
-                      SOLD
+              レディース新着アイテム
 
-                .productList__body
-                  %h3.name
-                    = item.name
-                  .details
-                    %ul
-                      %li
-                        = item.price
-                      %li
-                        %i.linkIcon
-                        0
-                    %p
-                      (税込)
+
+        .productLists
+          - @categories.each do |category|
+            - if category.root?
+              - category.children.each do |child|
+                - child.children.each do |grandChild|
+
+                  - @items.each do |item|
+                    - if category.root_id == 1 && item.category_id == grandChild.id
+                      .productList 
+                        = link_to "#" do
+                          .productList__img
+                            = image_tag ""
+                            - if item.buyer.present? 
+                              .sold-out
+                                SOLD
+
+                          .productList__body
+                            %h3.name
+                              = item.name
+                            .details
+                              %ul
+                                %li
+                                  = item.price
+                                %li
+                                  %i.linkIcon
+                                  0
+                              %p
+                                (税込)
+        .more-view
+          = link_to "#", class: "more-view-link" do
+            もっとみる >
+      .productBox
+        .productHead
+          = link_to "#" do
+            %h3.title
+              メンズ新着アイテム
+        .productLists
+
+          - @categories.each do |category|
+            -# ancestryカラムが空なら
+            - if category.ancestry.nil?
+              -# カテゴリの子を回す
+              - category.children.each do |child|
+                -# 子の子を回す
+                - child.children.each do |grandChild|
+                  - @items.each do |item|
+                    -# itemのcategory_idと孫のidが同じだったら
+                    - if category.root_id == 199 && item.category_id == grandChild.id
+                      .productList 
+                        = link_to "#" do
+                          .productList__img
+                            = image_tag ""
+                            - if item.buyer.present? 
+                              .sold-out
+                                SOLD
+
+                          .productList__body
+                            %h3.name
+                              = item.name
+                            .details
+                              %ul
+                                %li
+                                  = item.price
+                                %li
+                                  %i.linkIcon
+                                  0
+                              %p
+                                (税込)
+        .more-view
+          = link_to "#", class: "more-view-list" do
+            もっとみる >
+      .productBox
+        .productHead
+          = link_to "#" do
+            %h3.title
+              家電・スマホ・カメラ新着アイテム
+        .productLists
+          - @categories.each do |category|
+            - if category.root?
+              - category.children.each do |child|
+                - child.children.each do |grandChild|
+
+                  - @items.each do |item|
+                    - if category.root_id == 892 && item.category_id == grandChild.id
+
+                      .productList 
+                        = link_to "#" do
+                          .productList__img
+                            = image_tag ""
+                            - if item.buyer.present? 
+                              .sold-out
+                                SOLD
+
+                          .productList__body
+                            %h3.name
+                              = item.name
+                            .details
+                              %ul
+                                %li
+                                  = item.price
+                                %li
+                                  %i.linkIcon
+                                  0
+                              %p
+                                (税込)
+        .more-view
+          = link_to "#", class: "more-view-link" do
+            もっとみる >
+      .productBox
+        .productHead
+          = link_to "#" do
+            %h3.title
+              おもちゃ・ホビー・グッズ新着アイテム
+        .productLists
+          - @categories.each do |category|
+            - if category.root?
+              - category.children.each do |child|
+                - child.children.each do |grandChild|
+
+                  - @items.each do |item|
+                    - if category.root_id == 679 && item.category_id == grandChild.id
+                      .productList 
+                        = link_to "#" do
+                          .productList__img
+                            = image_tag ""
+                            - if item.buyer.present? 
+                              .sold-out
+                                SOLD
+
+                          .productList__body
+                            %h3.name
+                              = item.name
+                            .details
+                              %ul
+                                %li
+                                  = item.price
+                                %li
+                                  %i.linkIcon
+                                  0
+                              %p
+                                (税込)
+        .more-view
+          = link_to "#", class: "more-view-link" do
+            もっとみる >
+
     .brand
       %h2
         ピックアップブランド
