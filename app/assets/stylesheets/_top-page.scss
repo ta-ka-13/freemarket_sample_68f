@@ -138,12 +138,18 @@
     h2{
       text-align: center;
       font-size: 28px;
+      font-weight: bold;
     }
     .productBox{
       .productHead{
+        a{
+          text-decoration: none;
+        }
           h3{
             text-align: center;
             font-size: 24px;
+            color: #3CCACE;
+            font-weight: bold;
           }
       }
       .productLists{
