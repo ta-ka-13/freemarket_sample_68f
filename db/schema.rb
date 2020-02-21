@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_17_084208) do
+ActiveRecord::Schema.define(version: 2020_02_21_040744) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id"
@@ -18,7 +18,6 @@ ActiveRecord::Schema.define(version: 2020_02_17_084208) do
     t.string "destination_last_name", null: false
     t.string "destination_family_name_kana", null: false
     t.string "destination_last_name_kana", null: false
-    t.integer "postal_code", null: false
     t.string "prefectures", null: false
     t.string "municipalities", null: false
     t.string "address", null: false
@@ -26,6 +25,7 @@ ActiveRecord::Schema.define(version: 2020_02_17_084208) do
     t.bigint "phone_number"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "postal_code"
     t.index ["user_id"], name: "index_addresses_on_user_id"
   end
 
@@ -65,6 +65,7 @@ ActiveRecord::Schema.define(version: 2020_02_17_084208) do
     t.bigint "category_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "ancestry"
     t.index ["brand_id"], name: "index_items_on_brand_id"
     t.index ["category_id"], name: "index_items_on_category_id"
     t.index ["user_id"], name: "index_items_on_user_id"

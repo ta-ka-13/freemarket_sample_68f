@@ -28,8 +28,8 @@ $(document).on('turbolinks:load', function(){
   }
 
   $("#parent-form").on('change',function(){
-    var parent_form = $(this).val()
-    $("#childform, #grandchildform").remove()
+    var parent_form = $(this).val();
+    $("#childform, #grandchildform").remove();
     $.ajax({
       url: '/items/search',
       type: "GET",
@@ -44,9 +44,9 @@ $(document).on('turbolinks:load', function(){
     })
   })
 
-  $(document).on('change', "#childform", function() {
-     var childform = $(this).val()
-     $("#grandchildform").remove()
+  $(document).one('change', "#childform", function() {
+     var childform = $(this).val();
+     $("#grandchildform").remove();
 
      $.ajax({
        type: "GET",
