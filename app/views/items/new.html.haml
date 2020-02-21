@@ -77,7 +77,7 @@
                 %span.form-require
                   必須
                 %br/
-                = f.select :shopping_charges, [["送料込み(出品者負担)"], ["送料込み(出品者負担)"]], {prompt: "---"}, class: "sell-form-pulldown"
+                = f.select :shopping_charges, [["送料込み(出品者負担)"], ["着払い(購入者負担)"]], {prompt: "---"}, class: "sell-form-pulldown"
 
                 .sell-content__form-group-name
                 = f.label :shopping_area, "発送元の地域"

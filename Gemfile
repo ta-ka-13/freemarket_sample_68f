@@ -44,6 +44,7 @@ group :development, :test do
   gem 'pry-doc'
   gem 'faker'
   gem 'rspec-rails'
+  gem 'rails-controller-testing'
   gem 'factory_bot_rails'
   gem 'capistrano'
   gem 'capistrano-rbenv'
