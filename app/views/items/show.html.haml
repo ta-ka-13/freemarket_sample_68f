@@ -63,8 +63,25 @@
         .price-box__value
           （税込）送料込み
         .item-buy
-        = link_to "#", class: "item-buy-btn" do
-          購入画面に進む
+
+        -# ユーザーとアイテムが紐づいたらこっち
+        -# - if user_signed_in? && current_user.id == :id
+        -#   = link_to '商品の編集', "/items/#{:id}/edit", method: :gat, class: "item-buy-btn"
+        -#   = link_to 'この商品を削除する', "/items/#{:id}", method: :delete, class: ".item-delete-btn"
+        -# - else
+        -#   = link_to "#", class: "item-buy-btn" do
+        -#     購入画面に進む
+
+
+        -# 確認用の仮コード
+        - if user_signed_in? && current_user.id == :id
+          = link_to "#", class: "item-buy-btn" do
+            購入画面に進む
+        - else
+          = link_to '商品の編集', "/items/#{:id}/edit", method: :gat, class: "item-buy-btn"
+          = link_to 'この商品を削除する', "/items/#{:id}", method: :delete, class: "item-delete-btn"
+
+
       .buy-text-box
         %p.buy-text
           商品の説明欄
