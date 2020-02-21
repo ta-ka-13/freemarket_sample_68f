@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :set_item, except: [:index, :new, :create]
+  # before_action :set_item, except: [:index, :new, :create]
   protect_from_forgery except: :search 
   before_action :set_parents, only: [:new, :create, :edit, :update]
 
@@ -70,7 +70,7 @@ class ItemsController < ApplicationController
 
   private
   def item_params
-    params.require(:item).permit(:name, :price, :description, :ancestry, :condition, :shopping_charges, :shopping_area, :shopping_date, :category_id, images_attributes: [:src, :_destroy, :id]).merge(user_id: current_user.id)
+    params.require(:item).permit(:name, :price, :description, :ancestry, :condition, :shopping_charges, :shopping_area, :shopping_date, :category_id, :commission, :profit, images_attributes: [:image, :_destroy, :id]).merge(user_id: current_user.id)
   end
 
   def set_item
