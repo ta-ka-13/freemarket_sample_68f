@@ -11,6 +11,7 @@
         %h2.sell-header
           商品の情報を入力
         = form_for @item do |f|
+          = render 'layouts/error_messages', model: f.object
           .sell-form
             .sell-form__upload-box
               %h3.sell-form__upload-head
