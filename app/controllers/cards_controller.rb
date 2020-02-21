@@ -1,7 +1,7 @@
 class CardsController < ApplicationController
   require "payjp"
   include Purchase
-  before_action :set_secret_key, only: [:destroy, :show, :create, :new]
+  before_action :set_secret_key, only: [:new, :create, :destroy, :show]
   before_action :set_card, only: [:new, :destroy, :show]
 
   def new
@@ -31,20 +31,11 @@ class CardsController < ApplicationController
   end
 
   def show
-    card_show(@card)
+    card_data(@card)
   end
 
-  
   private
   def card_params
     params.require(:card).permit(:customer_id, :card_id).merge(user_id: current_user.id)
-  end
-  
-  def set_secret_key
-    Payjp.api_key = ENV["PAYJP_SECRET_KEY"]
-  end
-  
-  def set_card
-    @card = Card.where(user_id: current_user.id).first
   end
 end

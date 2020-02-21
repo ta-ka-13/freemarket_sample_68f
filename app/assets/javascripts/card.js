@@ -1,6 +1,4 @@
 $(function(){
-  // Payjp.setPublicKey("pk_test_8eaea2b68a7361608febd5e9");
-
   $(".card-save-btn").on("click",function(e){
     e.preventDefault();
 
@@ -13,7 +11,7 @@ $(function(){
       exp_month: $("#exp_month").val(),
       exp_year: $("#exp_year").val()
     };
-    debugger
+
     Payjp.createToken(card,function(status,response){
       if (status === 200) {
         $("#number").removeAttr("name");
