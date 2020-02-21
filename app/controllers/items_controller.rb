@@ -38,12 +38,9 @@ class ItemsController < ApplicationController
     # item.destroy
     # else
 
-    item = Item.find(1)
-    # if items.user_id == current_user.id
-      item.destroy
-    # else
+    item = Item.find(2)
 
-    # end
+      item.destroy
     redirect_to root_path
   end
 
