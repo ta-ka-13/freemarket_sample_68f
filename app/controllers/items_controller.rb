@@ -1,5 +1,7 @@
 class ItemsController < ApplicationController
   def index
+    @categories = Category.all
+    @items = Item.all.order("id DESC").limit(12)
   end
 
   def new
@@ -38,5 +40,5 @@ class ItemsController < ApplicationController
       params.require(:item).permit( :name, :price, :description, :condition, :shopping_charges, :shopping_area, :shopping_data, :_id, :buyer, :user_id, :brand_id, :category_id, :created_at, :updated_at, )
     end
   end
-  
+
 end

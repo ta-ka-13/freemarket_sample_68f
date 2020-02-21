@@ -84,63 +84,100 @@
             様々な支払いに対応
           %p.item__detail
             お支払いは、クレジットカードだけではなく、ポイントや売上金など多彩な方法があります。
+
     .categories
       %h2.head
         ピックアップカテゴリー
+      .categories__pick-up
+        =link_to "#レディース", class: "sift-category" do
+          レディース
+        =link_to "#メンズ", class: "sift-category" do
+          メンズ
+        =link_to "#家電・スマホ・カメラ", class: "sift-category" do
+          家電・スマホ・カメラ
+        =link_to "#おもちゃ・ホビー・グッズ", class: "sift-category" do
+          おもちゃ・ホビー・グッズ
+
+
       .productBox
         .productHead
           = link_to "#" do
-            %h3.title
-              新規投稿商品
+            %h3.title{ id: "レディース"}
+              レディース新着アイテム
+        
         .productLists
-          .productList 
-            = link_to "#" do
-              .productList__img
-                = image_tag ""
-              .productList__body
-                %h3.name
-                  puroduct3
-                .details
-                  %ul
-                    %li
-                      3000円
-                    %li
-                      %i.linkIcon
-                      0
-                  %p
-                    (税込)
-          .productList
-            = link_to "#" do
-              .productList__img
-                = image_tag ""
-              .productList__body
-                %h3.name
-                  puroduct3
-                .details
-                  %ul
-                    %li
-                      3000円
-                    %li
-                      %i.linkIcon
-                      0
-                  %p
-                    (税込)
-          .productList
-            = link_to "#" do
-              .productList__img
-                = image_tag ""
-              .productList__body
-                %h3.name
-                  puroduct3
-                .details
-                  %ul
-                    %li
-                      3000円
-                    %li
-                      %i.linkIcon
-                      0
-                  %p
-                    (税込)
+          - @categories.each do |category|
+            - if category.root?
+              - category.children.each do |child|
+                - child.children.each do |grandChild|
+
+                  - @items.each do |item|
+                    - if category.root_id == 1 && item.category_id == grandChild.id
+                      = render partial: "item-list", locals: { item: item } 
+        .more-view
+          = link_to "#", class: "more-view-link" do
+            もっとみる >
+
+
+      .productBox
+        .productHead
+          = link_to "#" do
+            %h3.title{id: "メンズ"}
+              メンズ新着アイテム
+
+        .productLists
+          - @categories.each do |category|
+            - if category.root?
+              - category.children.each do |child|
+                - child.children.each do |grandChild|
+
+                  - @items.each do |item|
+                    - if category.root_id == 199 && item.category_id == grandChild.id
+                      = render partial: "item-list", locals: { item: item } 
+        .more-view
+          = link_to "#", class: "more-view-list" do
+            もっとみる >
+
+
+      .productBox
+        .productHead
+          = link_to "#" do
+            %h3.title{id: "家電・スマホ・カメラ"}
+              家電・スマホ・カメラ新着アイテム
+        
+        .productLists
+          - @categories.each do |category|
+            - if category.root?
+              - category.children.each do |child|
+                - child.children.each do |grandChild|
+
+                  - @items.each do |item|
+                    - if category.root_id == 892 && item.category_id == grandChild.id
+                      = render partial: "item-list", locals: { item: item } 
+        .more-view
+          = link_to "#", class: "more-view-link" do
+            もっとみる >
+
+
+      .productBox
+        .productHead
+          = link_to "#" do
+            %h3.title{id: "おもちゃ・ホビー・グッズ"}
+              おもちゃ・ホビー・グッズ新着アイテム
+        
+        .productLists
+          - @categories.each do |category|
+            - if category.root?
+              - category.children.each do |child|
+                - child.children.each do |grandChild|
+
+                  - @items.each do |item|
+                    - if category.root_id == 679 && item.category_id == grandChild.id
+                      = render partial: "item-list", locals: { item: item } 
+        .more-view
+          = link_to "#", class: "more-view-link" do
+            もっとみる >
+
     .brand
       %h2
         ピックアップブランド
