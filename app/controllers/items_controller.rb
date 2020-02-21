@@ -48,7 +48,7 @@ class ItemsController < ApplicationController
   # end
 
   
-    @items = Item.search(params[:search])
+    @items = Item.search(params[:search]).limit(116)
     # @search = params[:search]
 
 

@@ -1,3 +1,65 @@
-.test
-  = @items.each do |item|
-    = item.name
+.wrapper
+  =  render "shared/header"
+
+  .searches_main
+    .right_menu
+      .search_index
+        検索結果
+      .search_result
+        - @items.each do |item|
+          .items
+            .search_price
+              .price
+                ¥
+                = item.price
+            .search_name
+              = item.name
+
+
+
+      -# 検索Lv2で使用
+
+    .left_menu
+      .sort
+        並び替え
+      .blank
+      .detailed_search
+        .fo
+          詳細検索
+      .keyword
+        +キーワードを追加する
+        .keyword_add
+      .category
+        カテゴリーを選択する
+        .category_choice
+      .brand
+        ブランド名から探す
+        .brand_choice
+      .size
+        サイズを指定する
+        .size_select
+      .price
+        価格
+        .price_choice
+      .item_status
+        商品の状態
+        .item_status_select
+          .all
+          .new_nouse
+          .nouse_near
+          .no_stand_out
+          .kind_of_dirt
+          .dirt
+          .bad
+      .delivery
+        配送料の負担
+        .delivery_burden
+      .sales_status
+        販売状況
+        .sales_status_select
+      .button
+        .clear
+        .done
+
+    
+  =  render "shared/footer"

@@ -1,0 +1,187 @@
+$back_gray:#F2F2F2;
+
+@mixin left_side_list {
+  padding: 1.5em 1em;
+  margin: 0em 0;
+  font-weight: bold;
+  border: solid 0.1px $back_gray;
+}
+
+
+
+.searches_main {
+  padding: 90px 200px 0px 200px;
+  background-color: $back_gray;
+  height: 10000px;
+
+
+  .right_menu{
+    float: right;
+    width: 1300px;
+    .search_index{
+      height: 100px;
+      padding:  20px  0px  1px  100px;
+      font-size: 30px;
+    }
+    .search_result {
+      .items{
+        width: 300px;
+        height: 340px;
+        float: left;
+      }
+        .search_price{
+          width: 250px;
+          height: 250px;
+          background-color: snow;
+          position: relative;
+          .price{
+            position: absolute;
+            bottom: 0;
+            background-color: #999999;
+            border-radius: 50px;
+            opacity: 1;
+          }
+        }
+        .search_name{
+          width: 250px;
+          height: 58px;
+          background-color: white;
+        }
+    }
+  }
+
+
+
+.left_menu{
+  width: 400px;
+  height: 1650px;
+  float: left;
+  background-color:white;
+
+  .sort{
+    // @include left_side_list;
+    // border-radius: 10px;
+    // background-color: white;
+    border-radius: 10px;
+    background-color: white;
+    padding: 1.5em 1em;
+    margin: 0em 0;
+    font-weight: bold;
+    border: solid 1.5px $back_gray;
+    height: 25px;
+    }
+  .blank{
+    @include left_side_list;
+    background-color: $back_gray;
+  }
+
+  .detailed_search {
+    @include left_side_list;
+    .fo{
+      font-size: 25px;
+    }
+  }
+  .keyword{
+    font-size: 20px;
+    .keyword_add{
+      border-radius: 10px;
+      background-color: white;
+      padding: 1.5em 1em;
+      margin: 0em 0;
+      font-weight: bold;
+      border: solid 1.5px $back_gray;
+      height: 25px;
+    }
+  }
+  .category{
+    font-size: 20px;
+    .category_choice{
+      border-radius: 10px;
+      background-color: white;
+      padding: 1.5em 1em;
+      margin: 0em 0;
+      font-weight: bold;
+      border: solid 1.5px $back_gray;
+      height: 25px;
+    }
+  }
+  .brand{
+    font-size: 20px;
+    .brand_choice{
+      border-radius: 10px;
+      background-color: white;
+      padding: 1.5em 1em;
+      margin: 0em 0;
+      font-weight: bold;
+      border: solid 1.5px $back_gray;
+      height: 25px;
+    }
+  }
+  .size{
+    font-size: 20px;
+    .size_select{
+      border-radius: 10px;
+      background-color: white;
+      padding: 1.5em 1em;
+      margin: 0em 0;
+      font-weight: bold;
+      border: solid 1.5px $back_gray;
+      height: 25px;
+    }
+  }
+  .price{
+    font-size: 20px;
+    .price_choice{
+      border-radius: 10px;
+      background-color: white;
+      padding: 1.5em 1em;
+      margin: 0em 0;
+      font-weight: bold;
+      border: solid 1.5px $back_gray;
+      height: 25px;
+    }
+  }
+  .item_status{
+    font-size: 20px;
+    .item_status_select{
+    width: 400px;
+    height: 300px;
+    background-color: yellow;
+    }
+  }
+  .delivery{
+    font-size: 20px;
+    .delivery_burden{
+    width: 400px;
+    height: 150px;
+    background-color:lightpink;
+    }
+  }
+  .sales_status{
+    font-size: 20px;
+    .sales_status_select{
+      width: 400px;
+      height: 150px;
+      background-color:lightgreen ;
+
+    }
+  }
+  .button{
+  
+
+  // .clear{
+  //   width: 150px;
+  //   height: 90px;
+  //   background-color: lightslategray;
+  // }
+  // .done{
+  //   width: 150px;
+  //   height: 90px;
+  //   background-color: red;
+  //   float: right;
+  //   margin: top 90px;
+  //   margin-left: 8px;
+  // }
+  }
+}
+}
