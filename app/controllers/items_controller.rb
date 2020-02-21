@@ -33,7 +33,7 @@ class ItemsController < ApplicationController
   def destroy
 
     # 出品機能完成したら実装
-    # tweet = Tweet.find(params[:id])
+    # item = Item.find(params[:id])
     # if items.user_id == current_user.id
     # item.destroy
     # else
