@@ -88,13 +88,23 @@
     .categories
       %h2.head
         ピックアップカテゴリー
+      .categories__pick-up
+        =link_to "#レディース", class: "sift-category" do
+          レディース
+        =link_to "#メンズ", class: "sift-category" do
+          メンズ
+        =link_to "#家電・スマホ・カメラ", class: "sift-category" do
+          家電・スマホ・カメラ
+        =link_to "#おもちゃ・ホビー・グッズ", class: "sift-category" do
+          おもちゃ・ホビー・グッズ
+
+
       .productBox
         .productHead
           = link_to "#" do
-            %h3.title
+            %h3.title{ id: "レディース"}
               レディース新着アイテム
-
-
+        
         .productLists
           - @categories.each do |category|
             - if category.root?
@@ -103,74 +113,38 @@
 
                   - @items.each do |item|
                     - if category.root_id == 1 && item.category_id == grandChild.id
-                      .productList 
-                        = link_to "#" do
-                          .productList__img
-                            = image_tag ""
-                            - if item.buyer.present? 
-                              .sold-out
-                                SOLD
-
-                          .productList__body
-                            %h3.name
-                              = item.name
-                            .details
-                              %ul
-                                %li
-                                  = item.price
-                                %li
-                                  %i.linkIcon
-                                  0
-                              %p
-                                (税込)
+                      = render partial: "item-list", locals: { item: item } 
         .more-view
           = link_to "#", class: "more-view-link" do
             もっとみる >
+
+
       .productBox
         .productHead
           = link_to "#" do
-            %h3.title
+            %h3.title{id: "メンズ"}
               メンズ新着アイテム
+
         .productLists
-
           - @categories.each do |category|
-            -# ancestryカラムが空なら
-            - if category.ancestry.nil?
-              -# カテゴリの子を回す
+            - if category.root?
               - category.children.each do |child|
-                -# 子の子を回す
                 - child.children.each do |grandChild|
-                  - @items.each do |item|
-                    -# itemのcategory_idと孫のidが同じだったら
-                    - if category.root_id == 199 && item.category_id == grandChild.id
-                      .productList 
-                        = link_to "#" do
-                          .productList__img
-                            = image_tag ""
-                            - if item.buyer.present? 
-                              .sold-out
-                                SOLD
 
-                          .productList__body
-                            %h3.name
-                              = item.name
-                            .details
-                              %ul
-                                %li
-                                  = item.price
-                                %li
-                                  %i.linkIcon
-                                  0
-                              %p
-                                (税込)
+                  - @items.each do |item|
+                    - if category.root_id == 199 && item.category_id == grandChild.id
+                      = render partial: "item-list", locals: { item: item } 
         .more-view
           = link_to "#", class: "more-view-list" do
             もっとみる >
+
+
       .productBox
         .productHead
           = link_to "#" do
-            %h3.title
+            %h3.title{id: "家電・スマホ・カメラ"}
               家電・スマホ・カメラ新着アイテム
+        
         .productLists
           - @categories.each do |category|
             - if category.root?
@@ -179,35 +153,18 @@
 
                   - @items.each do |item|
                     - if category.root_id == 892 && item.category_id == grandChild.id
-
-                      .productList 
-                        = link_to "#" do
-                          .productList__img
-                            = image_tag ""
-                            - if item.buyer.present? 
-                              .sold-out
-                                SOLD
-
-                          .productList__body
-                            %h3.name
-                              = item.name
-                            .details
-                              %ul
-                                %li
-                                  = item.price
-                                %li
-                                  %i.linkIcon
-                                  0
-                              %p
-                                (税込)
+                      = render partial: "item-list", locals: { item: item } 
         .more-view
           = link_to "#", class: "more-view-link" do
             もっとみる >
+
+
       .productBox
         .productHead
           = link_to "#" do
-            %h3.title
+            %h3.title{id: "おもちゃ・ホビー・グッズ"}
               おもちゃ・ホビー・グッズ新着アイテム
+        
         .productLists
           - @categories.each do |category|
             - if category.root?
@@ -216,26 +173,7 @@
 
                   - @items.each do |item|
                     - if category.root_id == 679 && item.category_id == grandChild.id
-                      .productList 
-                        = link_to "#" do
-                          .productList__img
-                            = image_tag ""
-                            - if item.buyer.present? 
-                              .sold-out
-                                SOLD
-
-                          .productList__body
-                            %h3.name
-                              = item.name
-                            .details
-                              %ul
-                                %li
-                                  = item.price
-                                %li
-                                  %i.linkIcon
-                                  0
-                              %p
-                                (税込)
+                      = render partial: "item-list", locals: { item: item } 
         .more-view
           = link_to "#", class: "more-view-link" do
             もっとみる >
