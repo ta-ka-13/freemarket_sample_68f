@@ -18,24 +18,32 @@
                 %span.form-require
                   必須
               %p
-                最大10枚までアップロードできます
+                最大5枚までアップロードできます
               .sell-form__drop-image
-                %p
-                  ドラッグアンドドロップ
-                %p
-                  またはクリックしてファイルをアップロード
-
-
+                .post__drop__box__container
+                  .prev-content
+                  .label-content
+                    %label{for: "item_images_attributes_0_image", class: "label-box", id: "label-box--0"}
+                      %pre.label-box__text-visible クリックしてファイルをアップロード
+                  .hidden-content
+                    = f.fields_for :images do |i|
+                      = i.file_field :image, class: "hidden-field"
+                      %input{class:"hidden-field", type: "file", name: "item[images_attributes][0][image]", id: "item_images_attributes_0_image" }
+                      %input{class:"hidden-field", type: "file", name: "item[images_attributes][1][image]", id: "item_images_attributes_1_image" }
+                      %input{class:"hidden-field", type: "file", name: "item[images_attributes][2][image]", id: "item_images_attributes_2_image" }
+                      %input{class:"hidden-field", type: "file", name: "item[images_attributes][3][image]", id: "item_images_attributes_3_image" }
+                      %input{class:"hidden-field", type: "file", name: "item[images_attributes][4][image]", id: "item_images_attributes_4_image" }
+  
 
             .sell-content
               .sell-content__form-group-name
-                = f.label :商品名
+                = f.label :name, "商品名"
                 %span.form-require
                   必須
                 %br/
                 = f.text_field :name, class: "sell-form-pulldown"
               .sell-content__form-group-name
-                = f.label :商品の説明
+                = f.label :description, "商品の説明"
                 %span.form-require
                   必須
                 %br/
@@ -50,13 +58,13 @@
                 %span.form-require
                   必須
                 %br/
-                = f.text_field :name, class: "sell-form-pulldown"
+                = f.select :category, [["-----", ""], ["レディース", "レディース"], ["メンズ", "メンズ"]], {}, { class: "sell-form-pulldown" }
               .sell-content__form-group-name
                 = f.label :商品の状態
                 %span.form-require
                   必須
                 %br/
-                = f.text_field :name, class: "sell-form-pulldown"
+                = f.select :condition, [["-----", ""], ["新品、未使用", "新品、未使用"], ["未使用に近い", "未使用に近い"], ["目立った傷や汚れはなし", "目立った傷や汚れはなし"], ["やや傷や汚れあり", "やや傷や汚れあり"], ["傷や汚れあり", "傷や汚れあり"], ["全体的に状態が悪い", "全体的に状態が悪い"]], {}, { class: "sell-form-pulldown" }
 
 
             .sell-content
@@ -64,25 +72,25 @@
                 配送について
               .sell-form-right
                 .sell-content__form-group-name
-                = f.label :配送料の負担
+                = f.label :shopping_charges, "配送料の負担"
                 %span.form-require
                   必須
                 %br/
-                = f.text_field :name, class: "sell-form-pulldown"
+                = f.select :shopping_charges, [["-----", ""], ["着払い(購入者負担)", "着払い(購入者負担)"], ["送料込み(出品者負担)", "送料込み(出品者負担)"]], {}, { class: "sell-form-pulldown" }
 
                 .sell-content__form-group-name
-                = f.label :配送元の地域
+                = f.label :shopping_area, "発送元の地域"
                 %span.form-require
                   必須
                 %br/
-                = f.text_field :name, class: "sell-form-pulldown"
+                = f.select :shopping_area, [["-----", ""], ["北海道", "北海道"], ["青森県", "青森県"], ["岩手県", "岩手県"], ["宮城県", "宮城県"], ["秋田県", "秋田県"], ["山形県", "山形県"], ["福島県", "福島県"], ["茨城県", "茨城県"], ["栃木県", "栃木県"], ["群馬県", "群馬県"], ["埼玉県", "埼玉県"], ["千葉", "千葉"]], {}, { class: "sell-form-pulldown" }
 
                 .sell-content__form-group-name
-                = f.label :発送までの日数
+                = f.label :shopping_date, "発送までの日数"
                 %span.form-require
                   必須
                 %br/
-                = f.text_field :name, class: "sell-form-pulldown"
+                = f.select :shopping_date, [["-----", ""], ["1~2日で発送", "1~2日で発送"], ["2~3日で発送", "2~3日で発送"], ["4~7日で発送", "4~7日で発送"]], {}, { class: "sell-form-pulldown" }
 
             .sell-content.price
               %h3.sell-form-price
@@ -92,23 +100,24 @@
                     販売価格
                     %span.form-require
                       必須
-                    
-                  = f.text_field :name, class: "price-pulldown-blue"
-                      
+                  %p
+                    ¥
+                  %input#price_calc.price-pulldown-blue{placeholder: "例) 300", type: "number"}/
+                  = f.number_field :price, style: "display: none", id: "price"
 
                 .sell-form-price-box
+                  販売手数料(10%)
                   %p.sell-form-group-fee
-                    販売手数料
-                    
                   .price-pulldown
-                    ー
+                    = f.number_field :commission, style: "display: none", id: "commission"
+                    .right_bar
 
                 .sell-form-price-box
+                  販売利益
                   %p.sell-form-group-price
-                    販売利益
-                    
                   .price-pulldown
-                    ー
+                    = f.number_field :profit, style: "display: none", id: "profit"
+                    .right_bar_2
 
 
             .sell-content.sell-btn-box
