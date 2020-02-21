@@ -1,6 +1,6 @@
 $(document).on('turbolinks:load', function(){
 
-  var category = $(".sell-form-right#category-form");
+  var category = $("#category-form");
 
   function appendSelect(num) {
     if(num == 1) {
@@ -28,24 +28,26 @@ $(document).on('turbolinks:load', function(){
   }
 
   $("#parent-form").on('change',function(){
-    var parent_form = $(this).val();
+    parent_form = $(this).val();
     $("#childform, #grandchildform").remove();
     $.ajax({
-      url: '/items/search',
-      type: "GET",
-      data: {parent_form: parent_form},
-      dataType: 'json'
-    })
-    .done(function(childform){
-      var num = 1
-      appendSelect(num)
-      childform.forEach(function(childform) {
-      appendOption(childform, num)
+        url: '/items/search',
+        type: "GET",
+        data: {parent_form: parent_form},
+        dataType: 'json'
+      })
+      .done(function(childform){
+        var num = 1
+        appendSelect(num)
+        childform.forEach(function(childform) {
+        appendOption(childform, num)
+      })
     })
   })
 
-  $(document).one('change', "#childform", function() {
-     var childform = $(this).val();
+
+  $(document).on('change', "#childform", function() {
+     childform = $(this).val();
      $("#grandchildform").remove();
 
      $.ajax({
@@ -61,6 +63,5 @@ $(document).on('turbolinks:load', function(){
          appendOption(grandchildform, num)
        })
      })
-    })
   })
 });
