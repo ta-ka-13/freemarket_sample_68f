@@ -1,0 +1,66 @@
+.card-main {
+  color: $mainFont;
+  .card-box {
+    // width: 700px;
+    background-color: #fff;
+    margin: 0 auto;
+    border-radius: 5px;
+    &__top {
+      border-bottom: 1px solid #eee;
+      &--text {
+        font-weight: bold;
+        text-align: center;
+        padding: 20px 0 15px;
+      }
+    }
+    &__body {
+      padding: 40px 50px 50px;
+      .body-content {
+        &__brand {
+          margin-bottom: 50px;
+          .card-brand {
+            @include displayFlex(space-between);
+            &__image {
+              height: auto;
+              width: 60px;
+            }
+          }
+        }
+        &__form {
+          .card-form {
+            &__menu {
+              border-bottom: 1px solid #eee;
+              &--input {
+                padding: 20px 0;
+                .form-label {
+                  font-weight: bold;
+                }
+                .form-field {
+                  margin-left: 20px;
+                  border-style: none;
+                  &:focus {
+                    outline: none;
+                  }
+                }
+                .separate {
+                  margin-left: -48px;
+                }
+              }
+            }
+          }
+          .card-save-btn {
+            @include heightWidth(50px, 100%);
+            background: $mainColor;
+            border-radius: 4px;
+            color: #fff;
+            font-size: 14px;
+            line-height: 50px;
+            margin-top: 40px;
+            border: none;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}
