@@ -2,76 +2,84 @@
   .single-header
     = link_to '/' do
       = image_tag 'material/logo/logo.png'
-  .single-main
-    .sell-container
-      .sell-container-inner
-        %h2.sell-header
-          購入内容の確認
-        .sell-form
-          .sell-content.image
-            
-            .left-product-left
-              .product-name
-                画像
-            .right-product-right
-              .right-product-name
-                = @item.name
-              .right-product-price
-                = "#{@item.price} 円（税込）"
-          .sell-content
-            .sell-content
-              .left-payment-box
-                .payment-title
-                  支払い金額
-                .payment-price
-                  = "#{@item.price} 円"
 
-            - if current_user.id == @card.user_id
-              .sell-content
-                %p.payment-method
-                  カード情報
-                .registration-payment
-                  .sell-content__form-group-name
-                    カード番号
-                    = "**** **** ****#{@default_card_information.last4}"
-                    %span.form-require
-                      必須
-                  .sell-form-pulldown
-                .expiration-date
-                  .sell-content__form-group-name
-                    有効期限
-                    %span.form-require
-                      必須
-                  .expiration-date-input
-                    .small-pulldown-box
-                      
-                    %div
-                      月
-                    .small-pulldown-box
-                      
-                    %div
-                      年
-                  .sell-content__form-group-name
-                    セキュリティコード
-                    %span.form-require
-                      必須
-                  .sell-form-pulldown
-              .sell-content
-                %p.shipping-address
-                  配送先
-                = link_to '#', class: "shippng-address-choice" do
-                  登録してください
-              .sell-content
-                .buy-btn-box
-                  = form_with url: {controller: "items",action: "pay"}, method:"POST", local: true do |f|
-                    = f.submit "購入する", class: "item-pay-btn"
+  -# .single-main
+  -#   .sell-container
+  -#     .sell-container-inner
+  -#       %h2.sell-header
+  -#         購入内容の確認
+  -#       .sell-form
+  -#         .sell-content.image
 
-            - else
-              .sell-content
-                .sell-content__text
-                  ※お客様のカード情報はまだ登録されていません。
-                  = link_to new_card_path, class: "new-card" do
-                    カード登録へ進む
+  -#           .left-product-left
+  -#             .product-name
+  -#               画像
+  -#           .right-product-right
+  -#             .right-product-name
+  -#               = @item.name
+  -#             .right-product-price
+  -#               = "#{@item.price} 円（税込）"
+  -#         .sell-content
+  -#           .sell-content
+  -#             .left-payment-box
+  -#               .payment-title
+  -#                 支払い金額
+  -#               .payment-price
+  -#                 = "#{@item.price} 円"
+
+  .item-content
+    .item-content__top
+      .message-box
+        購入内容の確認
+    .item-content__product
+      .product-image
+        = image_tag @item.images[0].image, class: "item-image"
+      .product-text
+        .product-text__name
+          = @item.name
+        .product-text__price
+          = "#{@item.price} 円（税込）"
+    .item-content__payment
+      .payment-text
+        支払金額
+      .payment-price
+        = "#{@item.price} 円"
+
+    - if current_user.id == @card.user_id
+      .item-content__card-info
+        .card-top
+          .card-top__text
+            登録されているカード情報
+          = link_to new_card_path, class: "card-top__link" do
+            確認する
+        .card-info
+          .card-info__data
+            .card-info__data--label
+              カード番号
+            .card-info__data--number
+              = "**** **** **** #{@default_card_information.last4}"
+          .card-info__data
+            .card-info__data--label
+              有効期限　
+            .card-info__data--number
+              = expMonthYear(@default_card_information)
+
+      - if @item.buyer.nil? 
+        .item-content__bottom
+          = form_with url: {controller: "items",action: "pay"}, method:"POST", class: "payment-form", local: true do |f|
+            = f.button "購入する", class: "payment-btn"
+      - else
+        .item-content__bottom
+          .sold-out
+            .sold-out__btn
+              SOLD OUT
+
+    - else
+      .sell-content
+        .sell-content__text
+          ※お客様のカード情報はまだ登録されていません。
+          = link_to new_card_path, class: "new-card" do
+            カード登録へ進む
 
   .single-footer
     .footer-nav
@@ -86,7 +94,7 @@
           = link_to '#' do
             特定商取引に関する表記
         
-    = link_to '#', class: "single-footer__logo" do
+    = link_to '/', class: "single-footer__logo" do
       = image_tag 'material/logo/logo-white.png', class: "img"
     %p
       ©️FURIMA

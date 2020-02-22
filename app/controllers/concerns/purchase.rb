@@ -26,4 +26,16 @@ module Purchase
       redirect_to action: "new", id: current_user.id
     end
   end
+
+  def session_add(key)
+    session[:"#{key}"] = true
+  end
+
+  def sesstion_chack(key)
+    if session[:"#{key}"]
+      session[:"#{key}"] = nil
+    else
+      redirect_to root_path
+    end
+  end
 end

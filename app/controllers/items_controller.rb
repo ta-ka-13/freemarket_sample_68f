@@ -1,8 +1,7 @@
 class ItemsController < ApplicationController
-  protect_from_forgery except: [:purchase, :pay]
   require "payjp"
   include Purchase
-  before_action :set_item, only: [:new, :edit, :update, :show, :purchase]
+  before_action :set_item, only: [:new, :edit, :update, :show, :purchase, :pay, :done]
   before_action :set_secret_key, only: [:purchase, :pay]
   before_action :set_card, only: [:purchase, :pay]
 
@@ -38,14 +37,20 @@ class ItemsController < ApplicationController
 
   def pay
     Payjp::Charge.create(
-      amount: 19800,
+      amount: @item.price,
       customer: @card.customer_id,
       currency: "jpy"
     )
-    redirect_to action: "done"
+    if @item.update_attribute(:buyer, current_user.id)
+      session_add("Pay")
+      redirect_to action: "done"
+    else
+      redirect_to root_path
+    end
   end
 
   def done
+    sesstion_chack("Pay")
   end
 
   private
@@ -66,10 +71,5 @@ class ItemsController < ApplicationController
 
   def set_item
     @item = Item.find(params[:id])
-  end
-
-
-  def set_card
-    @card = Card.where(user_id: current_user.id).first
   end
 end
