@@ -70,7 +70,7 @@
 
 
   .center {
-    background-image: url(/assets/material/pict/bg-topMiddleDl-pict.jpg);
+    background-image: image-url("material/pict/bg-topMiddleDl-pict.jpg");
     height: 400px;
     background-size: cover;
     background-position: center;
@@ -138,12 +138,33 @@
     h2{
       text-align: center;
       font-size: 28px;
+      font-weight: bold;
+    }
+    &__pick-up{
+      display: flex;
+      justify-content: center;
+      margin: 10px;
+      .sift-category{
+        background-color: #eee;
+        border-radius: 15px;
+        padding: 8px 16px;
+        font-weight: bold;
+        font-size: 14px;
+        margin: 0 10px;
+        text-decoration: none;
+        color: black;
+      }
     }
     .productBox{
       .productHead{
+        a{
+          text-decoration: none;
+        }
           h3{
             text-align: center;
             font-size: 24px;
+            color: #3CCACE;
+            font-weight: bold;
           }
       }
       .productLists{
@@ -151,12 +172,26 @@
         display: flex;
         justify-content: space-around;
         margin: 26px auto;
+        flex-wrap: wrap;
         .productList {
           text-decoration: none;
+          margin-bottom: 15px;
+          a{
+            text-decoration: none;
+          }
           &__img {
             width: 220px;
             height: 150px;
             background-color: yellow;
+            .sold-out{
+              transform: rotate(-20deg);
+              background-color: red;
+              width: 100px;
+              text-align: center;
+              text-decoration: none;
+              color: white;
+              border-radius: 2px;
+            }
           }
           &__body {
             padding: 16px;
@@ -174,8 +209,18 @@
           }
         }
       }
+        .more-view{
+          text-align: end;
+          margin-right: 250px;
+          a{
+            text-decoration: none;
+            color: #0095ee;
+          }
+      }
     }
   }
+  
+  
 
   .brand{
     background-color: #f8f8f8;
@@ -187,9 +232,12 @@
     .productBox {
       .productHead {
         a{
+          text-decoration: none;
           h3{
             text-align: center;
             font-size: 24px;
+            color: #3CCACE;
+            font-weight: bold;
           }
         }
       }
@@ -226,7 +274,7 @@
   }
 
   .bottom{
-  background-image: url(/assets/material/pict/bg-appBanner-pict.jpg);
+  background-image: image-url("material/pict/bg-appBanner-pict.jpg");
   padding: 100px 40px;
   background-size: cover;
   background-position: center;

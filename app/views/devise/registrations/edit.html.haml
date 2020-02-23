@@ -1,36 +1,144 @@
-%h2
-  Edit #{resource_name.to_s.humanize}
-= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
-  = render "devise/shared/error_messages", resource: resource
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  - if devise_mapping.confirmable? && resource.pending_reconfirmation?
-    %div
-      Currently waiting confirmation for: #{resource.unconfirmed_email}
-  .field
-    = f.label :password
-    %i (leave blank if you don't want to change it)
-    %br/
-    = f.password_field :password, autocomplete: "new-password"
-    - if @minimum_password_length
-      %br/
-      %em
-        = @minimum_password_length
-        characters minimum
-  .field
-    = f.label :password_confirmation
-    %br/
-    = f.password_field :password_confirmation, autocomplete: "new-password"
-  .field
-    = f.label :current_password
-    %i (we need your current password to confirm your changes)
-    %br/
-    = f.password_field :current_password, autocomplete: "current-password"
-  .actions
-    = f.submit "Update"
-%h3 Cancel my account
-%p
-  Unhappy? #{button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete}
-= link_to "Back", :back
+-# %h2
+-#   Edit #{resource_name.to_s.humanize}
+-# = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
+-#   = render "devise/shared/error_messages", resource: resource
+-#   .field
+-#     = f.label :email
+-#     %br/
+-#     = f.email_field :email, autofocus: true, autocomplete: "email"
+-#   - if devise_mapping.confirmable? && resource.pending_reconfirmation?
+-#     %div
+-#       Currently waiting confirmation for: #{resource.unconfirmed_email}
+-#   .field
+-#     = f.label :password
+-#     %i (leave blank if you don't want to change it)
+-#     %br/
+-#     = f.password_field :password, autocomplete: "new-password"
+-#     - if @minimum_password_length
+-#       %br/
+-#       %em
+-#         = @minimum_password_length
+-#         characters minimum
+-#   .field
+-#     = f.label :password_confirmation
+-#     %br/
+-#     = f.password_field :password_confirmation, autocomplete: "new-password"
+-#   .field
+-#     = f.label :current_password
+-#     %i (we need your current password to confirm your changes)
+-#     %br/
+-#     = f.password_field :current_password, autocomplete: "current-password"
+-#   .actions
+-#     = f.submit "Update"
+-# %h3 Cancel my account
+-# %p
+-#   Unhappy? #{button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete}
+-# = link_to "Back", :back
+.wrapper
+  =  render "shared/header"
+  .my-page
+    .my-page__inner
+      .my-page__inner--left
+          
+        = link_to "#", class: "my-link" do
+          .my-mypage
+            マイページ
+        = link_to "#", class: "my-link" do
+          .my-announce
+            お知らせ
+        = link_to "#", class: "my-link" do
+          .my-to_do
+            やることリスト
+        = link_to "#", class: "my-link" do
+          .my-good
+            いいね！一覧
+        = link_to "#", class: "my-link" do
+          .my-create
+            出品する
+        = link_to "#", class: "my-link" do
+          .my-up_currunt
+            出品した商品-出品中
+        = link_to "#", class: "my-link" do
+          .my-up_ing
+            出品した商品-取引中
+        = link_to "#", class: "my-link" do
+          .my-end
+            出品した商品-売却済み
+        = link_to "#", class: "my-link" do
+          .my-buying_item
+            購入した商品-取引中
+        = link_to "#", class: "my-link" do
+          .my-bought_item
+            購入した商品-過去の取引
+        = link_to "#", class: "my-link" do
+          .my-news
+            ニュース一覧
+        = link_to "#", class: "my-link" do
+          .reviw
+            評価一覧
+        = link_to "#", class: "my-link" do
+          .guide
+            ガイド
+        = link_to "#", class: "my-link" do
+          .infomation
+            お問い合わせ
+        .merupay
+          メルペイ
+        = link_to "#", class: "my-link" do
+          .sales_app
+            売上・振込申請
+        = link_to "#", class: "my-link" do
+          .point
+            ポイント
+      .my-page__inner--right
+        .my-page__inner--right_1
+        .my-page__inner--right_2
+          .my-page_announcement
+            = link_to "#", class: "my-link" do
+              .info
+                お知らせ
+          .my-page_to_do
+            = link_to "#", class: "my-link" do
+              .to_do
+                やることリスト
+        .my-page__inner--right_3
+          = link_to "#", class: "my-link" do
+            .my-page__btn
+              .btn
+                一覧を見る
+      .my-page__under--left
+        .setting
+          設定
+        = link_to "#", class: "my-link" do
+          .profile
+            プロフィール
+        = link_to "#", class: "my-link" do
+          .delivery_address
+            発送元・お届け先住所変更
+        = link_to "#", class: "my-link" do
+          .method_of_payment
+            支払い方法
+        = link_to "#", class: "my-link" do
+          .mail_pass
+            メール/パスワード
+        = link_to "#", class: "my-link" do
+          .identity_infomation
+            本人情報
+        = link_to "#", class: "my-link" do
+          .phone_number_check
+            電話番号の確認
+        = link_to destroy_user_session_path, method: :delete, class: "my-link" do
+          .logout
+            ログアウト
+      .my-page__under--right
+        .my-page__under--right_1
+          購入した商品
+        .my-page__under--right_2
+          = link_to "#", class: "my-link" do
+            .transaction
+              取引中
+        .my-page__under--right_3
+          = link_to "#", class: "my-link" do
+            .past
+              過去の取引
+  = render "shared/footer"
