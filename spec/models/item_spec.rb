@@ -12,13 +12,19 @@ RSpec.describe Item, type: :model do
       it 'is invalid without image' do
         item = build(:item)
         item.valid?
-        expect(item.errors[:image]).to include("を入力してください")
+        expect(item.errors[:images]).to include("を入力してください")
       end
 
       it 'is invalid without category' do
         item = build(:item, :item_with_image, category: nil )
         item.valid?
         expect(item.errors[:category]).to include("を入力してください")
+      end
+
+      it 'is invalid without name' do
+        item = build(:item, :item_with_image, name: nil )
+        item.valid?
+        expect(item.errors[:name]).to include("を入力してください")
       end
     end
   end
