@@ -47,15 +47,6 @@ class ItemsController < ApplicationController
   def purchase
   end
 
-  private
-  def item_params
-    params.require(:item).permit( :name, :price, :description, :condition, :shopping_charges, :shopping_area, :shopping_data, :_id, :buyer, :user_id, :brand_id, :category_id, :created_at, :updated_at, )
-    
-    def update_params
-      params.require(:item).permit( :name, :price, :description, :condition, :shopping_charges, :shopping_area, :shopping_data, :_id, :buyer, :user_id, :brand_id, :category_id, :created_at, :updated_at, )
-    end
-  end
-
   def search
     if params[:parent_form]
       @childform = Category.find(params[:parent_form]).children
@@ -69,6 +60,7 @@ class ItemsController < ApplicationController
   end
 
   private
+
   def item_params
     params.require(:item).permit(:name, :price, :description, :ancestry, :condition, :shopping_charges, :shopping_area, :shopping_date, :category_id, :commission, :profit, images_attributes: [:image, :_destroy, :id]).merge(user_id: current_user.id)
   end
