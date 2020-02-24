@@ -42,7 +42,6 @@ $(function(){
   $("#number").on("keyup", function(){
     resetShadow();
     var input = $("#number").val();
-    console.log(input);
     if (input.match(/^4/)) {
       cardBrandShadow(".visa")
     } else if (input.match(/^5/)) {
