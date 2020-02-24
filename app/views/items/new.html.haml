@@ -60,6 +60,14 @@
                   必須
                 %br/
                 = f.collection_select :category_id,  @parents, :id, :name,{prompt: "---"}, class: "sell-form-pulldown", id: "parent-form"
+
+              .sell-content__form-group-name#brand-form
+                = f.label :name, "ブランド"
+                %span.form-arbitrary
+                  任意
+                %br/
+                = f.text_field :name, class: "sell-form-pulldown"
+
               .sell-content__form-group-name
                 = f.label :商品の状態
                 %span.form-require
