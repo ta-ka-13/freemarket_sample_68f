@@ -211,16 +211,18 @@ $back_white: #FFF;
       @include inner_height_width(1200px,1200px);
       float: right;
       background-color:$back_gray;
-      // .my-page__inner--right_1{
-      //   width: 1200px;
-      //   height: 350px;
-      //   background: url('https://livedoor.blogimg.jp/jin115/imgs/b/c/bc3f2b2c.jpg');
-      // }
-      // .my-page__inner--right_2{
-      //   width: 1200px;
-      //   height: 650px;
-      //   background-color: $back_white;
-      // }
+
+      .my-page__inner--right_1{
+        width: 1200px;
+        height: 350px;
+        background: url('https://livedoor.blogimg.jp/jin115/imgs/b/c/bc3f2b2c.jpg');
+      }
+      
+      .my-page__inner--right_2{
+        width: 1200px;
+        height: 650px;
+        background-color: $back_white;
+      }
         .my-page_announcement{
           float: left;
           width: 600px;
@@ -246,13 +248,13 @@ $back_white: #FFF;
             font-size: 25px;
             text-align: center;
           }
-      // .my-page__inner--right_3{
-      //   width: 1200px;
-      //   height: 120px;
-      //   background-color: $back_white;
-      //   margin-top: 4px;
-      //   margin-bottom: 90px;
-      // }
+          .my-page__inner--right_3{
+            width: 1200px;
+            height: 120px;
+            background-color: $back_white;
+            margin-top: 4px;
+            margin-bottom: 90px;
+          }
         .my-page__btn{
           margin: 40px;
           margin-top: -1px;
