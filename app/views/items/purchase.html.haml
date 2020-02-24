@@ -9,7 +9,9 @@
         購入内容の確認
     .item-content__product
       .product-image
-        = image_tag @item.images[0].image, class: "item-image"
+        = image_tag "", class: "item-image"
+        -# image使えるようになったら以下を解放
+        -# = image_tag @item.images[0].image, class: "item-image"
       .product-text
         .product-text__name
           = @item.name
