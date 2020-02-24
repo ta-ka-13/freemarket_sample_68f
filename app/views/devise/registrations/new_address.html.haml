@@ -10,7 +10,7 @@
         %h2.l-single-head.registration
           本人情報登録
         = form_for @address do |f|
-          = render "devise/shared/error_messages", resource: @address
+          = render 'layouts/error_messages', model: f.object
           .l-single-content
             .form-group
               = f.label :配送先姓（全角）
