@@ -183,6 +183,10 @@
             width: 220px;
             height: 150px;
             background-color: yellow;
+            .item-image{
+              width: 220px;
+              height: 150px;
+            }
             .sold-out{
               transform: rotate(-20deg);
               background-color: red;

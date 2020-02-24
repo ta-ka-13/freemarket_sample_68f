@@ -4,7 +4,7 @@ class ItemsController < ApplicationController
 
   def index
     @categories = Category.all
-    @items = Item.all.order("id DESC").limit(12)
+    @items = Item.includes(:images).order("id DESC").limit(12)
   end
 
   def new

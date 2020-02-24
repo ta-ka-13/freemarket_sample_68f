@@ -1,10 +1,11 @@
 .productList 
   = link_to "#" do
     .productList__img
-      = image_tag ""
-      - if item.buyer.present? 
-        .sold-out
-          SOLD
+      - item.images.each do |image|
+        = image_tag image.image.url, class: "item-image"
+        - if item.buyer.present? 
+          .sold-out
+            SOLD
 
     .productList__body
       %h3.name
