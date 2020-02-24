@@ -2,7 +2,8 @@
   .single-container
     %header.single-header
       %h1
-        =image_tag "https://www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?35314277", size: "300x300"
+        = link_to root_path, class: "header-link" do
+          =image_tag "http://localhost:3000/assets/material/logo/logo-9486ef715c62ec78e487e9fd713395dee60de0966916f621cbc19d0462dbf03b.png", size: "300x300"
       %nav
     %main.single-main
       %section.l-single-container
@@ -87,7 +88,8 @@
             = link_to "#", class: "btn" do
               特定商取引に関する表記
         .single-footer-logo
-          =image_tag "https://www-mercari-jp.akamaized.net/assets/img/common/common/logo-gray.svg?2072393617", size: "80x80"
+          =image_tag "http://localhost:3000/assets/material/logo/logo-white-34b9db297824e9a0b2fe711412f0f6ef6431c163d60f76848bf0c719f656e807.png", size: "150x40"
           %p
             %small
-              © Mercari, Inc.
+              ©️FURIMA
+

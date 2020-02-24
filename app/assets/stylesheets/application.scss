@@ -7,7 +7,7 @@
 @import "./show";
 @import "./new";
 @import "./create";
-// @import "./edit";
+@import "./edit";
 // @import "./update";
 // @import "./destroy";
 @import "modules/user";
@@ -15,3 +15,5 @@
 @import "./modules/categories/show";
 @import "./modules/cards/new";
 @import "./modules/items/purchase_done";
+@import "./modules/brands/index";
+@import "./modules/brands/show";

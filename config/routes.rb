@@ -15,6 +15,7 @@ Rails.application.routes.draw do
     end
   end
   resources :categories, only: [:index, :show]
+  resources :brands, only: [:index, :show]
   resources :cards, only: [:new, :create, :destroy, :show] do
     collection do
       post "delete", to: "cards#delete"

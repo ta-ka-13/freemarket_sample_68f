@@ -6,7 +6,8 @@ class ItemsController < ApplicationController
   before_action :set_card, only: [:purchase, :pay]
 
   def index
-    @items = Item.all
+    @categories = Category.all
+    @items = Item.all.order("id DESC").limit(12)
   end
 
   def new
@@ -16,9 +17,13 @@ class ItemsController < ApplicationController
   end
 
   def edit
+    @item = Item.find(params[:id])
+    @images = @item.images
   end
 
   def update
+    @item = Item.find(params[:id])
+    @item.update(item_params)
   end
 
   def destroy
@@ -55,18 +60,7 @@ class ItemsController < ApplicationController
 
   private
   def item_params
-    params.require(:item).permit(
-      :name,
-      :price,
-      :description,
-      :condition,
-      :shopping_charges,
-      :shopping_area,
-      :shopping_date,
-      :buyer,
-      :brand_id,
-      :category_id
-    ).merge(user_id: current_user.id)
+    params.require(:item).permit(:name, :price, :description, :condition, :shopping_charges, :shopping_area, :shopping_data, :buyer, :user_id, :brand_id, :category_id, :created_at, :updated_at, )
   end
 
   def set_item
