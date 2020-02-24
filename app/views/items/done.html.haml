@@ -8,9 +8,7 @@
         購入が完了しました
     .item-content__product
       .product-image
-        = image_tag "", alt: "購入商品", class: "item-image"
-        -# imageが入るようになったら以下を解放
-        -# = image_tag @item.images[0].image, class: "item-image"
+        = image_tag @item.images[0].image, class: "item-image"
       .product-text
         .product-text__name
           = @item.name
