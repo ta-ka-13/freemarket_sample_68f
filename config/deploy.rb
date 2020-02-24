@@ -2,6 +2,8 @@
 # capistranoのバージョンを記載。固定のバージョンを利用し続け、バージョン変更によるトラブルを防止する
 lock '3.12.0'
 
+set :linked_files, %w{config/master.key}
+
 # Capistranoのログの表示に利用する
 set :application, 'freemarket_sample_68f'
 
@@ -24,25 +26,24 @@ set :unicorn_pid, -> { "#{shared_path}/tmp/pids/unicorn.pid" }
 set :unicorn_config_path, -> { "#{current_path}/config/unicorn.rb" }
 set :keep_releases, 5
 
-# set :linked_files, %w{config/master.key}
-
 # デプロイ処理が終わった後、Unicornを再起動するための記述
 after 'deploy:publishing', 'deploy:restart'
 namespace :deploy do
+  
   task :restart do
     invoke 'unicorn:restart'
   end
-end
 
-# desc 'upload master.key'
-#  task :upload do
-#    on roles(:app) do |host|
-#      if test "[ ! -d #{shared_path}/config ]"
-#        execute "mkdir -p #{shared_path}/config"
-#      end
-#      upload!('config/master.key', "#{shared_path}/config/master.key")
-#    end
-#  end
-#  before :starting, 'deploy:upload'
-#  after :finishing, 'deploy:cleanup'
-# end
+
+  desc 'upload master.key'
+  task :upload do
+    on roles(:app) do |host|
+      if test "[ ! -d #{shared_path}/config ]"
+        execute "mkdir -p #{shared_path}/config"
+      end
+      upload!('config/master.key', "#{shared_path}/config/master.key")
+    end
+  end
+  before :starting, 'deploy:upload'
+  after :finishing, 'deploy:cleanup'
+end
