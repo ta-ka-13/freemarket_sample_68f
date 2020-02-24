@@ -9,9 +9,9 @@ FactoryBot.define do
     last_name             {"浩己"}
     family_name_kana      {"アベ"}
     last_name_kana        {"コウキ"}
-    birth_year            {"1996"}
-    birth_month           {"10"}
-    birth_day             {"4"}
+    birth_year            {1996}
+    birth_month           {10}
+    birth_day             {4}
   end
 
 end
