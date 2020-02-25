@@ -89,11 +89,11 @@
                 = f.select :shopping_charges, [["送料込み(出品者負担)"], ["着払い(購入者負担)"]], {prompt: "---"}, class: "sell-form-pulldown"
 
                 .sell-content__form-group-name
-                = f.label :shopping_area, "発送元の地域"
+                = f.label :prefecture_id, "発送元の地域"
                 %span.form-require
                   必須
                 %br/
-                = f.collection_select :shopping_area, Prefecture.all, :id, :name, {prompt: "---"}, class: "sell-form-pulldown"
+                = f.collection_select :prefecture_id, Prefecture.all, :id, :name, {prompt: "---"}, class: "sell-form-pulldown"
 
                 .sell-content__form-group-name
                 = f.label :shopping_date, "発送までの日数"
