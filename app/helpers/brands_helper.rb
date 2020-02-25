@@ -15,6 +15,16 @@ module BrandsHelper
     brand = brands.uniq
   end
 
+  def brandLink(brand, items)
+    a = []
+    @items.each do |i|
+      if i.brand == brand
+        a << i
+      end
+    end
+    item = a[0]
+  end
+
   def brandNav
     nav = [
       {name: "FURIMA", path: "/"},
