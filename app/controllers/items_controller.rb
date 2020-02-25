@@ -2,7 +2,7 @@ class ItemsController < ApplicationController
   require "payjp"
   include Purchase
   protect_from_forgery except: :search 
-  before_action :set_item, only: [:new, :edit, :update, :show, :purchase, :pay, :done]
+  before_action :set_item, only: [:edit, :update, :show, :purchase, :pay, :done]
   before_action :set_parents, only: [:new, :create, :edit, :update]
   before_action :set_secret_key, only: [:purchase, :pay]
   before_action :set_card, only: [:purchase, :pay]

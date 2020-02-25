@@ -56,4 +56,11 @@ $(function(){
       cardBrandShadow(".discover")
     }
   });
+
+  $(".delete-link").on("click", function(e) {
+    e.preventDefault();
+    if (!confirm('本当に削除しますか？')) {
+      return false;
+    }
+  })
 });
