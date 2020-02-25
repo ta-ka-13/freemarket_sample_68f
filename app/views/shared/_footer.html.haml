@@ -22,7 +22,7 @@
           FURIMAを見る
         %ul.list-chilled
           %li.list-chilled__text
-            = link_to "#", class: "list-chilled__text--link" do
+            = link_to categories_path, class: "list-chilled__text--link" do
               カテゴリー 一覧
           %li.list-chilled__text
             = link_to "#", class: "list-chilled__text--link" do
@@ -41,7 +41,7 @@
             = link_to "#", class: "list-chilled__text--link" do
               お知らせ
   .footer__logo
-    = link_to "#", class: "footer__logo--link" do
+    = link_to root_path, class: "footer__logo--link" do
       = image_tag "material/logo/logo-white.png", alt: "FURIMA", class: "footer-logo"
   .footer__bottom
     © FURIMA

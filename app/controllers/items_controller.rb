@@ -28,12 +28,16 @@ class ItemsController < ApplicationController
     end
   end
 
+  def show
+  end
+
   def edit
     @images = @item.images
   end
 
   def update
     @item.update(item_params)
+    redirect_to item_path(params[:id])
   end
 
   def destroy
@@ -87,7 +91,7 @@ class ItemsController < ApplicationController
 
   private
   def item_params
-    params.require(:item).permit(:name, :price, :description, :ancestry, :condition, :brand, :shopping_charges, :shopping_area, :shopping_date, :category_id, :commission, :profit, images_attributes: [:image, :_destroy, :id]).merge(user_id: current_user.id)
+    params.require(:item).permit(:name, :price, :description, :ancestry, :condition, :brand, :shopping_charges, :prefecture_id, :shopping_date, :category_id, :commission, :profit, images_attributes: [:image, :_destroy, :id]).merge(user_id: current_user.id)
   end
 
   def set_item
