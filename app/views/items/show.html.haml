@@ -64,12 +64,12 @@
           （税込）送料込み
         .item-buy
 
-        - if user_signed_in? && current_user.id == :id
+        - if user_signed_in? && current_user.id == @item.user_id
           = link_to '商品の編集', "/items/#{:id}/edit", method: :gat, class: "item-buy-btn"
           = link_to 'この商品を削除する', "/items/#{:id}", method: :delete, class: "item-delete-btn"
         - else
-          = link_to 'この商品を削除する', item_path, method: :delete, class: "item-delete-btn"
-
+          = link_to  purchase_confirmation_items_path, class: "item-buy-btn" do
+            購入画面に進む
       .buy-text-box
         %p.buy-text
           商品の説明欄
