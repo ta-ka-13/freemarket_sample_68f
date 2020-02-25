@@ -21,7 +21,7 @@ class ItemsController < ApplicationController
   def create
     @item = Item.new(item_params)
     if @item.save
-      redirect_to root_path
+      redirect_to exhibition_item_path(:id)
     else
       @item.images.new
       render :new
