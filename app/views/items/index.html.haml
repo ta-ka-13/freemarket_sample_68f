@@ -106,16 +106,10 @@
               レディース新着アイテム
         
         .productLists
-          - @categories.each do |category|
-            - if category.root?
-              - category.children.each do |child|
-                - child.children.each do |grandChild|
-
-                  - @items.each do |item|
-                    - if category.root_id == 1 && item.category_id == grandChild.id
-                      = render partial: "item-list", locals: { item: item } 
+          - @ladies.each do |item|
+            = render partial: "item-list", locals: { item: item } 
         .more-view
-          = link_to "#", class: "more-view-link" do
+          = link_to category_path(@parents.ids[0]), class: "more-view-link" do
             もっとみる >
 
 
@@ -126,16 +120,10 @@
               メンズ新着アイテム
 
         .productLists
-          - @categories.each do |category|
-            - if category.root?
-              - category.children.each do |child|
-                - child.children.each do |grandChild|
-
-                  - @items.each do |item|
-                    - if category.root_id == 199 && item.category_id == grandChild.id
-                      = render partial: "item-list", locals: { item: item } 
+          - @mens.each do |item|
+            = render partial: "item-list", locals: { item: item } 
         .more-view
-          = link_to "#", class: "more-view-list" do
+          = link_to category_path(@parents.ids[1]), class: "more-view-list" do
             もっとみる >
 
 
@@ -146,16 +134,10 @@
               家電・スマホ・カメラ新着アイテム
         
         .productLists
-          - @categories.each do |category|
-            - if category.root?
-              - category.children.each do |child|
-                - child.children.each do |grandChild|
-
-                  - @items.each do |item|
-                    - if category.root_id == 892 && item.category_id == grandChild.id
-                      = render partial: "item-list", locals: { item: item } 
+          - @appliances.each do |item|
+            = render partial: "item-list", locals: { item: item } 
         .more-view
-          = link_to "#", class: "more-view-link" do
+          = link_to category_path(@parents.ids[7]), class: "more-view-link" do
             もっとみる >
 
 
@@ -166,16 +148,10 @@
               おもちゃ・ホビー・グッズ新着アイテム
         
         .productLists
-          - @categories.each do |category|
-            - if category.root?
-              - category.children.each do |child|
-                - child.children.each do |grandChild|
-
-                  - @items.each do |item|
-                    - if category.root_id == 679 && item.category_id == grandChild.id
-                      = render partial: "item-list", locals: { item: item } 
+          - @goods.each do |item|
+            = render partial: "item-list", locals: { item: item } 
         .more-view
-          = link_to "#", class: "more-view-link" do
+          = link_to category_path(@parents.ids[5]), class: "more-view-link" do
             もっとみる >
 
     .brand

@@ -3,13 +3,17 @@ class ItemsController < ApplicationController
   include Purchase
   protect_from_forgery except: [:search]
   before_action :set_item, only: [:edit, :update, :show, :purchare, :pay, :done, :destroy]
-  before_action :set_parents, only: [:new, :create, :edit, :update]
+  before_action :set_parents, only: [:index, :new, :create, :edit, :update]
   before_action :set_secret_key, only: [:purchase, :pay]
   before_action :set_card, only: [:purchase, :pay]
 
   def index
-    @categories = Category.all
-    @items = Item.all.order("id DESC").limit(12)
+    @items = Item.includes(:images).order("id DESC")
+    @ladies = Item.includes(:images).where(category_id: 1..198).order("id DESC").limit(3)
+    @mens = Item.includes(:images).where(category_id: 199..343).order("id DESC").limit(3)
+    @appliances = Item.includes(:images).where(category_id: 892..977).order("id DESC").limit(3)
+    @goods = Item.includes(:images).where(category_id: 679..791).order("id DESC").limit(3)
+
   end
 
   def new
