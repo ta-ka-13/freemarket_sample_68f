@@ -13,6 +13,7 @@ Rails.application.routes.draw do
       post "pay", to: "items#pay"
       get "done", to: "items#done"
       delete "destroy", to: "items#destroy"
+      get "show", to: "items#show"
     end
     collection do
       get 'search'
