@@ -12,7 +12,6 @@ $back_white: #FFF;
 .my-link {
   @include linkReset;
 }
-
 .my-page {
     height:170vh;
     background-color: $back_gray;
@@ -209,19 +208,19 @@ $back_white: #FFF;
       background-color:$back_gray;
 
       .my-page__inner--right_1{
-        width: 1200px;
+        width: 600px;
         height: 350px;
         background: url('https://livedoor.blogimg.jp/jin115/imgs/b/c/bc3f2b2c.jpg');
       }
 
       .my-page__inner--right_2{
-        width: 1200px;
+        width: 600px;
         height: 650px;
         background-color: $back_white;
       }
         .my-page_announcement{
           float: left;
-          width: 600px;
+          width: 300px;
           height: 130px;
           display: flex;
           justify-content: center;
@@ -233,7 +232,7 @@ $back_white: #FFF;
           }
         .my-page_to_do{
           float: right;
-          width: 600px;
+          width: 300px;
           height: 120px;
           background-color: lightgray;
           display: flex;
@@ -245,7 +244,7 @@ $back_white: #FFF;
             text-align: center;
           }
           .my-page__inner--right_3{
-            width: 1200px;
+            width: 600px;
             height: 120px;
             background-color: $back_white;
             margin-top: 4px;
@@ -256,8 +255,8 @@ $back_white: #FFF;
           margin-top: -1px;
           // background-color:lightgray;
           padding-top: 90 px;
-          width: 1100px;
-          height: 80px;
+          width: 550px;
+          height: 40px;
           display: flex;
           justify-content: center;
           align-items: center;
@@ -279,9 +278,9 @@ $back_white: #FFF;
       }
       .my-page__under--right{
         background-color:$back_white;
-        width: 1200px;
-        height: 500px;
-        float: right;
+        width: 600px;
+        height: 250px;
+        float: left;
         .my-page__under--right_1{
           height: 40px;
           width: 400px;
@@ -290,8 +289,8 @@ $back_white: #FFF;
         }
         .my-page__under--right_2{
           float: left;
-          width: 600px;
-          height:100px;
+          width: 300px;
+          height:50px;
           display: flex;
           justify-content: center;
           align-items: center;
@@ -303,8 +302,8 @@ $back_white: #FFF;
         .my-page__under--right_3{
           float: right;
           background-color: lightgray;
-          width: 600px;
-          height: 100px;
+          width: 300px;
+          height: 50px;
           display: flex;
           justify-content: center;
           align-items: center;

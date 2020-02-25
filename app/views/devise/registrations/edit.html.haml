@@ -54,6 +54,17 @@
             .my-page__btn
               .btn
                 一覧を見る
+        .my-page__under--right
+          .my-page__under--right_1
+            購入した商品
+          .my-page__under--right_2
+            = link_to "#", class: "my-link" do
+              .transaction
+                取引中
+          .my-page__under--right_3
+            = link_to "#", class: "my-link" do
+              .past
+                過去の取引
 
       .my-page__inner--left
         = link_to "#", class: "my-link" do
@@ -131,15 +142,5 @@
           .logout
             ログアウト
 
-      .my-page__under--right
-        .my-page__under--right_1
-          購入した商品
-        .my-page__under--right_2
-          = link_to "#", class: "my-link" do
-            .transaction
-              取引中
-        .my-page__under--right_3
-          = link_to "#", class: "my-link" do
-            .past
-              過去の取引
+
   = render "shared/footer"
