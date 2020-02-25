@@ -15,6 +15,7 @@ Rails.application.routes.draw do
 
       delete "destroy", to: "items#destroy"
 
+      get "exhibition", to: "items#exhibition"
     end
     collection do
       get 'search'
