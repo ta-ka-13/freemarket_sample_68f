@@ -1,10 +1,10 @@
 class BrandsController < ApplicationController
-
   def index
-    @brands = Brand.all
+    @items = Item.all
   end
 
   def show
-    @brand = Brand.find(params[:id])
+    @items = Item.all
+    @item = Item.find(params[:id])
   end
 end

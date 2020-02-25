@@ -1,6 +1,9 @@
 .brand-nav
   %ul.brand-nav__list
-    - list = brandList(@brand)
+    - if @item.present?
+      - list = brandList(@item)
+    - else
+      - list = brandNav()
     - list.each_with_index do |data, index|
       -if index < list.size - 1
         %li.nav-list

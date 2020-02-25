@@ -6,18 +6,18 @@ module BrandsHelper
   end
 
   def first(brand)
-    kana = NKF.nkf("--hiragana -w", brand.name)
+    kana = NKF.nkf("--hiragana -w", brand)
     brand_kana = kana.unicode_normalize(:nfd)
   end
 
-  def brandList(brand)
+  def brandNav
     nav = [
       {name: "FURIMA", path: "/"},
       {name: "ブランド一覧", path: "/brands"}
     ]
-    unless brand.nil?
-      nav << {name: brand.name, path: "/brands/#{brand.id}"}
-    end
-    nav
+  end
+
+  def brandList(item)
+    brandNav << {name: item.brand, path: "/brands/#{item.brand}"}
   end
 end
