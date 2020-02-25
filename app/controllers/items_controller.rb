@@ -1,6 +1,11 @@
 class ItemsController < ApplicationController
+  require "payjp"
+  include Purchase
   protect_from_forgery except: :search 
+  before_action :set_item, only: [:edit, :update, :show, :purchase, :pay, :done]
   before_action :set_parents, only: [:new, :create, :edit, :update]
+  before_action :set_secret_key, only: [:purchase, :pay]
+  before_action :set_card, only: [:purchase, :pay]
 
   def index
     @categories = Category.all
@@ -23,16 +28,11 @@ class ItemsController < ApplicationController
     end
   end
 
-  def show
-  end
-
   def edit
-    @item = Item.find(params[:id])
     @images = @item.images
   end
 
   def update
-    @item = Item.find(params[:id])
     @item.update(item_params)
   end
 
@@ -44,10 +44,33 @@ class ItemsController < ApplicationController
     end
   end
 
-  def purchase_confirmation
+  def show
   end
 
   def purchase
+    if @card.present?
+      card_data(@card)
+    else
+      redirect_to controller: "card", action: "new"
+    end
+  end
+
+  def pay
+    Payjp::Charge.create(
+      amount: @item.price,
+      customer: @card.customer_id,
+      currency: "jpy"
+    )
+    if @item.update_attribute(:buyer, current_user.id)
+      session_add("Pay")
+      redirect_to action: "done"
+    else
+      redirect_to root_path
+    end
+  end
+
+  def done
+    sesstion_chack("Pay")
   end
 
   def search
@@ -63,9 +86,12 @@ class ItemsController < ApplicationController
   end
 
   private
-
   def item_params
-    params.require(:item).permit(:name, :price, :description, :ancestry, :condition, :shopping_charges, :shopping_area, :shopping_date, :category_id, :commission, :profit, images_attributes: [:image, :_destroy, :id]).merge(user_id: current_user.id)
+    params.require(:item).permit(:name, :price, :description, :ancestry, :condition, :brand, :shopping_charges, :shopping_area, :shopping_date, :category_id, :commission, :profit, images_attributes: [:image, :_destroy, :id]).merge(user_id: current_user.id)
+  end
+
+  def set_item
+    @item = Item.find(params[:id])
   end
 
   def set_parents
