@@ -1,7 +1,7 @@
 class ItemsController < ApplicationController
   require "payjp"
   include Purchase
-  protect_from_forgery except: :search 
+  protect_from_forgery except: [:search, :destroy]
   before_action :set_item, only: [:edit, :update, :destroy, :show, :purchase, :pay, :done]
   before_action :set_parents, only: [:new, :create, :edit, :update]
   before_action :set_secret_key, only: [:purchase, :pay]
@@ -41,8 +41,12 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-    @item.destroy
+
+   if @item.destroy
     redirect_to root_path
+   else
+    alert("削除に失敗しました。")
+   end
   end
 
   def purchase
