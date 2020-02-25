@@ -10,6 +10,6 @@ ja:
         description: 商品の説明
         condition: 商品の状態
         shopping_charges: 配送料の負担
-        shopping_area: 発送元の地域
+        prefecture_id: 発送元の地域
         shopping_date: 発送までの日数
         price: 販売価格

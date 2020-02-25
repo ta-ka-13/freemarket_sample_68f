@@ -5,7 +5,7 @@ FactoryBot.define do
     description           {"aaa"}
     condition             {"新品未使用"}
     shopping_charges      {"送料込み(出品者負担)"}
-    shopping_area         {"千葉県"}
+    prefecture_id         {"千葉県"}
     shopping_date         {"aaa"}
     user
     category

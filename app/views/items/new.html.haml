@@ -24,17 +24,17 @@
                 .post__drop__box__container
                   .prev-content
                   .label-content
-                    %label{for: "item_images_attributes_0_image", class: "label-box", id: "label-box--0"}
+                    %label{for: "item_images_attributes_0_image", class: "label-box", id: "label-box--0 "}
                       %pre.label-box__text-visible クリックしてファイルをアップロード
                   .hidden-content
                     = f.fields_for :images do |i|
                       = i.file_field :image, class: "hidden-field"
-                      %input{class:"hidden-field", type: "file", name: "item[images_attributes][0][image]", id: "item_images_attributes_0_image" }
+                      -# %input{class:"hidden-field", type: "file", name: "item[images_attributes][0][image]", id: "item_images_attributes_0_image" }
                       %input{class:"hidden-field", type: "file", name: "item[images_attributes][1][image]", id: "item_images_attributes_1_image" }
                       %input{class:"hidden-field", type: "file", name: "item[images_attributes][2][image]", id: "item_images_attributes_2_image" }
                       %input{class:"hidden-field", type: "file", name: "item[images_attributes][3][image]", id: "item_images_attributes_3_image" }
                       %input{class:"hidden-field", type: "file", name: "item[images_attributes][4][image]", id: "item_images_attributes_4_image" }
-  
+
 
             .sell-content
               .sell-content__form-group-name
@@ -80,11 +80,11 @@
                 = f.select :shopping_charges, [["送料込み(出品者負担)"], ["着払い(購入者負担)"]], {prompt: "---"}, class: "sell-form-pulldown"
 
                 .sell-content__form-group-name
-                = f.label :shopping_area, "発送元の地域"
+                = f.label :prefecture_id, "発送元の地域"
                 %span.form-require
                   必須
                 %br/
-                = f.collection_select :shopping_area, Prefecture.all, :id, :name, {prompt: "---"}, class: "sell-form-pulldown"
+                = f.collection_select :prefecture_id, Prefecture.all, :id, :name, {prompt: "---"}, class: "sell-form-pulldown"
 
                 .sell-content__form-group-name
                 = f.label :shopping_date, "発送までの日数"

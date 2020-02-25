@@ -51,10 +51,10 @@ RSpec.describe Item, type: :model do
         expect(item.errors[:shopping_charges]).to include("を入力してください")
       end
 
-      it 'is invalid without shopping_area' do
-        item = build(:item, :item_with_image, shopping_area: nil )
+      it 'is invalid without prefecture' do
+        item = build(:item, :item_with_image, prefecture_id: nil )
         item.valid?
-        expect(item.errors[:shopping_area]).to include("を入力してください")
+        expect(item.errors[:prefecture_id]).to include("を入力してください")
       end
 
       it 'is invalid without shopping_date' do

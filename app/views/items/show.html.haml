@@ -1,98 +1,92 @@
-.free
+._header
+  = render partial: 'shared/header'
+
+.f.free
   .contents
     .content
       %h2.content__item-name
-        ラルフローレン　財布
+        = @item.name
       .content-box
         %ul.content-box__image 
           %li
-            =image_tag "https://static.mercdn.net/item/detail/orig/photos/m79639826108_1.jpg?1581574124", size: "300x300"
+            = image_tag(@item.images[0].image.url, size: '300x300', class: "label-box")
           .content-box__image-sub
             %ul
-              %li
-                =image_tag "https://static.mercdn.net/item/detail/orig/photos/m79639826108_3.jpg?1581574124", size: "80x80"
-              %li
-                =image_tag "https://static.mercdn.net/item/detail/orig/photos/m79639826108_4.jpg?1581574124", size: "80x80"
-              %li 
-                =image_tag "https://static.mercdn.net/item/detail/orig/photos/m79639826108_2.jpg?1581574124", size: "80x80"
-          -# 画像は仮の画像です
+              -if @item.images[1]
+                %li
+                  = image_tag(@item.images[1].image.url, size: '80x80', class: "label-box")
+              -if @item.images[2]
+                %li
+                  = image_tag(@item.images[2].image.url, size: '80x80', class: "label-box")
+              -if @item.images[3]
+                %li 
+                  = image_tag(@item.images[3].image.url, size: '80x80', class: "label-box")
+              -if @item.images[4]
+                %li 
+                  = image_tag(@item.images[4].image.url, size: '80x80', class: "label-box")
+              
         %table
           %tbody
             %tr
               %th 出品者
               %td
-                山田
+                = @item.user.name
             %tr
               %th カテゴリー
               %td
                 = link_to "#", class: "gategory" do
-                  メンズ
+                  = @item.category.name
             %tr
               %th ブランド
               %td
                 = link_to "#", class: "gategory" do
-                  ラルフローレン
-            %tr
-              %th 商品のサイズ
-              %td
-                L
+                  = @item.brand
             %tr
               %th 商品の状態
               %td
-                新品
+                = @item.condition
             %tr
               %th 配送料の負担
               %td
-                送料込み(出品者負担)
-            %tr
-              %th 配送の方法
-              %td ラクラクメルカリ便
+                = @item.shopping_charges
             %tr
               %th 配送の地域
               %td
                 = link_to "#", class: "adress" do
-                  青森県
+                  = @item.prefecture.name
             %tr
               %th 発送日の目安
               %td
-                1~2日
+                = @item.shopping_date
 
       .price-box
         .price-box__number
-          ¥4000
+          ¥
+          = @item.price
         .price-box__value
           （税込）送料込み
+
         .item-buy
 
-        -# ユーザーとアイテムが紐づいたらこっち
-        -# - if user_signed_in? && current_user.id == :id
-        -#   = link_to '商品の編集', "/items/#{:id}/edit", method: :gat, class: "item-buy-btn"
-        -#   = link_to 'この商品を削除する', "/items/#{:id}", method: :delete, class: ".item-delete-btn"
-        -# - else
-        -#   = link_to "#", class: "item-buy-btn" do
-        -#     購入画面に進む
-
-
-        -# 確認用の仮コード
-        - if user_signed_in? && current_user.id == :id
-          = link_to "#", class: "item-buy-btn" do
-            購入画面に進む
-        - else
+        - if user_signed_in? && current_user.id == @item.user_id
           = link_to '商品の編集', "/items/#{:id}/edit", method: :gat, class: "item-buy-btn"
           = link_to 'この商品を削除する', "/items/#{:id}", method: :delete, class: "item-delete-btn"
-
-
+        - else
+          = link_to "#", class: "item-buy-btn" do
+            購入画面に進む
+    
       .buy-text-box
         %p.buy-text
-          商品の説明欄
-      .like-area
-        %ul
-          %li.like-btn
-            お気に入り
-        %ul
-          %li.report-btn
-            = link_to "#", class: "opitinal-btn" do
-              不適切な商品の情報
+          = @item.description
+      -# .like-area
+      -#   %ul
+      -#     %li.like-btn
+      -#       お気に入り
+      -#   %ul
+      -#     %li.report-btn
+      -#       = link_to "#", class: "opitinal-btn" do
+      -#         不適切な商品の情報
+      -# 上記追加実装
 
     %ul.links
       %li
@@ -104,3 +98,6 @@
     .man-item
       = link_to "#", class: "mense-btn" do
         メンズをもっとみる
+
+._footer
+  = render partial: 'shared/footer'
