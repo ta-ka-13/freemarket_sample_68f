@@ -30,6 +30,7 @@ $(document).on('turbolinks:load', function(){
   $("#parent-form").on('change',function(){
     parent_form = $(this).val();
     $("#childform, #grandchildform").remove();
+    $("#brand-form").hide();
     $.ajax({
         url: '/items/search',
         type: "GET",
@@ -49,6 +50,7 @@ $(document).on('turbolinks:load', function(){
   $(document).on('change', "#childform", function() {
      childform = $(this).val();
      $("#grandchildform").remove();
+     $("#brand-form").hide();
 
      $.ajax({
        type: "GET",
@@ -63,5 +65,9 @@ $(document).on('turbolinks:load', function(){
          appendOption(grandchildform, num)
        })
      })
+  })
+
+  $(document).on('change', "#grandchildform", function() {
+    $("#brand-form").show();
   })
 });
