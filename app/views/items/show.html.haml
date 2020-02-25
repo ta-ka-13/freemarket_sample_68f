@@ -78,14 +78,14 @@
       .buy-text-box
         %p.buy-text
           = @item.description
-      -# .like-area
-      -#   %ul
-      -#     %li.like-btn
-      -#       お気に入り
-      -#   %ul
-      -#     %li.report-btn
-      -#       = link_to "#", class: "opitinal-btn" do
-      -#         不適切な商品の情報
+      .like-area
+        %ul
+          %li.like-btn
+            お気に入り
+        %ul
+          %li.report-btn
+            = link_to "#", class: "opitinal-btn" do
+              不適切な商品の情報
       -# 上記追加実装
 
     %ul.links
