@@ -12,6 +12,7 @@ Rails.application.routes.draw do
       get "purchase", to: "items#purchase"
       post "pay", to: "items#pay"
       get "done", to: "items#done"
+      delete "destroy", to: "items#destroy"
     end
     collection do
       get 'search'
@@ -25,5 +26,4 @@ Rails.application.routes.draw do
       post "show"
     end
   end
-  delete 'items/:id' => 'items#destroy'
 end

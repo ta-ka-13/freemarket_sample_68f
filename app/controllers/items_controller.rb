@@ -2,7 +2,7 @@ class ItemsController < ApplicationController
   require "payjp"
   include Purchase
   protect_from_forgery except: :search 
-  before_action :set_item, only: [:edit, :update, :show, :purchase, :pay, :done]
+  before_action :set_item, only: [:edit, :update, :destroy, :show, :purchase, :pay, :done]
   before_action :set_parents, only: [:new, :create, :edit, :update]
   before_action :set_secret_key, only: [:purchase, :pay]
   before_action :set_card, only: [:purchase, :pay]
@@ -37,16 +37,8 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-    item = Item.find(params[:id])
-    if items.user_id == current_user.id
-      item.destroy
-      redirect_to root_path
-    else
-      alert("削除に失敗しました。")
-    end
-  end
-
-  def show
+    @item.destroy
+    redirect_to root_path
   end
 
   def purchase
