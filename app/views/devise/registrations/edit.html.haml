@@ -38,8 +38,24 @@
   =  render "shared/header"
   .my-page
     .my-page__inner
+      .my-page__inner--right
+        .my-page__inner--right_1
+        .my-page__inner--right_2
+          .my-page_announcement
+            = link_to "#", class: "my-link" do
+              .info
+                お知らせ
+          .my-page_to_do
+            = link_to "#", class: "my-link" do
+              .to_do
+                やることリスト
+        .my-page__inner--right_3
+          = link_to "#", class: "my-link" do
+            .my-page__btn
+              .btn
+                一覧を見る
+
       .my-page__inner--left
-          
         = link_to "#", class: "my-link" do
           .my-mypage
             マイページ
@@ -90,22 +106,6 @@
         = link_to "#", class: "my-link" do
           .point
             ポイント
-      .my-page__inner--right
-        .my-page__inner--right_1
-        .my-page__inner--right_2
-          .my-page_announcement
-            = link_to "#", class: "my-link" do
-              .info
-                お知らせ
-          .my-page_to_do
-            = link_to "#", class: "my-link" do
-              .to_do
-                やることリスト
-        .my-page__inner--right_3
-          = link_to "#", class: "my-link" do
-            .my-page__btn
-              .btn
-                一覧を見る
       .my-page__under--left
         .setting
           設定
@@ -130,6 +130,7 @@
         = link_to destroy_user_session_path, method: :delete, class: "my-link" do
           .logout
             ログアウト
+
       .my-page__under--right
         .my-page__under--right_1
           購入した商品
