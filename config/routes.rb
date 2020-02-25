@@ -25,4 +25,5 @@ Rails.application.routes.draw do
       post "show"
     end
   end
+  delete 'items/:id' => 'items#destroy'
 end
