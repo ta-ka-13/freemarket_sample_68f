@@ -1,5 +1,5 @@
 .productList 
-  = link_to "#" do
+  = link_to item_path(item.id) do
     .productList__img
       - item.images.each do |image|
         = image_tag image.image.url, class: "item-image"
