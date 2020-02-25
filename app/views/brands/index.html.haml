@@ -12,9 +12,9 @@
               .japanese-list__top
                 = "#{kana}行"
               %ul.japanese-list__box
-                - @items.each do |item|
-                  - if first(item.brand).match(/^#{kana}/)
+                - brandUniq(@items).each_with_index do |brand, index|
+                  - if first(brand).match(/^#{kana}/)  
                     %li.japanese-list__box__name
-                      = link_to brand_path(item[:id]), class: "brand-name" do
-                        = item.brand
+                      = link_to "/brands/#{index + 1}", class: "brand-name" do
+                        = brand
   = render "shared/footer"

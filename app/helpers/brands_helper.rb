@@ -10,6 +10,11 @@ module BrandsHelper
     brand_kana = kana.unicode_normalize(:nfd)
   end
 
+  def brandUniq(items)
+    brands = items.map { |item| item.brand }
+    brand = brands.uniq
+  end
+
   def brandNav
     nav = [
       {name: "FURIMA", path: "/"},
@@ -18,6 +23,6 @@ module BrandsHelper
   end
 
   def brandList(item)
-    brandNav << {name: item.brand, path: "/brands/#{item.brand}"}
+    brandNav << {name: item.brand, path: nil}
   end
 end
