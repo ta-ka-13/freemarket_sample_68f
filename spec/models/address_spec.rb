@@ -39,7 +39,7 @@ describe Address do
     it "is invalid without a prefecture_id" do
       address = build(:address, prefecture_id: nil)
       address.valid?
-      expect(address.errors[:prefectures]).to include("can't be blank")
+      expect(address.errors[:prefecture_id]).to include("can't be blank")
     end
 
     # 7. 市区町村が空では登録できないこと
