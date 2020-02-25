@@ -2,11 +2,12 @@
   .contents
     .content
       %h2.content__item-name
-        = @item.name
+        ラルフローレン 財布
       .content-box
         %ul.content-box__image 
           %li
-            =image_tag "https://static.mercdn.net/item/detail/orig/photos/m79639826108_1.jpg?1581574124", size: "300x300"
+            -# =image_tag "https://static.mercdn.net/item/detail/orig/photos/m79639826108_1.jpg?1581574124", size: "300x300"
+            -# = @item.images
           .content-box__image-sub
             %ul
               %li
@@ -65,11 +66,10 @@
         .item-buy
 
         - if user_signed_in? && current_user.id == :id
-          = link_to purchase_item_path, class: "item-buy-btn" do
-            購入画面に進む
-        - else
           = link_to '商品の編集', "/items/#{:id}/edit", method: :gat, class: "item-buy-btn"
-          = link_to 'この商品を削除する', "/items/#{@item.id}", method: :delete, class: "item-delete-btn"
+          = link_to 'この商品を削除する', "/items/#{:id}", method: :delete, class: "item-delete-btn"
+        - else
+          = link_to 'この商品を削除する', item_path, method: :delete, class: "item-delete-btn"
 
       .buy-text-box
         %p.buy-text
