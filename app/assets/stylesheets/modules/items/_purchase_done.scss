@@ -23,6 +23,7 @@
       position: relative;
       overflow: hidden;
       .item-image {
+        @include heightWidth(auto, 100%);
         position: absolute;
         top: 50%;
         left: 50%;
@@ -98,10 +99,11 @@
     padding: 40px;
     .card-top {
       @include displayFlex(space-between);
-      margin-bottom: 20px;
       &__text {
+        &--link {
+        }
       }
-      &__link {
+      .card-link {
         @include linkReset($mainColor);
         &:hover {
           opacity: 0.6;

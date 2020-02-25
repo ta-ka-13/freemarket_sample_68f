@@ -16,7 +16,7 @@
             = link_to categories_path, class: "category-link" do
               カテゴリー
           .left-list__brand
-            = link_to brands_path, class: "brand-link" do
+            = link_to '#', class: "brand-link" do
               ブランド
       .contents-bottom__right
         .right-list
@@ -30,9 +30,9 @@
               ログイン
             = link_to new_user_registration_path, class: "right-list__member" do
               新規会員登録
-
-  = link_to new_item_path do
-    .purchaseBtn
-      %span.purchaseBth__text
-        出品する
-      = image_tag 'material/icon/icon_camera.png', alt: 'icon', class: 'purchaseBth__icon'
+  -if user_signed_in?
+    = link_to new_item_path do
+      .purchaseBtn
+        %span.purchaseBth__text
+          出品する
+        = image_tag 'material/icon/icon_camera.png', alt: 'icon', class: 'purchaseBth__icon'

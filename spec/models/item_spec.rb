@@ -51,10 +51,10 @@ RSpec.describe Item, type: :model do
         expect(item.errors[:shopping_charges]).to include("を入力してください")
       end
 
-      it 'is invalid without shopping_area' do
-        item = build(:item, :item_with_image, shopping_area: nil )
+      it 'is invalid without prefecture' do
+        item = build(:item, :item_with_image, prefecture_id: nil )
         item.valid?
-        expect(item.errors[:shopping_area]).to include("を入力してください")
+        expect(item.errors[:prefecture_id]).to include("を入力してください")
       end
 
       it 'is invalid without shopping_date' do
@@ -68,6 +68,12 @@ RSpec.describe Item, type: :model do
         item.valid?
         expect(item.errors[:user]).to include("を入力してください")
       end
+    end
+  end
+
+  describe '#pay' do
+    it "can update buyer" do
+      expect(build(:item, :item_with_image, buyer: 1)).to be_valid
     end
   end
 end
