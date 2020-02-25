@@ -1,7 +1,7 @@
 .header
   .header__main
     .contents-top
-      = link_to "#", class: "header-link" do
+      = link_to root_path, class: "header-link" do
         = image_tag "material/logo/logo.png", alt: "FURIMA", class: "header-logo"
       .search
         = form_with url: "#", method: :get, local: true do |f|
@@ -30,3 +30,9 @@
               ログイン
             = link_to new_user_registration_path, class: "right-list__member" do
               新規会員登録
+
+  = link_to new_item_path do
+    .purchaseBtn
+      %span.purchaseBth__text
+        出品する
+      = image_tag 'material/icon/icon_camera.png', alt: 'icon', class: 'purchaseBth__icon'

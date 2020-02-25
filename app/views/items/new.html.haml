@@ -49,6 +49,7 @@
                   必須
                 %br/
                 = f.text_field :description, class: "sell-form-pulldown"
+              
 
             .sell-content
               %h3
@@ -60,13 +61,24 @@
                   必須
                 %br/
                 = f.collection_select :category_id,  @parents, :id, :name,{prompt: "---"}, class: "sell-form-pulldown", id: "parent-form"
+
+              .sell-content__form-group-name#brand-form
+                = f.label :brand, "ブランド"
+                %span.form-arbitrary
+                  任意
+                %br/
+                = f.text_field :brand, class: "sell-form-pulldown"
+
               .sell-content__form-group-name
                 = f.label :商品の状態
                 %span.form-require
                   必須
                 %br/
                 = f.select :condition, [["新品未使用"], ["未使用に近い"], ["目立った傷や汚れなし"], ["やや傷や汚れあり"], ["傷や汚れあり"], ["全体的に状態が悪い"]], {prompt: "---"}, class: "sell-form-pulldown"
-
+              .sell-content__form-group-name
+                = f.label :商品のブランド名
+                %br/
+                = f.text_field item: :brand_attribute, class: "sell-form-pulldown"
 
             .sell-content
               %h3

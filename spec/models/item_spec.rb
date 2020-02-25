@@ -70,4 +70,10 @@ RSpec.describe Item, type: :model do
       end
     end
   end
+
+  describe '#pay' do
+    it "can update buyer" do
+      expect(build(:item, :item_with_image, buyer: 1)).to be_valid
+    end
+  end
 end

@@ -1,0 +1,175 @@
+.wrapper
+
+  .single-header
+    = link_to root_path do
+      = image_tag 'material/logo/logo.png'
+
+
+  .single-main
+    .sell-container
+      .sell-container-inner
+        %h2.sell-header
+          新しい商品の情報を入力
+        = form_for @item do |f|
+          = render 'layouts/error_messages', model: f.object
+          .sell-form
+            .sell-form__upload-box
+              %h3.sell-form__upload-head
+                出品画像
+                %span.form-require
+                  必須
+              %p
+                最大5枚までアップロードできます
+              .sell-form__drop-image
+                .post__drop__box__container
+                  .prev-content
+                    - @item.images.each do |image|
+                      .preview-box
+                        .upper-box
+                          = image_tag image.image.url, width: "112", height: "112", alt: "preview"
+                        .lower-box
+                          .delete-box
+                            .delete-btn
+                              %span 削除
+                  .label-content
+                    %label{for: "item_images_attributes_#{@item.images.length}_image", class: "label-box", id: "label-box--#{@item.images.length}"}
+                      %pre.label-box__text-visible クリックしてファイルをアップロード
+                  .hidden-content
+                    = f.fields_for :images do |i|
+                      = i.file_field :image, class: "hidden-field"
+                      = i.check_box:_destroy, class: "hidden-checkbox"
+                    - @item.images.length.upto(4) do |i|
+                      %input{name: "item[images_attributes][#{i}][image]", id: "item_images_attributes_#{i}_image", class:"hidden-field", type:"file"}
+  
+
+            .sell-content
+              .sell-content__form-group-name
+                = f.label :name, "商品名"
+                %span.form-require
+                  必須
+                %br/
+                = f.text_field :name, class: "sell-form-pulldown"
+              .sell-content__form-group-name
+                = f.label :description, "商品の説明"
+                %span.form-require
+                  必須
+                %br/
+                = f.text_field :description, class: "sell-form-pulldown"
+
+            .sell-content
+              %h3
+                商品の詳細
+              .sell-form-right#category-form
+                .sell-content__form-group-name
+                = f.label :カテゴリー
+                %span.form-require
+                  必須
+                %br/
+                = f.collection_select :category_id,  @parents, :id, :name,{prompt: "---"}, class: "sell-form-pulldown", id: "parent-form"
+              .sell-content__form-group-name
+                = f.label :商品の状態
+                %span.form-require
+                  必須
+                %br/
+                = f.select :condition, [["新品未使用"], ["未使用に近い"], ["目立った傷や汚れなし"], ["やや傷や汚れあり"], ["傷や汚れあり"], ["全体的に状態が悪い"]], {prompt: "---"}, class: "sell-form-pulldown"
+              .sell-content__form-group-name
+                = f.label :商品のブランド名
+                %br/
+                = f.text_field :brand, class: "sell-form-pulldown"
+
+            .sell-content
+              %h3
+                配送について
+              .sell-form-right
+                .sell-content__form-group-name
+                = f.label :shopping_charges, "配送料の負担"
+                %span.form-require
+                  必須
+                %br/
+                = f.select :shopping_charges, [["送料込み(出品者負担)"], ["着払い(購入者負担)"]], {prompt: "---"}, class: "sell-form-pulldown"
+
+                .sell-content__form-group-name
+                = f.label :shopping_area, "発送元の地域"
+                %span.form-require
+                  必須
+                %br/
+                = f.collection_select :shopping_area, Prefecture.all, :id, :name, {prompt: "---"}, class: "sell-form-pulldown"
+
+                .sell-content__form-group-name
+                = f.label :shopping_date, "発送までの日数"
+                %span.form-require
+                  必須
+                %br/
+                = f.select :shopping_date	, [["1~2日で発送"], ["2~3日で発送"], ["4~7日で発送"]], {prompt: "---"}, class: "sell-form-pulldown"
+
+            .sell-content.price
+              %h3.sell-form-price
+                価格（¥300〜9,999,999）
+                .sell-form-price-box
+                  %p.sell-form-group-price
+                    販売価格
+                    %span.form-require
+                      必須
+                  %p
+                    ¥
+                  %input#price_calc.price-pulldown-blue{placeholder: "例) 300", value: "#{@item.price}", type: "number"}/
+                  = f.number_field :price, style: "display: none", id: "price"
+
+                .sell-form-price-box
+                  販売手数料(10%)
+                  %p.sell-form-group-fee
+                  .price-pulldown
+                    = f.number_field :commission, style: "display: none", id: "commission"
+                    .right_bar
+
+                .sell-form-price-box
+                  販売利益
+                  %p.sell-form-group-price
+                  .price-pulldown
+                    = f.number_field :profit, style: "display: none", id: "profit"
+                    .right_bar_2
+
+
+            .sell-content.sell-btn-box
+              .sell-button-box
+                = f.submit "更新する", class: 'sell-button'
+                = link_to "詳細に戻る", item_path(params[:id]), class: 'sell-button-back'
+                  
+              .sell-attention
+                %p
+                  禁止されている
+                  = link_to '#' do
+                    出品
+                  、
+                  = link_to '#' do
+                    行為
+                  を必ずご確認ください
+                  
+                %p
+                  またブランド品でシリアルナンバー等がある場合はご記載ください。
+                  = link_to '#' do
+                    偽ブランドの販売
+                  は犯罪であり処罰される可能性があります。
+                  また、出品をもちまして
+                  = link_to '#' do
+                    加盟店規約
+                  に同意したことになります。
+
+
+  .single-footer
+    .footer-nav
+      %ul.clearfix
+        %li
+          = link_to '#' do
+            プライバシーポリシー
+        %li
+          = link_to '#' do
+            フリマ利用規約
+        %li
+          = link_to '#' do
+            特定商取引に関する表記
+        
+    = link_to '#', class: "single-footer__logo" do
+      = image_tag 'material/logo/logo-white.png', class: "img"
+    %p
+      ©️FURIMA

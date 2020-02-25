@@ -1,0 +1,45 @@
+.wrapper
+  .single-header
+    = link_to '/' do
+      = image_tag 'material/logo/logo.png'
+  .card-show
+    .item-content__card-info
+      .card-top
+        .card-top__text
+          登録されているカード情報
+        %ul.card-top__text--link
+          %li
+            = link_to edit_user_registration_path, class: "card-link" do
+              マイページに戻る
+          %li
+            = link_to card_path, method: :delete, class: "card-link delete-link" do
+              削除する
+      .card-info
+        .card-info__data
+          .card-info__data--label
+            カード番号
+          .card-info__data--number
+            = "**** **** **** #{@default_card_information.last4}"
+        .card-info__data
+          .card-info__data--label
+            有効期限　
+          .card-info__data--number
+            = expMonthYear(@default_card_information)
+  .single-footer
+    .footer-nav
+      %ul.clearfix
+        %li
+          = link_to '#' do
+            プライバシーポリシー
+        %li
+          = link_to '#' do
+            フリマ利用規約
+        %li
+          = link_to '#' do
+            特定商取引に関する表記
+        
+    = link_to '/', class: "single-footer__logo" do
+      = image_tag 'material/logo/logo-white.png', class: "img"
+    %p
+      ©️FURIMA
+

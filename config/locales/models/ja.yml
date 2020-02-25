@@ -13,3 +13,30 @@ ja:
         prefecture_id: 発送元の地域
         shopping_date: 発送までの日数
         price: 販売価格
+    models:
+      user: ユーザー
+    attributes:
+      user:
+        email: メールアドレス
+        password: パスワード
+        name: ニックネーム
+        family_name: 姓（全角）
+        last_name: 名（全角）
+        family_name_kana: 姓 カナ（全角）
+        last_name_kana: 名 カナ（全角）
+        birth_year: 西暦
+        birth_month: 誕生月
+        birth_day: 誕生日
+    models:
+      address: 住所
+    attributes:
+      address:
+        destination_family_name: 配送先姓（全角)
+        destination_last_name: 配送先名（全角)
+        destination_family_name_kana: 配送先姓カナ（全角)
+        destination_last_name_kana: 配送先名カナ（全角)
+        postal_code: 郵便番号
+        prefectures: 都道府県
+        municipalities: 市区町村
+        address: 番地
+        phone_number: 電話番号
