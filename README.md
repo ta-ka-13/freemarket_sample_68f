@@ -53,7 +53,7 @@ Things you may want to cover:
 |destination_family_name_kana|string|null: false|
 |destination_last_name_kana|string|null: false|
 |Postal_code|integer|null: false|
-|prefectures|string|nul: false|
+|prefecture_id|string|nul: false|
 |municipalities|string|nul: false|
 |address|string|nul: false|
 |building|string||
@@ -82,7 +82,7 @@ Things you may want to cover:
 |description|string|null: false|
 |condition|string|null: false|
 |shopping_charges|string|null: false|
-|shopping_area|string|null: false|
+|prefecture_id|string|null: false|
 |shopping_date|string|null: false|
 |buyer|integer||
 |user_id|references|foreign_key: true|

@@ -1,5 +1,5 @@
 .productList 
-  = link_to "#" do
+  = link_to item_path(item.id) do
     .productList__img
       = image_tag ""
       - if item.buyer.present? 

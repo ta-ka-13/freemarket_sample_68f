@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 2020_02_24_114159) do
     t.string "destination_family_name_kana", null: false
     t.string "destination_last_name_kana", null: false
     t.integer "postal_code", null: false
-    t.string "prefectures", null: false
+    t.string "prefecture_id", null: false
     t.string "municipalities", null: false
     t.string "address", null: false
     t.string "building"
@@ -62,7 +62,7 @@ ActiveRecord::Schema.define(version: 2020_02_24_114159) do
     t.string "description", null: false
     t.string "condition", null: false
     t.string "shopping_charges", null: false
-    t.string "shopping_area", null: false
+    t.integer "prefecture_id", null: false
     t.string "shopping_date", null: false
     t.integer "buyer"
     t.bigint "user_id"

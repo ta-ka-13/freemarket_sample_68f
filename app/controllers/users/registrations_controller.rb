@@ -67,7 +67,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   def address_params
-    params.require(:address).permit(:destination_family_name, :destination_last_name, :destination_family_name_kana, :destination_last_name_kana, :postal_code, :prefectures, :municipalities, :address, :building, :phone_number)
+    params.require(:address).permit(:destination_family_name, :destination_last_name, :destination_family_name_kana, :destination_last_name_kana, :postal_code, :prefecture_id, :municipalities, :address, :building, :phone_number)
   end
 
   # If you have extra params to permit, append them to the sanitizer.
