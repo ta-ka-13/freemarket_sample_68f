@@ -72,7 +72,7 @@
           = link_to '商品の編集', edit_item_path(@item.id), method: :get, class: "item-buy-btn"
           = link_to 'この商品を削除する',item_path(@item.id), method: :delete, class: "item-delete-btn"
         - else
-          = link_to  purchase_confirmation_items_path, class: "item-buy-btn" do
+          = link_to  purchase_item_path, class: "item-buy-btn" do
             購入画面に進む
     
       .buy-text-box
