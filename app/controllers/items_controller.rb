@@ -9,10 +9,10 @@ class ItemsController < ApplicationController
 
   def index
     @items = Item.includes(:images).order("id DESC")
-    @ladies = Item.includes(:images).where(category_id: 1..198).order("id DESC").limit(3)
-    @mens = Item.includes(:images).where(category_id: 199..343).order("id DESC").limit(3)
-    @appliances = Item.includes(:images).where(category_id: 892..977).order("id DESC").limit(3)
-    @goods = Item.includes(:images).where(category_id: 679..791).order("id DESC").limit(3)
+    @ladies = Item.includes(:images).where(category_id: 1..198).order("id DESC").limit(5)
+    @mens = Item.includes(:images).where(category_id: 199..343).order("id DESC").limit(5)
+    @appliances = Item.includes(:images).where(category_id: 892..977).order("id DESC").limit(5)
+    @goods = Item.includes(:images).where(category_id: 679..791).order("id DESC").limit(5)
 
   end
 

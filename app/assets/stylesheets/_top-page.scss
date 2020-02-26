@@ -168,7 +168,7 @@
           }
       }
       .productLists{
-        width: 780px;
+        width: 1000px;
         display: flex;
         justify-content: space-around;
         margin: 26px auto;
@@ -180,12 +180,12 @@
             text-decoration: none;
           }
           &__img {
-            width: 220px;
-            height: 150px;
+            width: 188px;
+            height: 188px;
             background-color: yellow;
             .item-image{
-              width: 220px;
-              height: 150px;
+              width: 100%;
+              height: 100%;
             }
             .sold-out{
               transform: rotate(-20deg);
