@@ -1,8 +1,8 @@
 class ItemsController < ApplicationController
   require "payjp"
   include Purchase
-  protect_from_forgery except: [:search]
-  before_action :set_item, only: [:edit, :update, :show, :purchare, :pay, :done, :destroy]
+  protect_from_forgery except: :search
+  before_action :set_item, only: [:edit, :update, :destroy, :show, :purchase, :pay, :done]
   before_action :set_parents, only: [:index, :new, :create, :edit, :update]
   before_action :set_secret_key, only: [:purchase, :pay]
   before_action :set_card, only: [:purchase, :pay]
@@ -13,13 +13,11 @@ class ItemsController < ApplicationController
     @mens = Item.includes(:images).where(category_id: 199..343).order("id DESC").limit(3)
     @appliances = Item.includes(:images).where(category_id: 892..977).order("id DESC").limit(3)
     @goods = Item.includes(:images).where(category_id: 679..791).order("id DESC").limit(3)
-
   end
 
   def new
     @item = Item.new
     @item.images.new
-    @parents = Category.where(ancestry: nil)
   end
 
   def create
@@ -32,9 +30,6 @@ class ItemsController < ApplicationController
     end
   end
 
-  def show
-  end
-
   def edit
     @images = @item.images
   end
@@ -45,19 +40,21 @@ class ItemsController < ApplicationController
   end
 
   def destroy
+    if @item.destroy
+      redirect_to root_path
+    else
+      alert("削除に失敗しました。")
+    end
+  end
 
-   if @item.destroy
-    redirect_to root_path
-   else
-    alert("削除に失敗しました。")
-   end
+  def show
   end
 
   def purchase
     if @card.present?
       card_data(@card)
     else
-      redirect_to controller: "card", action: "new"
+      redirect_to new_card_path
     end
   end
 

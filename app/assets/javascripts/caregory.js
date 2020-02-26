@@ -1,4 +1,4 @@
-$(function () {
+$(document).on('turbolinks:load', function() {
   function scroll(num) {
     $("html, body").animate({ scrollTop: num }, 400);
   }

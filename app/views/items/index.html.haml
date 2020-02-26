@@ -101,7 +101,7 @@
 
       .productBox
         .productHead
-          = link_to "#" do
+          = link_to category_path(@parents.ids[0]) do
             %h3.title{ id: "レディース"}
               レディース新着アイテム
         
@@ -115,7 +115,7 @@
 
       .productBox
         .productHead
-          = link_to "#" do
+          = link_to category_path(@parents.ids[1]) do
             %h3.title{id: "メンズ"}
               メンズ新着アイテム
 
@@ -129,7 +129,7 @@
 
       .productBox
         .productHead
-          = link_to "#" do
+          = link_to category_path(@parents.ids[7]) do
             %h3.title{id: "家電・スマホ・カメラ"}
               家電・スマホ・カメラ新着アイテム
         
@@ -143,7 +143,7 @@
 
       .productBox
         .productHead
-          = link_to "#" do
+          = link_to category_path(@parents.ids[5]) do
             %h3.title{id: "おもちゃ・ホビー・グッズ"}
               おもちゃ・ホビー・グッズ新着アイテム
         

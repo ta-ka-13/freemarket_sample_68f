@@ -187,15 +187,15 @@
               width: 220px;
               height: 150px;
             }
-            .sold-out{
-              transform: rotate(-20deg);
-              background-color: red;
-              width: 100px;
-              text-align: center;
-              text-decoration: none;
-              color: white;
-              border-radius: 2px;
-            }
+            // .sold-out{
+            //   transform: rotate(-20deg);
+            //   background-color: red;
+            //   width: 100px;
+            //   text-align: center;
+            //   text-decoration: none;
+            //   color: white;
+            //   border-radius: 2px;
+            // }
           }
           &__body {
             padding: 16px;
@@ -314,5 +314,18 @@ a{
     img{
       width: 60%;
     }
+    &:hover {
+      background-color:#3ddbdf;
+    }
   }
+}
+
+.sold-out{
+  transform: rotate(-20deg);
+  background-color: red;
+  width: 100px;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  border-radius: 2px;
 }

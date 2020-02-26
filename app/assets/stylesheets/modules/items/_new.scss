@@ -106,15 +106,19 @@
       .sell-content.sell-btn-box{
         .sell-button-box{
           text-align: center;
-          // 赤い送信ボタン------------------------
+          // 送信ボタン------------------------
           .sell-button{
-            background-color: red;
+            border-style: none;
+            background-color: $mainColor;
             color: white;
             height: 50px;
             line-height: 50px;
             width: 45%;
             border-radius: 5px;
             cursor: pointer;
+            &:hover {
+              opacity: 0.8;
+            }
           }
 
         // ライトグレーの戻るボタン
@@ -131,6 +135,9 @@
             font-size: 15px;
             cursor: pointer;
             text-decoration: none;
+            &:hover {
+              opacity: 0.8;
+            }
           }
         }
       }
