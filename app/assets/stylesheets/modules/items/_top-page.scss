@@ -201,6 +201,13 @@
             padding: 16px;
             background-color:white;
             color: black;
+            .item-name{
+              height: 50px;
+              width: 150px;
+              overflow: hidden;
+              &__text{
+              }
+            }
             .details {
               ul {
                 display: flex;
