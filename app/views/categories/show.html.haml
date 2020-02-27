@@ -13,7 +13,7 @@
     .category-show__items.clearfix
       - @items.each do |item|
         .item-list
-          = link_to item_path(params[:id]), class: "item-link" do
+          = link_to item_path(item[:id]), class: "item-link" do
             .item-list__image
               = image_tag item.images[0].image.url, alt: "#{item.name}", class: "item-image"
               .item-price
