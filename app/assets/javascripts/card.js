@@ -1,4 +1,4 @@
-$(function(){
+$(document).on('turbolinks:load', function() {
   $(".card-save-btn").on("click",function(e){
     e.preventDefault();
 

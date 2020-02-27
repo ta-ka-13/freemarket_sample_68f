@@ -1,5 +1,14 @@
 module ItemsHelper
-  def expMonthYear(card_date)
-    exp_date = "#{card_date.exp_month.to_s} / #{card_date.exp_year.to_s.slice(2,3)}"
+  # edit
+  def categoryParents(item)
+    categories = @item.category.root.siblings
+  end
+
+  def categoryChildren(item)
+    categories = @item.category.parent.parent.children
+  end
+
+  def categoryGrandChildren(item)
+    categories = @item.category.parent.children
   end
 end

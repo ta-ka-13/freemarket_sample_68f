@@ -41,15 +41,17 @@
     }
   }
   &__payment {
-    @include displayFlex(space-between, center);
     padding: 40px 100px;
     border-bottom: 1px solid #eee;
-    .payment-text {
-      font-size: 20px;
-    }
-    .payment-price {
-      font-size: 30px;
-      font-weight: bold;
+    &--box {
+      @include displayFlex(space-around, center);
+      .payment-text {
+        font-size: 20px;
+      }
+      .payment-price {
+        font-size: 30px;
+        font-weight: bold;
+      }
     }
   }
   &__bottom {
@@ -70,7 +72,7 @@
     }
 
     // 以下の記述は全てpurchase用のcss
-    .sold-out {
+    .sold {
       &__btn {
         background-color: gray;
         border-radius: 50px;
@@ -100,10 +102,8 @@
     .card-top {
       @include displayFlex(space-between);
       &__text {
-        &--link {
-        }
       }
-      .card-link {
+      &__link {
         @include linkReset($mainColor);
         &:hover {
           opacity: 0.6;

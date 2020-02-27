@@ -48,23 +48,23 @@ $(document).on('turbolinks:load', function(){
 
 
   $(document).on('change', "#childform", function() {
-     childform = $(this).val();
-     $("#grandchildform").remove();
-     $("#brand-form").hide();
+    childform = $(this).val();
+    $("#grandchildform").remove();
+    $("#brand-form").hide();
 
-     $.ajax({
-       type: "GET",
-       url: '/items/search',
-       data: {childform: childform},
-       dataType: 'json'
-     })
-     .done(function(grandchildform) {
-       var num = 2
-       appendSelect(num)
-       grandchildform.forEach(function(grandchildform){
-         appendOption(grandchildform, num)
-       })
-     })
+    $.ajax({
+      type: "GET",
+      url: '/items/search',
+      data: {childform: childform},
+      dataType: 'json'
+    })
+    .done(function(grandchildform) {
+      var num = 2
+      appendSelect(num)
+      grandchildform.forEach(function(grandchildform){
+        appendOption(grandchildform, num)
+      })
+    })
   })
 
   $(document).on('change', "#grandchildform", function() {
