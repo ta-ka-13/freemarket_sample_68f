@@ -16,12 +16,12 @@
         .product-text__price
           = "#{@item.price} 円（税込）"
     .item-content__payment
-      .payment-text
-        支払金額
-      .payment-price
-        = "#{@item.price} 円"
+      .item-content__payment--box
+        .payment-text
+          支払金額
+        .payment-price
+          = "#{@item.price} 円"
 
-    - if current_user.id == @card.user_id
       .item-content__card-info
         .card-top
           .card-top__text
@@ -49,13 +49,6 @@
           .sold
             .sold__btn
               SOLD OUT
-
-    - else
-      .sell-content
-        .sell-content__text
-          ※お客様のカード情報はまだ登録されていません。
-          = link_to new_card_path, class: "new-card" do
-            カード登録へ進む
 
   .single-footer
     .footer-nav

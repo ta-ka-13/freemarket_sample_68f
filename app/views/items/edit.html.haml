@@ -4,7 +4,6 @@
     = link_to root_path do
       = image_tag 'material/logo/logo.png'
 
-
   .single-main
     .sell-container
       .sell-container-inner
@@ -65,7 +64,9 @@
                 %span.form-require
                   必須
                 %br/
-                = f.collection_select :category_id,  @parents, :id, :name,{prompt: "---"}, class: "sell-form-pulldown", id: "parent-form"
+                = f.collection_select :category_id, categoryParents(@item), :id, :name,{ selected: @item.category.root.id }, class: "sell-form-pulldown", id: "parent-form"
+                = f.collection_select :category_id, categoryChildren(@item), :id, :name,{ selected: @item.category.parent.id }, class: "sell-form-pulldown", id: "childform"
+                = f.collection_select :category_id, categoryGrandChildren(@item), :id, :name,{ selected: @item.category.id }, class: "sell-form-pulldown", id: "grandchildform"
               .sell-content__form-group-name
                 = f.label :商品の状態
                 %span.form-require
