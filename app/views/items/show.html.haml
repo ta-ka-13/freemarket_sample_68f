@@ -37,7 +37,7 @@
             %tr
               %th カテゴリー
               %td
-                = link_to "#", class: "gategory" do
+                = link_to category_path(:"#{@item.category.id}"), class: "gategory" do
                   = @item.category.name
             %tr
               %th ブランド
@@ -70,7 +70,7 @@
           （税込）送料込み
 
       .item-buy
-        - if user_signed_in? && current_user.id == @item.user_id
+        - if current_user.id == @item.user_id
           = link_to '商品の編集', edit_item_path(@item.id), method: :get, class: "item-buy-btn"
           = link_to 'この商品を削除する',item_path(@item.id), method: :delete, class: "item-delete-btn"
         - else
