@@ -29,7 +29,6 @@
                   .hidden-content
                     = f.fields_for :images do |i|
                       = i.file_field :image, class: "hidden-field"
-                      -# %input{class:"hidden-field", type: "file", name: "item[images_attributes][0][image]", id: "item_images_attributes_0_image" }
                       %input{class:"hidden-field", type: "file", name: "item[images_attributes][1][image]", id: "item_images_attributes_1_image" }
                       %input{class:"hidden-field", type: "file", name: "item[images_attributes][2][image]", id: "item_images_attributes_2_image" }
                       %input{class:"hidden-field", type: "file", name: "item[images_attributes][3][image]", id: "item_images_attributes_3_image" }
@@ -63,7 +62,7 @@
                 = f.collection_select :category_id,  @parents, :id, :name,{prompt: "---"}, class: "sell-form-pulldown", id: "parent-form"
 
               .sell-content__form-group-name#brand-form
-                = f.label :brand, "ブランド"
+                = f.label :ブランド
                 %span.form-arbitrary
                   任意
                 %br/
@@ -75,7 +74,6 @@
                   必須
                 %br/
                 = f.select :condition, [["新品未使用"], ["未使用に近い"], ["目立った傷や汚れなし"], ["やや傷や汚れあり"], ["傷や汚れあり"], ["全体的に状態が悪い"]], {prompt: "---"}, class: "sell-form-pulldown"
-              .sell-content__form-group-name
 
             .sell-content
               %h3

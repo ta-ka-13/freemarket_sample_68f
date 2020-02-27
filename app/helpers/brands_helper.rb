@@ -6,18 +6,33 @@ module BrandsHelper
   end
 
   def first(brand)
-    kana = NKF.nkf("--hiragana -w", brand.name)
+    kana = NKF.nkf("--hiragana -w", brand)
     brand_kana = kana.unicode_normalize(:nfd)
   end
 
-  def brandList(brand)
+  def brandUniq(items)
+    brands = items.map { |item| item.brand }
+    brand = brands.uniq
+  end
+
+  def brandLink(brand, items)
+    a = []
+    @items.each do |i|
+      if i.brand == brand
+        a << i
+      end
+    end
+    item = a[0]
+  end
+
+  def brandNav
     nav = [
       {name: "FURIMA", path: "/"},
       {name: "ブランド一覧", path: "/brands"}
     ]
-    unless brand.nil?
-      nav << {name: brand.name, path: "/brands/#{brand.id}"}
-    end
-    nav
+  end
+
+  def brandList(item)
+    brandNav << {name: item.brand, path: nil}
   end
 end
