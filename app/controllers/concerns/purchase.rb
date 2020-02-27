@@ -6,7 +6,11 @@ module Purchase
   end
 
   def set_card
-    @card = Card.where(user_id: current_user.id).first
+    if user_signed_in?
+      @card = Card.where(user_id: current_user.id).first
+    else
+      redirect_to new_user_registration_path
+    end
   end
 
   def card_destroy(card)

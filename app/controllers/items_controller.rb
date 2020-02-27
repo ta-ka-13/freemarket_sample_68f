@@ -48,9 +48,6 @@ class ItemsController < ApplicationController
   end
 
   def show
-    puts current_user.id
-    puts @item.user_id
-    puts 
   end
 
   def purchase
