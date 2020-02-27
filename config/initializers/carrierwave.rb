@@ -10,6 +10,7 @@ CarrierWave.configure do |config|
       provider: 'AWS',
       aws_access_key_id: Rails.application.credentials[:aws][:access_key_id],
       aws_secret_access_key: Rails.application.credentials[:aws][:secret_access_key],
+      provider: 'PAYJP',
       payjp_public_key: Rails.application.credentials[:payjp][:public_key],
       payjp_secret_key: Rails.application.credentials[:payjp][:secret_key],
       region: 'ap-northeast-1'
