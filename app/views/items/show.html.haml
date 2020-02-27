@@ -37,7 +37,7 @@
             %tr
               %th カテゴリー
               %td
-                = link_to "#", class: "gategory" do
+                = link_to category_path(:"#{@item.category.id}"), class: "gategory" do
                   = @item.category.name
             %tr
               %th ブランド
