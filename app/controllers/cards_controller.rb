@@ -9,6 +9,7 @@ class CardsController < ApplicationController
   end
 
   def create
+    
     if params["payjpToken"].present?
       customer = Payjp::Customer.create(
         email: current_user.email,
