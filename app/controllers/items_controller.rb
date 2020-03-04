@@ -32,12 +32,16 @@ class ItemsController < ApplicationController
   end
 
   def edit
+    redirect_to root_path if @item.user_id != current_user.id
     @images = @item.images
   end
-
+  
   def update
-    @item.update(item_params)
-    redirect_to item_path(params[:id])
+    if @item.update(item_params)
+      redirect_to item_path(params[:id])
+    else 
+      render edit_item_path(params[:id])
+    end
   end
 
   def destroy
