@@ -4,6 +4,7 @@ class ItemsController < ApplicationController
   protect_from_forgery except: :search
   before_action :set_item, only: [:edit, :update, :destroy, :show, :purchase, :pay, :done]
   before_action :set_parents, only: [:index, :new, :create, :edit, :update]
+  before_action :set_redirect, only: [:edit, :update, :destroy]
   before_action :set_secret_key, only: [:show, :purchase, :pay]
   before_action :set_card, only: [:show, :purchase, :pay]
 
@@ -59,6 +60,7 @@ class ItemsController < ApplicationController
   end
 
   def pay
+    redirect_to root_path if @item.buyer.present?
     Payjp::Charge.create(
       amount: @item.price,
       customer: @card.customer_id,
@@ -99,5 +101,9 @@ class ItemsController < ApplicationController
 
   def set_parents
     @parents = Category.where(ancestry: nil)
+  end
+
+  def set_redirect
+    redirect_to root_path unless @item.user_id == current_user.id
   end
 end

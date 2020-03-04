@@ -70,20 +70,28 @@
           （税込）送料込み
 
       .item-buy
-        - if current_user.id == @item.user_id
+        - if user_signed_in? && current_user.id == @item.user_id
           = link_to '商品の編集', edit_item_path(@item.id), method: :get, class: "item-buy-btn"
           = link_to 'この商品を削除する',item_path(@item.id), method: :delete, class: "item-delete-btn"
         - else
-          - if @card.present?
-            = link_to purchase_item_path(params[:id]), class: "item-buy-btn" do
-              購入画面に進む
+          - if user_signed_in?
+            - if @card.present?
+              = link_to purchase_item_path(params[:id]), class: "item-buy-btn" do
+                購入画面に進む
+            - else
+              .item-buy__not
+                %ul.item-buy__not--card
+                  ※お客様のカード情報はまだ登録されていません。
+                  %li
+                    = link_to new_card_path, class: "new-card" do
+                      カード登録へ進む
           - else
             .item-buy__not
               %ul.item-buy__not--card
-                ※お客様のカード情報はまだ登録されていません。
+                ※まだ会員登録されていません。
                 %li
-                  = link_to new_card_path, class: "new-card" do
-                    カード登録へ進む
+                  = link_to new_user_registration_path, class: "new-card" do
+                    新規会員登録へ進む
 
       .buy-text-box
         %p.buy-text
